@@ -4,7 +4,6 @@
     --accent-color: #ffc18a;
     --card-bg: #ffcfb9;
     --card-hover: #ffa77e;
-
 }
 
 body.dark-mode {
@@ -18,6 +17,7 @@ body.dark-mode {
 body {
     background-color: var(--background-color);
     color: var(--text-color);
+    font-family: 'Space Mono', monospace;
 
 }
 

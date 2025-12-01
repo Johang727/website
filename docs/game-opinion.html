@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Game Opinions</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+    <script>
+      (function() {
+          const savedTheme = localStorage.getItem('theme');
+          // Only apply the class; do NOT define the functions here.
+          if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+              document.body.classList.add('dark-mode');
+          }
+      })();
+    </script>
+    </head>
+
+
+    <body>
+        <div class="container mt-4">
+            <div class = "d-flex justify-content-between">
+            
+            <h2>Game Opinions | <a href="index.html">Go Home</a></h2>
+            <button id = "theme-toggle" onclick = "toggle_theme" class = "btn btn-secondary">
+                Toggle Dark/Light Mode
+            </button>
+
+            </div>
+
+            <hr>
+
+            <div class = "row">
+
+                <div class = "col ms-3">
+                    <h4>
+                        Pokémon Mystery Dungeon: Explorers of Sky Hacks:
+                    </h4>
+                    
+                    <hr>
+                    
+                    <div class="col ms-5">
+                        <h5>Pokémon Mystery Dungeon - The Bright Future:</h5>
+                        <div class="col ms-5">
+                            <div class="mb-3">
+                                | <b>Just One Flaw...</b> | <b>2 Hours to Beat</b> | <b><a href="https://hacks.skytemple.org/h/pmd_the_bright_future">SkyTemple Link</a></b> |
+                            </div>
+                            
+                            <div class="col ms-3">
+                                <p class="mb-3">Like the OP says, the player stays at Level 20 and there are no overworld segments, it's easy, back-to-back dungeon-ing. It's a full story-only hack which aren't the worst in my opinion: I do like myself a good story hack!</p>
+                                
+                                <p class="mb-3">The MC talks in this hack, which wouldn't be a problem if it wasn't an insertion story, <i>(the game asks for your name and a name to give your partner)</i>. This honestly is the only issue I have with this hack. The main reason that the MC in the base game doesn't speak often and somewhat generically, for lack of a better word, is because the MC needs to fit a wide range of people. When the MC says things that I, personally, wouldn't have said in that situation, it breaks the immersion a bit.</p>
+                                
+                                <p class="mb-3">Despite this, that doesn't mean the story or writing is bad, far from it. I feel like it captures the feeling of the original game. It flows nicely and doesn't drag on. I was not bored while I was playing, <i>(granted, it wasn't a long hack, but still)</i>.</p>
+                                
+                                <p class="mb-0"><b>Don't let my opinion discourage you! There's a reason I didn't go too into detail!</b> Honestly, I was tempted to replay the hack after seeing all the positive feedback on it, <i>(it has been a few months since I played through it).</i> I personally would replay with generic species names to get that 3rd person experience I feel this game needs, however, if you want to play it as an insertion story, go for it!</p>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        <script src = "theme.js"></script>
+
+    </body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</html>
