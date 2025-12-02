@@ -12,7 +12,6 @@
     <script>
       (function() {
           const savedTheme = localStorage.getItem('theme');
-          // Only apply the class; do NOT define the functions here.
           if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
               document.body.classList.add('dark-mode');
           }
