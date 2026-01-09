@@ -42,3 +42,7 @@ body {
     background-color: var(--accent-color);
     color: var(--text-color);
 }
+
+summary.big-summary {
+    font-size: x-large;
+}
