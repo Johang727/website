@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Kindle Jailbreaking</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+
+        <script src="../scripts/dark-light-sw.js"></script>
+    </head>
+
+    <body>
+        <div class="container mt-4">
+            <div class="d-flex justify-content-between">
+                <div class="d-flex align-items-baseline">
+                    <h2>Kindle Jailbreaking </h2><h4 class="ms-3">&#60; <a href="index.html">Scratchpad</a> &#60; <a href="../index.html">Go Home</a></h4>
+                </div>
+
+                <button id = "theme-toggle" onclick = "toggle_theme" class = "btn btn-secondary">
+                    Toggle Dark/Light Mode
+                </button>
+            </div>
+        
+            <hr>
+
+            <p><small>Sorry if this is a yap fest and somewhat unintelligible! I suppose that's what you get for reading from the Scratchpad tho!</small></p>
+
+            <p>
+                I had this Kindle Touch laying in a box unused for the past months or maybe even year, having moved on to using my tablet for reading, and ultimately not reading at all in recent times. I was thinking, there's gotta be a way to repurpose it, right? The new Kindles run Android.. which was simple, but I wasn't sure about this one.
+            </p>
+
+            <p>
+                <img src="images/kindle/abandoned.jpg" style="height: 320px;" alt="Black and White image of the backside of a Kindle Touch on a dresser.">
+            </p>
+            <p><i>Re-enactment</i></p>
+
+            <p>
+                So I did some research and luckily, these 2012 Kindles can be modded. It was the first time I was doing softmodding without a proper guide, being used to *.hacks.guide pages. So I turned to the dark side... <i>AI</i>...
+            </p>
+            <p>
+                It started off well, providing me with common resources like <a href="https://www.mobileread.com/forums/showthread.php?t=225030">MobileRead</a> forums.
+            </p>
+            <p>
+                But the good times stopped there, it already gave me false information, telling me to create folders---essentially hallucinating a way to jailbreak, wasting me an hour or so trying to figure it out.. before I decided enough with AI for now and just do my own research.
+            </p>
+
+            <p>After finishing the jailbreak and ssh-ing into my Kindle, I needed to figure out how to make a cronjob for a dashboard. The normal command cronjob -e didn't work, erroring out. So I once again decided to ask AI... just another waste of time.</p>
+
+            <p>It wanted me to <i>remove</i> the crontab directory to make my own crontab file in place of it, which I immediately knew was a bad idea and a potential brick waiting to happen. So I gave up on AI again and just used the paths it gave me to figure stuff out. I ended up finding out that cronjobs are just located under <b>/etc/crontab/root</b> and it was fairly simple to edit and add my own.</p>
+
+            <p>After a bit of programming and tinkering, I ended up making a dashboard for my server which I feel like ended up quote nice. The Kindle only has about a two day battery now, but, it is better than sitting in a closet at 0% for its entire life.</p>
+
+            <p>
+                <img src="images/kindle/server-dash.jpg" style="height: 320px;" alt="Black and White image of the backside of a Kindle Touch on a dresser.">
+            </p>
+            <p><i>Kindle propped under my monitor for a quick view on my server in-case it's gonna blow.</i></p>
+
+            <p>Honestly, I should give this kindle credit, it's surprisingly crisp and legible for being an 600x800 screen. There's plenty of space for server stats and even a small joke at the bottom :p</p>
+
+            <hr>
+
+            <p>TBH, there were many videos on how to jailbreak Kindles, but I personally just.. didn't wanna watch any since I really don't like watching videos like that, instead opting for text guides. So here's a text guide if you ever find yourself in a situation like mine!</p>
+
+
+            <ol>
+                <li>
+                    Download the K5 Jailbreak files from <a href="https://storage.gra.cloud.ovh.net/v1/AUTH_2ac4bfee353948ec8ea7fd1710574097/mr-public/Touch/kindle-jailbreak-1.16.N-r19426.tar.xz">here.</a>
+                </li>
+                <li>
+                    Unzip the contents of <b>kindle-5.4-jailbreak.zip</b> to the root of the device.
+                </li>
+                <li>
+                    Open the <b>Menu</b> on your Kindle and go to <b>Settings</b>, open the <b>Menu</b> again and click <b>"Update Your Kindle"</b>.
+                    <ul>
+                        <li>
+                            This should result in **** JAILBREAK **** displaying at the bottom.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Get the updated DevCerts from <a href="https://www.mobileread.com/forums/attachment.php?attachmentid=215127&d=1745098511">here.</a>
+                </li>
+                <li>
+                    Drag <b>Update_mkk-20250419-k5-ALL_keystore-install.bin</b> onto the root of your device and update your kindle using the same method as before.
+                </li>
+                <li>
+                    Download KUAL from <a href="https://storage.gra.cloud.ovh.net/v1/AUTH_2ac4bfee353948ec8ea7fd1710574097/mr-public/KUAL/KUAL-v2.7.37-gfcb45b5-20250419.tar.xz">here.</a>
+                </li>
+                <li>Drag <b>KUAL-KDK-2.0.azw2</b> into the Kindle's Documents folder.</li>
+                <li>Download MR Package Installer from <a href="https://storage.gra.cloud.ovh.net/v1/AUTH_2ac4bfee353948ec8ea7fd1710574097/mr-public/KUAL/kual-mrinstaller-1.7.N-r19303.tar.xz">here.</a></li>
+                <li>Drag <b>extensions</b> and <b>mrpackages</b> into the root of your Kindle.</li>
+                <li>Download USBNetwork from <a href="https://storage.gra.cloud.ovh.net/v1/AUTH_2ac4bfee353948ec8ea7fd1710574097/mr-public/Touch/kindle-usbnet-0.22.N-r19297.tar.xz">here.</a></li>
+                <li>Copy <b>Update_usbnet_0.22.N_install_touch_pw.bin</b> to the <b>mrpackages</b> folder.</li>
+                <li>Open KUAL &#62; Helper &#62; then tap "Install MR Packages"
+                    <ul>
+                        <li>Leave it be for a few minutes while it installs.</li>
+                    </ul>
+                </li>
+                <li>Re-open KUAL and navigate to Toggle USBNetwork.</li>
+                <li>From here, attempt to SSH into the Kindle. If the default passwords found <a href="https://www.sven.de/kindle/">here</a> don't work, then try:
+                    <ul>
+                        <li>Connect your Kindle to your PC again through USB. You may need to untoggle USBNetwork for MTP to function.</li>
+                        <li>In a terminal, run <b>ssh-keygen -t rsa</b>, you don't need to set a passphrase + store the key in its default location.</li>
+                        <li>On your Kindle, create a file named <b>authorized_keys</b> in the <b>usbnet/etc</b> directory.</li>
+                        <li>Copy the contents of <b>~/.ssh/id_rsa.pub</b> or <b>C:\Users\{username}\.ssh\id_rsa.pub</b> into authorized_keys</li>
+                        <li>Attempt to SSH into your Kindle again and it should log in immediately with no password prompt.</li>
+                        <li>Change the root password by running <b>mntroot rw</b> and <b>passwd root</b>.</li>
+                    </ul>
+                </li>
+                <li>You are now free to do whatever you want with your Kindle! I found the best way to keep the Kindle awake was to emulate a suspend loop using:
+                    <ul>
+                        <li><b>lipc-set-prop com.lab126.powerd powerButton 1 && lipc-set-prop com.lab126.powerd powerButton 1</b></li>
+                        <li>This resets the suspend timer more effectively than any other solution I have found. Just run it with a cronjob or within a script.</li>
+                        <li><i>Also a quick note: you may edit cronjobs using <b>nano /etc/crontab/root</b></i></li>
+                    </ul>
+                </li>
+                
+
+            </ol>
+
+            <h4>Sources:</h4>
+            <ul>
+                <li><a href="https://www.mobileread.com/forums/showthread.php?t=186645">Snapshots of NiLuJe's hacks</a></li>
+                <li><a href="https://www.mobileread.com/forums/showthread.php?t=225030">Kindle Touch/PW1/PW2 5.0.x - 5.4.4.2 JailBreak</a></li>
+                <li><a href="https://www.mobileread.com/forums/showpost.php?p=4506164">New DevCerts</a></li>
+                <li><a href="https://phoenixnap.com/kb/set-up-cron-job-linux">How to Create and Set Up a Cron Job in Linux</a></li>
+            </ul>
+
+        </div>
+
+        
+        <script src = "../scripts/theme.js"></script>
+    </body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</html>
