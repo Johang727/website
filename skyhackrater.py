@@ -344,10 +344,7 @@ for q in questions:
         continue
     max_score_nobono += weight
 
-max_score = max_score_nobono + bonus_score
-
-print(max_score_nobono, bonus_score, max_score)
-
+old_max = max_score_nobono
 # ask questions
 
 score_earned:float = 0
@@ -383,7 +380,7 @@ for q in questions:
 
     ans = input(f"{q} (y/n/na): ").lower()
 
-    if ans != "na":
+    if ans != "na" or ans != "":
         if q.inverse:
             if ans == "n":
                 score_earned += weight
@@ -391,6 +388,8 @@ for q in questions:
             if ans == "y":
                 score_earned += weight
         continue
+    else:
+        max_score_nobono -= weight
 
 # grades
 score = (score_earned / max_score_nobono)*100
@@ -405,7 +404,8 @@ elif score >= 50: grade = "D"
 else: grade = "F"
 
 modifier = ""
-if bonus_score > 0:
+if (old_max / max_score_nobono) < 0.7:modifier = "?"
+elif bonus_score > 0:
     b_ratio = bonus_earned / bonus_score
     if b_ratio >= 0.7: modifier = "+"
     elif b_ratio <= 0.3: modifier = "-"
