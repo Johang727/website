@@ -1,4 +1,3 @@
-
 category_weights = {
     "gameplay": 2.0,
     "story": 1.75,
@@ -90,7 +89,7 @@ questions:list[Question] = [
              inverse=True,
              exclude_if_wip=True),  # Skip for WIPs (bugs are expected)
 
-    Question("Are there noticeable graphical glitches (cutoffs, broken sprites)?",
+    Question("Are there noticeable graphical glitches?",
              ["all"],
              "visuals",
              inverse=True,
@@ -117,6 +116,11 @@ questions:list[Question] = [
     Question("Do characters' personalities evolve well overtime?",
              ["story", "mixed"],
              "story"),
+
+    Question("Is the character dynamic enjoyable?",
+             ["all"],
+             "story"
+             ),
 
     Question("Is the humor well timed?",
              ["story", "mixed"],
@@ -152,7 +156,12 @@ questions:list[Question] = [
              "visuals",
              bonus=True),
 
-    Question("Are custom portraits high quality and expressive?",
+    Question("Are there custom portraits?",
+             ["story", "mixed"],
+             "visuals",
+             bonus=True),
+
+    Question("Do the portraits follow the PMD style?",
              ["story", "mixed"],
              "visuals",
              bonus=True),
@@ -161,7 +170,7 @@ questions:list[Question] = [
              ["all"],
              "sound"),
 
-    Question("How many custom tracks are there?",
+    Question("How many custom songs are there?",
              ["all"],
              "sound",
              numeric=True),
@@ -169,6 +178,16 @@ questions:list[Question] = [
     Question("Do custom songs loop properly?",
              ["all"],
              "sound"),
+
+    Question("Is the Sky Jukebox available?",
+             ["all"],
+             "sound",
+             bonus=True),
+
+    Question("Does the Sky Jukebox contain custom music?",
+             ["all"],
+             "sound",
+             bonus=True),
 
     Question("Are custom songs balanced well? (not too loud, not too quiet)",
              ["all"],
@@ -226,6 +245,11 @@ questions:list[Question] = [
     Question("Are there grinding segments if you get stuck? (Dungeons before bosses count)",
              ["all"],
              "gameplay"),
+    
+    Question("Can you skip cutscenes?",
+             ["all"],
+             "gameplay",
+             bonus=True),
 
     Question("Are boss fights balanced (not just HP sponges)?",
              ["all"],
@@ -245,6 +269,10 @@ questions:list[Question] = [
              "gameplay"),
 
     Question("Are there Easter Eggs or hidden interactions?",
+             ["all"],
+             "gameplay"),
+
+    Question("Are there additional ways to spend Poké on other things apart from dungeon items?",
              ["all"],
              "gameplay"),
 
@@ -276,9 +304,9 @@ questions:list[Question] = [
 
     Question("Was the game engaging?",
              ["all"],
-             "story"),
+             "gameplay"),
 
-    Question("Does the story feel unique (not just an EoS reskin)?",
+    Question("Does the story feel unique (not just EoS with a fresh coat of paint)?",
              ["story", "mixed"],
              "story"),
     
@@ -311,17 +339,45 @@ if ex:
 # prompt user to select game type
 
 hack_type:str = "mixed"
-wip:bool = False
+wip:bool = True
 
 while True:
 
-    print("--- PMD Sky Hack Rating Tool ---")
+    print("\n--- PMD Sky Hack Rating Tool ---")
     print(f"Current Hack Type: {hack_type} | WIP?: {wip}")
     print("[1] Change Type")
     print("[2] Change WIP Status")
     print("[3] Start!")
 
-    break
+    inp:str = input("Make a selection: ")
+
+    if inp == "3": break
+    elif inp == "1":
+        print("\n--- Change Type ---")
+        print("[1] Story")
+        print("[2] Mixed (Base)")
+        print("[3] Difficulty")
+        print("[4] Back")
+        inp = input("Make a selection: ")
+        if inp == "1":
+            hack_type = "story"
+        elif inp == "2":
+            hack_type = "mixed"
+        elif inp == "3": 
+            hack_type = "difficulty"
+        else: continue
+    elif inp == "2":
+        print("\n--- Change WIP Status ---")
+        print("[1] WIP")
+        print("[2] Finished")
+        print("[3] Back")
+        inp = input("Make a selection: ")
+        if inp == "1":
+            wip = True
+        elif inp == "2":
+            wip = False
+        else: continue
+
 
 
 # calculate max score
@@ -365,22 +421,26 @@ for q in questions:
             continue
         except:
             bonus_earned += 0
+            continue
 
     if q.bonus:
         ans = input(f"{q} (y/n/na): ").lower()
-
-        if q.inverse:
-            if ans == "n":
-                bonus_earned += weight
+        if ans != "na" and ans != "":
+            if q.inverse:
+                if ans == "n":
+                    bonus_earned += weight
+            else:
+                if ans == "y":
+                    bonus_earned += weight
+            continue
         else:
-            if ans == "y":
-                bonus_earned += weight
-        continue
+            bonus_score -= weight
+            continue
 
 
     ans = input(f"{q} (y/n/na): ").lower()
 
-    if ans != "na" or ans != "":
+    if ans != "na" and ans != "":
         if q.inverse:
             if ans == "n":
                 score_earned += weight
@@ -391,30 +451,33 @@ for q in questions:
     else:
         max_score_nobono -= weight
 
-# grades
-score = (score_earned / max_score_nobono)*100
-if score >= 100: grade = "EX+"
-elif score >= 98: grade = "EX"
-elif score >= 95: grade = "SS"
-elif score >= 92: grade = "S"
-elif score >= 85: grade = "A"
-elif score >= 75: grade = "B"
-elif score >= 60: grade = "C"
-elif score >= 50: grade = "D"
-else: grade = "F"
+if max_score_nobono > 0:
+    # grades
+    score = (score_earned / max_score_nobono)*100
+    if score >= 100: grade = "EX+"
+    elif score >= 98: grade = "EX"
+    elif score >= 95: grade = "SS"
+    elif score >= 92: grade = "S"
+    elif score >= 85: grade = "A"
+    elif score >= 75: grade = "B"
+    elif score >= 60: grade = "C"
+    elif score >= 50: grade = "D"
+    else: grade = "F"
 
-modifier = ""
-if (old_max / max_score_nobono) < 0.7:modifier = "?"
-elif bonus_score > 0:
-    b_ratio = bonus_earned / bonus_score
-    if b_ratio >= 0.7: modifier = "+"
-    elif b_ratio <= 0.3: modifier = "-"
+    modifier = ""
+    if (old_max / max_score_nobono) < 0.7:modifier = "?"
+    elif bonus_score > 0:
+        b_ratio = bonus_earned / bonus_score
+        if b_ratio >= 0.7: modifier = "+"
+        elif b_ratio <= 0.3: modifier = "-"
 
 
-final_rank = f"{grade}{modifier}"
+    final_rank = f"{grade}{modifier}"
 
-print("-----------------------")
-print(f"Final Score {score:.2f}%")
-print(f"Bonus Score: {(bonus_earned / bonus_score)*100:.2f}%")
-print("-----------------------")
-print(f"Rank: {final_rank}")
+    print("-----------------------")
+    print(f"Final Score: {score_earned:.2f} / {max_score_nobono:.2f} ({score:.2f}%)")
+    print(f"Bonus Score: {bonus_earned} / {bonus_score} ({(bonus_earned / bonus_score)*100:.2f}%)")
+    print("-----------------------")
+    print(f"Rank: {final_rank}")
+else:
+    print("All questions answered as N/A... cannot get grade")

@@ -18,7 +18,38 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     font-family: 'Space Mono', monospace;
+}
 
+
+.card {
+background-color: var(--card-bg) !important;
+border: 1px solid var(--accent-color) !important;
+color: var(--text-color) !important;
+transition: background-color 0.3s ease;
+border-radius: 0;
+}
+
+
+.card-header {
+cursor: pointer;
+background-color: var(--card-bg);
+color: var(--text-color);
+border-bottom: 1px solid var(--accent-color);
+padding: 1rem;
+transition: background-color 0.2s;
+}
+
+.card-header:hover {
+background-color: var(--card-hover);
+}
+
+.rank-tag {
+font-weight: bold;
+border: 1px solid;
+padding: 2px 8px;
+border-radius: 4px;
+font-size: 0.9rem;
+background-color: #000;
 }
 
 .button-block {
