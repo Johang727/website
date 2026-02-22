@@ -12,7 +12,7 @@ class Question:
 
         self.question = question
         if type == ["all"]:
-            self.type = ["story", "mixed", "difficulty"]
+            self.type = ["story", "mixed"]
         else:
             self.type = type
         self.category = category
@@ -31,7 +31,7 @@ class Question:
         :rtype: bool
         """
         for item in self.type:
-            if item not in ["story", "mixed", "difficulty"]:
+            if item not in ["story", "mixed"]:
                 print(f"ERR: {item} is an invalid type.")
                 return False
 
@@ -87,13 +87,13 @@ questions:list[Question] = [
              ["all"],
              "gameplay",
              inverse=True,
-             exclude_if_wip=True),  # Skip for WIPs (bugs are expected)
+             exclude_if_wip=True),
 
     Question("Are there noticeable graphical glitches?",
              ["all"],
              "visuals",
              inverse=True,
-             exclude_if_wip=True),  # Skip for WIPs (visuals usually polished last)
+             exclude_if_wip=True),
 
     Question("Can you choose who you & your partner are?",
              ["all"],
@@ -117,6 +117,28 @@ questions:list[Question] = [
              ["story", "mixed"],
              "story"),
 
+    Question("Does the character's stats match the backing story (i.e., saved the future, but starts off at LV. 5 would be inconsistent.)?",
+         ["story", "mixed"],
+         "story"),
+
+    Question("If attempting to be a sequel or follow up, do changes to the world make sense?",
+             ["story", "mixed"],
+             "story"),
+    
+    Question("Does the character's stats increase during story-based timeskips?",
+         ["story", "mixed"],
+         "story",
+         bonus=True),
+    
+    Question("Does it seem like conflict only happens when the user is playing, rather than during timeskips?",
+             ["story", "mixed"],
+             "story",
+             inverse=True),
+
+    Question("Does the hack stay consistent with the lore of the original game (if attempting to be a follow-up)?",
+    ["story", "mixed"],
+    "story"),
+
     Question("Is the character dynamic enjoyable?",
              ["all"],
              "story"
@@ -134,7 +156,7 @@ questions:list[Question] = [
              ["story", "mixed"],
              "story"),
 
-    Question("Are side characters given personality beyond just quest-giving?",
+    Question("Are side characters given personality and character?",
              ["story", "mixed"],
              "story"),
 
@@ -147,12 +169,17 @@ questions:list[Question] = [
              "story"),
 
     Question("Does the title screen change based on progression?",
-             ["story", "mixed"],
+             ["all"],
+             "visuals",
+             bonus=True),
+
+    Question("Is the main menu background changed?",
+             ["all"],
              "visuals",
              bonus=True),
 
     Question("Does Treasure Town have dynamic weather?",
-             ["story", "mixed"],
+             ["all"],
              "visuals",
              bonus=True),
 
@@ -203,7 +230,7 @@ questions:list[Question] = [
              "visuals"),
 
     Question("Is the difficulty curve fair?",
-             ["mixed", "difficulty"],
+             ["mixed"],
              "gameplay"),
 
     Question("Does the hack introduce new items?",
@@ -260,7 +287,7 @@ questions:list[Question] = [
              "story"),
     
     Question("How many special episodes are there? (If difficulty hack, include if they are modified.)",
-             ["story", "mixed", "difficulty"],
+             ["all"],
              "story",
              numeric=True),
 
@@ -306,7 +333,7 @@ questions:list[Question] = [
              ["all"],
              "gameplay"),
 
-    Question("Does the story feel unique (not just EoS with a fresh coat of paint)?",
+    Question("Does the story feel unique (not just EoS with some minor modifications)?",
              ["story", "mixed"],
              "story"),
     
@@ -356,15 +383,12 @@ while True:
         print("\n--- Change Type ---")
         print("[1] Story")
         print("[2] Mixed (Base)")
-        print("[3] Difficulty")
-        print("[4] Back")
+        print("[3] Back")
         inp = input("Make a selection: ")
         if inp == "1":
             hack_type = "story"
         elif inp == "2":
             hack_type = "mixed"
-        elif inp == "3": 
-            hack_type = "difficulty"
         else: continue
     elif inp == "2":
         print("\n--- Change WIP Status ---")
