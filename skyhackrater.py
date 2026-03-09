@@ -121,11 +121,11 @@ questions:list[Question] = [
          ["story", "mixed"],
          "story"),
 
-    Question("If attempting to be a sequel or follow up, do changes to the world make sense?",
+    Question("If attempting to be a sequel, follow up, or side story, does it fit in well and keep the lore intact?",
              ["story", "mixed"],
              "story"),
     
-    Question("Does the character's stats increase during story-based timeskips?",
+    Question("Does the character's stats increase during story-based timeskips, if it makes sense?",
          ["story", "mixed"],
          "story",
          bonus=True),
@@ -134,10 +134,6 @@ questions:list[Question] = [
              ["story", "mixed"],
              "story",
              inverse=True),
-
-    Question("Does the hack stay consistent with the lore of the original game (if attempting to be a follow-up)?",
-    ["story", "mixed"],
-    "story"),
 
     Question("Is the character dynamic enjoyable?",
              ["all"],
@@ -153,6 +149,10 @@ questions:list[Question] = [
              "story"),
 
     Question("Does the story handle darker/mature themes with appropriate weight?",
+             ["story", "mixed"],
+             "story"),
+
+    Question("Are dark/emotional moments well-timed?",
              ["story", "mixed"],
              "story"),
 
@@ -249,7 +249,7 @@ questions:list[Question] = [
              bonus=True),
 
 
-    Question("Is gameplay/story balanced well?",
+    Question("Is the gameplay-to-story ratio balanced well?",
              ["mixed"],
              "gameplay"),
 
@@ -269,7 +269,7 @@ questions:list[Question] = [
              "gameplay",
              bonus=True),
 
-    Question("Are there grinding segments if you get stuck? (Dungeons before bosses count)",
+    Question("If level / resources are fixed:\n\tAre these sufficient to clear the game without over-reliance on luck?\nElse:\n\tAre there sufficient grinding areas in case you get stuck?",
              ["all"],
              "gameplay"),
     
@@ -340,6 +340,11 @@ questions:list[Question] = [
     Question("Did the hack flow well story-wise?",
              ["story", "mixed"],
              "story"),
+
+    Question("Does the story feel complete/resolved?",
+             ["story", "mixed"],
+             "story",
+             exclude_if_wip=True),
     
     Question("Would you want to replay this hack?",
              ["all"],
@@ -436,7 +441,7 @@ for q in questions:
 
     print("-----------------------")
 
-    weight:float = category_weights[q.category]
+    weight = category_weights[q.category]
 
     if q.numeric:
         try:
