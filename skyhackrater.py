@@ -89,11 +89,27 @@ questions:list[Question] = [
              inverse=True,
              exclude_if_wip=True),
 
-    Question("Are there noticeable graphical glitches?",
+        Question("Are there text formatting errors?",
              ["all"],
-             "visuals",
-             inverse=True,
-             exclude_if_wip=True),
+             "ui",
+             exclude_if_wip=True,
+             inverse=True),
+
+    Question("Are there noticable spelling & grammar errors?",
+             ["all"],
+             "ui",
+             exclude_if_wip=True,
+             inverse=True),
+
+    Question("Are dungeon names / boss room names proper location names\ni.e., no \"TPBoss1\' / \"Beach Boss\"?",
+             ["all"],
+             "ui",
+             exclude_if_wip=True,
+             inverse=True),
+    
+    Question("Are there enough save points?",
+             ["all"],
+             "gameplay"),
 
     Question("Can you choose who you & your partner are?",
              ["all"],
@@ -259,6 +275,11 @@ questions:list[Question] = [
              "gameplay",
              bonus=True),
 
+    Question("Is text like \"The bad weather inflicted...\" removed?",
+             ["all"],
+             "gameplay",
+             bonus=True),
+
     Question("Can you manually control teammates?",
              ["all"],
              "gameplay",
@@ -277,6 +298,10 @@ questions:list[Question] = [
              ["all"],
              "gameplay",
              bonus=True),
+
+    Question("Does it feel like transitions are missing?",
+             ["all"],
+             "gameplay"),
 
     Question("Are boss fights balanced (not just HP sponges)?",
              ["all"],
@@ -306,22 +331,6 @@ questions:list[Question] = [
     Question("Is the Adventure Log updated to reflect the main and special stories?",
              ["story", "mixed"],
              "ui"),
-
-    Question("Are there text formatting errors?",
-             ["all"],
-             "ui",
-             exclude_if_wip=True,
-             inverse=True),
-
-    Question("Are there noticable spelling & grammar errors?",
-             ["all"],
-             "ui",
-             exclude_if_wip=True,
-             inverse=True),
-
-    Question("Are there enough save points?",
-             ["all"],
-             "gameplay"),
 
     Question("How long is the story (in hours)?",
              ["all"],
@@ -371,7 +380,7 @@ if ex:
 # prompt user to select game type
 
 hack_type:str = "mixed"
-wip:bool = True
+wip:bool = False
 
 while True:
 
@@ -435,6 +444,11 @@ old_max = max_score_nobono
 score_earned:float = 0
 bonus_earned:float = 0
 
+# y for yes
+# n for no
+# k for kinda (half points)
+# na for not applicable
+
 for q in questions:
 
     if not q.ask(hack_type, wip): continue
@@ -453,12 +467,16 @@ for q in questions:
             continue
 
     if q.bonus:
-        ans = input(f"{q} (y/n/na): ").lower()
+        ans = input(f"{q} (y/n/k/na): ").lower()
         if ans != "na" and ans != "":
             if q.inverse:
+                if ans == "k":
+                    bonus_earned += (weight/2)
                 if ans == "n":
                     bonus_earned += weight
             else:
+                if ans == "k":
+                    bonus_earned += (weight/2)
                 if ans == "y":
                     bonus_earned += weight
             continue
@@ -467,13 +485,17 @@ for q in questions:
             continue
 
 
-    ans = input(f"{q} (y/n/na): ").lower()
+    ans = input(f"{q} (y/n/k/na): ").lower()
 
     if ans != "na" and ans != "":
         if q.inverse:
+            if ans == "k":
+                score_earned += (weight/2)
             if ans == "n":
                 score_earned += weight
         else:
+            if ans == "k":
+                score_earned += (weight/2)
             if ans == "y":
                 score_earned += weight
         continue
@@ -483,7 +505,7 @@ for q in questions:
 if max_score_nobono > 0:
     # grades
     score = (score_earned / max_score_nobono)*100
-    if score >= 100: grade = "EX+"
+    if score == 100: grade = "EX+"
     elif score >= 98: grade = "EX"
     elif score >= 95: grade = "SS"
     elif score >= 92: grade = "S"
@@ -491,6 +513,7 @@ if max_score_nobono > 0:
     elif score >= 75: grade = "B"
     elif score >= 60: grade = "C"
     elif score >= 50: grade = "D"
+    elif score >= 35: grade = "E"
     else: grade = "F"
 
     modifier = ""
