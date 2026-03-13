@@ -142,7 +142,7 @@ questions:list[Question] = [
              "story"),
     
     Question("Does the character's stats increase during story-based timeskips, if it makes sense?",
-         ["story", "mixed"],
+         ["all"],
          "story",
          bonus=True),
     
@@ -156,7 +156,7 @@ questions:list[Question] = [
              "story"
              ),
 
-    Question("Is the humor well timed?",
+    Question("Is the humor placed well in the story?",
              ["story", "mixed"],
              "story"),
 
@@ -329,8 +329,29 @@ questions:list[Question] = [
              "gameplay"),
 
     Question("Is the Adventure Log updated to reflect the main and special stories?",
-             ["story", "mixed"],
+             ["all"],
              "ui"),
+
+    Question("Is the mission objective menu updated with proper text (no 'Dummy' or placeholder entries)?",
+             ["all"],
+             "ui",
+             bonus=True,
+             exclude_if_wip=True),
+ 
+    Question("Is the in-game help/documentation updated to reflect the hack's lore or mechanics?",
+             ["all"],
+             "ui",
+             bonus=True),
+ 
+    Question("Are system-level strings changed to fit the hack? (e.g., error messages, cart text, etc.)",
+             ["all"],
+             "ui",
+             bonus=True),
+ 
+    Question("Does the game feature pre-title screen or pre-'New Game' dialogue/cutscenes?",
+             ["all"],
+             "story",
+             bonus=True),
 
     Question("How long is the story (in hours)?",
              ["all"],
@@ -354,6 +375,11 @@ questions:list[Question] = [
              ["story", "mixed"],
              "story",
              exclude_if_wip=True),
+
+    Question("If there are multiple endings, do they feel meaningfully distinct?",
+             ["all"],
+             "story",
+             bonus=True),
     
     Question("Would you want to replay this hack?",
              ["all"],
