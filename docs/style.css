@@ -2,71 +2,104 @@
     --background-color: #ffe3ca;
     --text-color: #000;
     --accent-color: #ffc18a;
+    --text-muted: #292929;
+
     --card-bg: #ffcfb9;
     --card-hover: #ffa77e;
+
+    --link-color: #b35c00; 
+    --link-hover: #803700;
 }
 
 body.dark-mode {
     --background-color: #3b1c00;
     --text-color: #ffffff;
     --accent-color: #853f01;
-    --card-bg: #974900;
-    --card-hover: #be5c00;
+    --text-muted: #e7e7e7;
+
+    --card-bg: #502700;
+    --card-hover: #783a00;
+
+    --link-color: #ffc18a; 
+    --link-hover: #ffe3ca;
+}
+
+body.dark-mode .text-muted, 
+body.dark-mode .text-secondary {
+    color: var(--text-muted) !important; 
 }
 
 body {
     background-color: var(--background-color);
     color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease; /* added color */
     font-family: 'Space Mono', monospace;
 }
 
-
-.card {
-background-color: var(--card-bg) !important;
-border: 1px solid var(--accent-color) !important;
-color: var(--text-color) !important;
-transition: background-color 0.3s ease;
-border-radius: 0;
+body .text-muted, 
+body .text-secondary {
+    color: var(--text-muted) !important; 
 }
 
+a {
+    color: var(--link-color);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--link-hover);
+}
+
+.card {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--accent-color) !important;
+    color: var(--text-color) !important;
+    transition: background-color 0.3s ease;
+    border-radius: 0;
+}
 
 .card-header {
-cursor: pointer;
-background-color: var(--card-bg);
-color: var(--text-color);
-border-bottom: 1px solid var(--accent-color);
-padding: 1rem;
-transition: background-color 0.2s;
+    cursor: pointer;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-bottom: 1px solid var(--accent-color);
+    padding: 1rem;
+    transition: background-color 0.2s;
 }
 
 .card-header:hover {
-background-color: var(--card-hover);
+    background-color: var(--card-hover);
+}
+
+.text-muted, .text-secondary {
+    transition: color 0.3s ease;
 }
 
 .rank-tag {
-font-weight: bold;
-border: 1px solid;
-padding: 2px 8px;
-border-radius: 4px;
-font-size: 0.9rem;
-background-color: #000;
+    font-weight: bold;
+    border: 1px solid;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    background-color: #000;
 }
 
 .button-block {
     background-color: var(--card-bg);
     color: var(--text-color);
     border: var(--accent-color);
-    transition: background-color 0.2;
+    transition: background-color 0.2s; /* fixed missing 's' */
 }
 
 .button-block:hover {
     background-color: var(--card-hover);
-    transition: background-color 0.2;
 }
 
 .btn-secondary {
     background-color: var(--background-color);
     color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease; /* added */
 }
 
 .btn-secondary:hover {
@@ -79,17 +112,20 @@ summary.big-summary {
 }
 
 .spoiler {
- color: black;
- background-color: black;
+    color: black;
+    background-color: black;
+    transition: color 0.3s ease; /* added */
 }
+
 .spoiler:hover {
- color: white;
+    color: white;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
 }
+
 th, td {
     border: 1px solid black;
     padding: 8px;
