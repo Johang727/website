@@ -32,7 +32,6 @@ body.dark-mode .text-secondary {
 body {
     background-color: var(--background-color);
     color: var(--text-color);
-    transition: background-color 0.3s ease, color 0.3s ease; /* added color */
     font-family: 'Space Mono', monospace;
 }
 

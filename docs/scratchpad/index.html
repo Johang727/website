@@ -1,86 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <link rel="icon" href="images/icon.jpeg">
-
-        <title>The Scratchpad</title>
-
-        <meta name="description" content="The blog of unfinished thoughts.">
-        <meta property="og:title" content="The Scratchpad">
-        <meta property="og:type" content="website">
-        <meta property="og:description" content="The blog of unfinished thoughts.">
-
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="../style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
-
-        <script src="../scripts/dark-light-sw.js"></script>
-    </head>
-
-    <body>
-        <div class="container mt-4">
-            <div class="d-flex justify-content-between">
-                <div class="d-flex align-items-baseline">
-                    <h2>Scratchpad </h2><h4 class="ms-3">&#60; <a href="../index.html">Go Home</a></h4>
-                </div>
-
-                <button id = "theme-toggle" onclick = "toggle_theme" class = "btn btn-secondary">
-                    Toggle Dark/Light Mode
-                </button>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Scratchpad</title>
+    <meta name="description" content="The blog of unfinished thoughts.">
+    <meta property="og:title" content="The Scratchpad">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="The blog of unfinished thoughts.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="sp-style.css">
+    <script src="../scripts/dark-light-sw.js"></script>
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="d-flex justify-content-between">
+            <div class="d-flex align-items-baseline">
+                <h2>Scratchpad </h2><h4 class="ms-3">&#60; <a href="../index.html">Go Home</a></h4>
             </div>
-            <small><i>A page full of unfinished thoughts and ramblings.</i></small>
-        
-            <hr>
 
-            <a href="artwork.html" class="button-block p-4 d-block text-decoration-none border rounded">
-                <div class="row">
-                    <div class="col text-start">Artwork.</div>
-                    <div class="col text-end"><i>Mar. 13, 2026</i></div>
+            <button id = "theme-toggle" onclick = "toggle_theme" class = "btn btn-secondary">
+                Toggle Dark/Light Mode
+            </button>
+        </div>
+        <small><i>A page full of unfinished thoughts and ramblings.</i></small>
+    
+        <hr>
+
+        <div class="notes-grid">
+            <a href="artwork.html" class="note">
+                <div class="pin" style="background: #64a0dc;"></div>
+                <div class="note-card">
+                    <img src="images/index/art.png" alt="Artwork — Mar. 16, 2026" title="Artwork">
                 </div>
             </a>
 
-            <a href="pmd-sky.html" class="button-block p-4 d-block text-decoration-none border rounded">
-                <div class="row">
-                    <div class="col text-start">Pokémon Mystery Dungeon Sky Rom Hacks.</div>
-                    <div class="col text-end"><i>Mar. 13, 2026 <small>(Created Dec. 1, 2025)</small></i></div>
+            <a href="pmd-sky.html" class="note">
+                <div class="pin" style="background: #e67e22;"></div>
+                <div class="note-card">
+                    <img src="images/index/pmd2.png" alt="Pokémon Mystery Dungeon Sky Rom Hacks — Mar. 13, 2026; Created: Dec. 1, 2026" title="Pokémon Mystery Dungeon Sky Rom Hacks">
                 </div>
             </a>
 
-            <a href="walmart.html" class="button-block p-4 d-block text-decoration-none border rounded">
-                <div class="row">
-                    <div class="col text-start">Scoring Walmart Computers using the TETR.IO Feecof Test.</div>
-                    <div class="col text-end"><i>Feb. 3, 2026</i></div>
+            <a href="walmart.html" class="note">
+                <div class="pin" style="background: #c0392b;"></div>
+                <div class="note-card">
+                    <img src="images/index/fecof.png" alt="TETR.IO Feecof Test — Feb. 3, 2026; Created: Dec. 1, 2026" title="TETR.IO Feecof Test">
                 </div>
             </a>
 
-            <a href="mesmerizer.html" class="button-block p-4 d-block text-decoration-none border rounded">
-                <div class="row">
-                    <div class="col text-start">What Games Have the Full Version of Mesmerizer?</div>
-                    <div class="col text-end"><i>Jan. 31, 2026 <small>(Created Jan. 9, 2026)</small></i></div>
+            <a href="mesmerizer.html" class="note">
+                <div class="pin" style="background: #b464c8;"></div>
+                <div class="note-card">
+                    <img src="images/index/mes.png" alt="Mesmerizer across games — Jan 31, 2026; Created: Jan. 9, 2026" title="Which games have Mesmerizer in full?">
                 </div>
             </a>
 
-
-            <a href="kindle-jailbreaking.html" class="button-block p-4 d-block text-decoration-none border rounded">
-                <div class="row">
-                    <div class="col text-start">Jailbreaking my Kindle Touch.</div>
-                    <div class="col text-end"><i>Jan. 21, 2026</i></div>
+            <a href="kindle-jailbreaking.html" class="note">
+                <div class="pin" style="background: #059669;"></div>
+                <div class="note-card">
+                    <img src="images/index/kindle.png" alt="Kindle Touch Jailbreak — Jan 21, 2026" title="Jailbreaking my Kindle Touch">
                 </div>
             </a>
-
-
-
 
         </div>
+    </div>
 
-        
-        <script src = "../scripts/theme.js"></script>
-    </body>
-
+    <script>
+        function hash(str) {
+            let h = 0;
+            for (let i = 0; i < str.length; i++) {
+                h = (Math.imul(31, h) + str.charCodeAt(i)) | 0;
+            }
+            return Math.abs(h);
+        }
+ 
+        const palettes = [
+            { light: ['#fdf6e3', '#2c1a0e', '#7a5c3e'], dark: ['#2c2014', '#e8d8c0', '#9a7a58'] },
+            { light: ['#fef9c3', '#3d2b00', '#92742a'], dark: ['#2a2200', '#f5e88a', '#b09040'] },
+            { light: ['#d1fae5', '#064e3b', '#2d7a5f'], dark: ['#0a2e20', '#8fffd4', '#4daa80'] },
+            { light: ['#e8f4fd', '#0c3a5c', '#3a6e94'], dark: ['#091e30', '#a8d8f8', '#5090c0'] },
+            { light: ['#fce7f3', '#4a0e2e', '#9a3060'], dark: ['#2a0818', '#f8b8d8', '#c06080'] },
+            { light: ['#ede9fe', '#2e1065', '#6d28d9'], dark: ['#1a0a38', '#c4b5fd', '#8060d0'] },
+        ];
+ 
+        function applyNoteColors() {
+            const isDark = document.body.classList.contains('dark-mode');
+            document.querySelectorAll('.note-card').forEach(el => {
+                const href = el.closest('.note')?.getAttribute('href') || '';
+                const p = palettes[hash(href) % palettes.length];
+                const [bg, titleCol, muted] = isDark ? p.dark : p.light;
+                el.style.setProperty('--note-bg', bg);
+                el.style.setProperty('--note-title', titleCol);
+                el.style.setProperty('--note-muted', muted);
+            });
+        }
+ 
+        // Patch toggle_theme to also recolor notes after theme.js defines it
+        document.addEventListener('DOMContentLoaded', () => {
+            applyNoteColors();
+            const orig = toggle_theme;
+            toggle_theme = function() {
+                orig();
+                applyNoteColors();
+            };
+        });
+    </script>
+    <script src="../scripts/theme.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
 </html>
