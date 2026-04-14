@@ -11,18 +11,14 @@ jobs:
 
       - name: Run accessibility audit in Playwright container
         run: |
-          echo "Workspace is: ${{ github.workspace }}"
-          echo "PWD is: $(pwd)
           docker run --rm \
-            --network host \
-            -v "${{ github.workspace }}:/work" \
-            -w /work \
-            mcr.microsoft.com/playwright:v1.42.0-jammy \
-            /bin/bash -c "
-              npm install -g serve pa11y-ci && \
-              ls -la /work && \
-              ls -la /work/docs && \
-              serve docs -l 3000 & \
-              for i in \$(seq 1 30); do curl -sf http://localhost:3000 > /dev/null && break; sleep 1; done && \
-              pa11y-ci --config /work/.pa11yci --sitemap 'http://localhost:3000/sitemap.xml' --sitemap-find 'https://johang.dev' --sitemap-replace 'http://localhost:3000'
-            "
+          --network host \
+          -v "${{ github.workspace }}:/work" \
+          -w /work \
+          mcr.microsoft.com/playwright:v1.42.0-jammy \
+          /bin/bash << 'EOF'
+              npm install -g serve pa11y-ci
+              serve docs -l 3000 &
+              sleep 5
+              pa11y-ci --config /work/.pa11yci --sitemap 'http://localhost:3000/sitemap.xml' --sitemap-find 'https://yourdomain.com' --sitemap-replace 'http://localhost:3000'
+          EOF
