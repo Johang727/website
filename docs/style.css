@@ -58,16 +58,28 @@ a:hover {
     border-radius: 0;
 }
 
+.card-toggle {
+    color: var(--text-color);
+    background-color: transparent;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+}
+
+.card-toggle:hover {
+    background-color: transparent; /* let card-header hover handle it */
+}
+
 .card-header {
     cursor: pointer;
     background-color: var(--card-bg);
     color: var(--text-color);
     border-bottom: 1px solid var(--accent-color);
-    padding: 1rem;
+    padding: 0; 
     transition: background-color 0.2s;
 }
 
-.card-header:hover {
+.card-header:has(button:hover) {
     background-color: var(--card-hover);
 }
 
@@ -111,12 +123,16 @@ summary.big-summary {
 }
 
 .spoiler {
-    color: black;
+    color: transparent;
     background-color: black;
-    transition: color 0.3s ease; /* added */
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
-.spoiler:hover {
+.spoiler:hover,
+.spoiler:focus {
     color: white;
 }
 
