@@ -2,22 +2,38 @@ name: Accessibility Checker
 on: [push]
 
 jobs:
-    check-a11y:
-        runs-on: self-hosted
-        container:
-          image: mcr.microsoft.com/playwright:v1.42.0-jammy
-          options: --user root
-        steps:
-            - name: Checkout Code
-              run: |
-                apt update && apt install -y git
-                git clone https://github.com/${{ github.repository }}.git .
-                git checkout ${{ github.sha }}
-            
-            - name: Start Local Server
-              run: |
-                npx serve -s . -l 3000 &
-                npx wait-on http://localhost:3000 --timeout 30000
-            
-            - name: Run Pa11y
-              run: npx pa11y-ci --sitemap http://localhost:3000
+  check-a11y:
+    runs-on: self-hosted
+    container:
+      image: mcr.microsoft.com/playwright:v1.42.0-jammy
+      options: --user root
+
+    steps:
+      - name: Install git and Node deps
+        run: |
+          apt-get update -qq && apt-get install -y git
+          npm install -g serve pa11y-ci
+
+      - name: Checkout Code
+        run: |
+          git init
+          git remote add origin https://github.com/${{ github.repository }}.git
+          git fetch --depth=1 origin ${{ github.sha }}
+          git checkout FETCH_HEAD
+
+      - name: Run accessibility audit
+        run: |
+          serve -s . -l 3000 &
+          SERVER_PID=$!
+
+          # Poll until the server is up (avoids npx wait-on download)
+          for i in $(seq 1 30); do
+            curl -sf http://localhost:3000 > /dev/null && break
+            sleep 1
+          done
+
+          pa11y-ci 'http://localhost:3000/index.html'
+          EXIT_CODE=$?
+
+          kill $SERVER_PID
+          exit $EXIT_CODE
