@@ -16,4 +16,4 @@ jobs:
             -v "${{ github.workspace }}:/work" \
             -w /work \
             mcr.microsoft.com/playwright:v1.42.0-jammy \
-            /bin/bash -c 'npm install -g serve pa11y-ci && serve docs -l 3000 & sleep 5 && pa11y-ci --config /work/.pa11yci --sitemap http://localhost:3000/sitemap.xml --sitemap-find https://johang.dev --sitemap-replace http://localhost:3000'
+            /bin/bash -c 'npm install -g serve pa11y-ci && serve docs -l 3000 & sleep 5 && npx pa11y-ci --config /work/.pa11yci --sitemap http://localhost:3000/sitemap.xml --sitemap-find https://johang.dev --sitemap-replace http://localhost:3000'
