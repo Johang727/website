@@ -6,14 +6,13 @@ jobs:
         runs-on: self-hosted
         container:
           image: mcr.microsoft.com/playwright:v1.42.0-jammy
+          options: --user root
         steps:
-            - name: Setup Node.js
-              uses: actions/setup-node@v6.3.0
-              with:
-                node-version: "24"
-
             - name: Checkout Code
-              uses: actions/checkout@v6.0.2
+              run: |
+                apt update && apt install -y git
+                git clone https://github.com/${{ github.repository }}.git .
+                git checkout ${{ github.sha }}
             
             - name: Start Local Server
               run: |
