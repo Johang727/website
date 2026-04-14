@@ -4,7 +4,6 @@ on: [push]
 jobs:
   check-a11y:
     runs-on: self-hosted
-    # No container: block here — run on the host runner directly
 
     steps:
       - name: Checkout Code
@@ -21,5 +20,5 @@ jobs:
               npm install -g serve pa11y-ci && \
               serve -s docs -l 3000 & \
               for i in \$(seq 1 30); do curl -sf http://localhost:3000 > /dev/null && break; sleep 1; done && \
-              pa11y-ci -- config /work/.pa11yci 'http://localhost:3000/index.html'
+              pa11y-ci --config /work/.pa11yci --sitemap 'http://localhost:3000/sitemap.xml' --sitemap-find 'https://johang.dev' --sitemap-replace 'http://localhost:3000'
             "
