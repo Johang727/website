@@ -1,0 +1,17 @@
+name: Accessibility Checker
+on: [push]
+
+jobs:
+    check-a11y:
+        runs-on: self-hosted
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v6.0.2
+            
+            - name: Start Local Server
+              run: |
+                npx serve -s . -l 3000 &
+                npx wait-on http://localhost:3000 --timeout 30000
+            
+            - name: Run Pa11y
+              run: npx pa11y-ci --sitemap http://localhost:3000 --runner axe
