@@ -4,25 +4,32 @@ on: [push]
 jobs:
   check-a11y:
     runs-on: self-hosted
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout Code
         uses: actions/checkout@v6.0.2
 
-      - name: where the heck is the pa11yci
-        run: |
-          ls -la ${{ github.workspace }}
-          cat ${{ github.workspace }}/.pa11yci
-
       - name: Run accessibility audit in Playwright container
         run: |
+          HOST_PATH="${{ github.workspace }}"
+          HOST_PATH="${HOST_PATH/\/tmp\/runner-work/$HOST_WORKDIR}"
           docker run --rm \
             --network host \
-            -v "${{ github.workspace }}:/work" \
+            -v "$HOST_PATH:/work" \
             -w /work \
             mcr.microsoft.com/playwright:v1.42.0-jammy \
-            /bin/bash -c 'npm install -g serve && serve docs -l 3000 & sleep 5 && npx pa11y-ci --config /work/.pa11yci --sitemap http://localhost:3000/sitemap.xml --sitemap-find https://johang.dev --sitemap-replace http://localhost:3000' 2>&1 | tee ${{ github.workspace }}/pa11y-output.txt
+            /bin/bash -c 'npm install -g serve && serve docs -l 3000 > /dev/null 2>&1 & sleep 5 && npx pa11y-ci --config /work/.pa11yci --sitemap http://localhost:3000/sitemap.xml --sitemap-find https://johang.dev --sitemap-replace http://localhost:3000' > ${{ github.workspace }}/pa11y-output.txt 2>&1
 
-      - name: Show pa11y output
+      - name: Post results as commit comment
         if: always()
-        run: cat ${{ github.workspace }}/pa11y-output.txt
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          OUTPUT=$(cat ${{ github.workspace }}/pa11y-output.txt)
+          gh api repos/${{ github.repository }}/commits/${{ github.sha }}/comments \
+            -f body="## Accessibility Audit Results
+          \`\`\`
+          $OUTPUT
+          \`\`\`"
