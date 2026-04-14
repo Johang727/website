@@ -12,8 +12,8 @@
     --card-bg: #ffcfb9;
     --card-hover: #ffa77e;
 
-    --link-color: #b35c00; 
-    --link-hover: #803700;
+    --link-color: #5f3100; 
+    --link-hover: #2b1200;
 }
 
 body {
@@ -45,8 +45,8 @@ body.dark-mode {
     --card-bg: #502700;
     --card-hover: #783a00;
 
-    --link-color: #ffc18a; 
-    --link-hover: #ffe3ca;
+    --link-color: #f8d3b2; 
+    --link-hover: #fff3e8;
 }
 
 body.dark-mode .text-muted, 
