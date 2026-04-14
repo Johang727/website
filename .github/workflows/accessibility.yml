@@ -4,6 +4,8 @@ on: [push]
 jobs:
     check-a11y:
         runs-on: self-hosted
+        container:
+          image: mcr.microsoft.com/playwright:v1.42.0-jammy
         steps:
             - name: Checkout Code
               uses: actions/checkout@v6.0.2
@@ -19,4 +21,4 @@ jobs:
                 npx wait-on http://localhost:3000 --timeout 30000
             
             - name: Run Pa11y
-              run: PA11Y_RUNNERS=axe npx pa11y-ci --sitemap http://localhost:3000
+              run: npx pa11y-ci --sitemap http://localhost:3000
