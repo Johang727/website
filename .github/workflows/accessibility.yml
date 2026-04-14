@@ -20,4 +20,4 @@ jobs:
 
       - name: Show pa11y output
         if: always()
-        run: cat /tmp/pa11y-output.txt
+        run: cat ${{ github.workspace }}/pa11y-output.txt
