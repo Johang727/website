@@ -9,6 +9,11 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v6.0.2
 
+      - name: where the heck is the pa11yci
+        run: |
+          ls -la ${{ github.workspace }}
+          cat ${{ github.workspace }}/.pa11yci
+
       - name: Run accessibility audit in Playwright container
         run: |
           docker run --rm \
