@@ -11,6 +11,8 @@ jobs:
 
       - name: Run accessibility audit in Playwright container
         run: |
+          echo "Workspace is: ${{ github.workspace }}"
+          echo "PWD is: $(pwd)
           docker run --rm \
             --network host \
             -v "${{ github.workspace }}:/work" \
