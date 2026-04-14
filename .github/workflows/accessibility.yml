@@ -7,13 +7,13 @@ jobs:
         container:
           image: mcr.microsoft.com/playwright:v1.42.0-jammy
         steps:
-            - name: Checkout Code
-              uses: actions/checkout@v6.0.2
-
             - name: Setup Node.js
               uses: actions/setup-node@v6.3.0
               with:
-                node-version: "latest"
+                node-version: "24"
+
+            - name: Checkout Code
+              uses: actions/checkout@v6.0.2
             
             - name: Start Local Server
               run: |
