@@ -21,16 +21,18 @@ urlencode() {
     echo "${encoded}"
 }
 
-# 1. Check if PPD exists before starting
 if [[ ! -f "$PPD_FILE" ]]; then
     echo "Error: PPD file ($PPD_FILE) not found in current directory."
-    exit 1
-fi
-
-# 1. Check if PPD exists before starting
-if [[ ! -f "$TEST_FILE" ]]; then
-    echo "Error: Test document ($TEST_FILE) not found in current directory."
-    exit 1
+    read -r -p "Would you like to download it? (y/N): " confirmation
+    if [[ "$confirmation" =~ ^[Yy]$ ]]; then
+        curl -fsSL "https://raw.githubusercontent.com/Johang727/website/master/print/$PPD_FILE" -o "$PPD_FILE" || {
+            echo "Download failed. Check your connection or grab it manually from the Sharp website."
+            exit 1
+        }
+    else
+        echo "PPD file ($PPD_FILE) is needed to complete setup. Exiting."
+        exit 1
+    fi
 fi
 
 # credits for a double sided color print
@@ -113,13 +115,30 @@ read -r -p "
 Would you like to print a test file? Est. $creds credits! (y/N): " confirmation
 
 if [[ "$confirmation" =~ ^[Yy]$ ]]; then
-    echo "Sending 2-page duplex test..."
+    if [[ ! -f "$TEST_FILE" ]]; then
+        echo "Test document ($TEST_FILE) not found in current directory."
+        read -r -p "Would you like to download it? (y/N): " confirmation
+        if [[ "$confirmation" =~ ^[Yy]$ ]]; then
+            curl -fsSL "https://raw.githubusercontent.com/Johang727/website/master/print/$TEST_FILE" -o "$TEST_FILE" || {
+                echo "Download failed. Check your connection or grab it manually at print.johang.dev"
+                exit 1
+            }
+        else
+            echo "Printing test file will be omitted."
+        fi
+    fi
 
-    lp -d "$PRINTER" -o sides=two-sided-long-edge -o Duplex=DuplexNoTumble "$TEST_FILE"
-
-    echo "Sent! The print may take up to a minute to register on the printer, please be patient!"
+    if [[ -f "$TEST_FILE" ]]; then
+        echo "Sending 2-page duplex test..."
+        lp -d "$PRINTER" -o sides=two-sided-long-edge -o Duplex=DuplexNoTumble "$TEST_FILE"
+        echo "Sent! The print may take up to a minute to register on the printer, please be patient!"
+    fi
 fi
 
 
 echo "
-Note: Your credentials are saved in /etc/cups/printers.conf!"
+Note: Your credentials are saved in /etc/cups/printers.conf!
+
+For the most consistent printing, use the CLI directly:
+lp -d $PRINTER -o sides=two-sided-long-edge -o Duplex=DuplexNoTumble <file.pdf>"
+
