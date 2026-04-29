@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta property="og:title" content="Johang's Personal Website">
+        <title>Johang's Personal Website</title>
+        <meta property="og:url" content="https://print.johang.dev">
+        <meta property="og:type" content="website">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+        <script src="scripts/dark-light-sw.js"></script>
+    </head>
+
+
+    <body class="d-flex flex-column min-vh-100">
+        <div class="container mt-4 flex-grow-1">
+            <div class = "d-flex justify-content-between">
+            
+                <h2>Linux Setup Guide</h2>
+                <button id = "theme-toggle" onclick = "toggle_theme" class = "btn btn-secondary">
+                    Toggle Dark/Light Mode
+                </button>
+
+            </div>
+
+            <hr>
+
+            
+            <h3>Dependencies</h3>
+
+            <p>Most Linux Distros like Linux Mint, Ubuntu, etc. come with these by default. Arch distros typically do not have these installed. Regardless, make sure you have <code>cups</code> and <code>samba</code> installed on your computer.</p>
+
+            <hr>
+
+            <h3>Printer Setup</h3>
+
+            <p><b>For an automated setup</b> that goes through the following steps, download this file: <a href="https://raw.githubusercontent.com/Johang727/website/master/print/setup.sh">setup.sh</a></p>
+            <p><small><i>If it doesn't download automatically, you can use CTRL+S to save it.</i></small></p>
+
+            <div class="container mb-4">
+                <p>Make sure to make it executable with <code>chmod +x setup.sh</code></p>
+                <p>Run it like any other program with <code>./setup.sh</code></p>
+            </div>
+
+            <p><b>For a manual setup</b> because running shell scripts can be scary...</p>
+
+            <div class="container mb-4">
+                <p>Download the PPD for the Sharp MX C304W from the <a href="https://global.sharp/restricted/print/select.html?view=2">official website</a>.</p>
+
+                <p>Find the name of the printer and write it down.</p>
+
+                <p>Make sure CUPS is running.</p>
+
+                <p>To register the printer, run <i>(all in one line)</i>:</p>
+                <div class="container mb-4">
+                    <p><code>sudo lpadmin -p PRINTER_NAME -b "smb://USERNAME:PASSWORD@crete/ob2/PRINTER_NAME" -E -P /PATH/TO/PPD_FILE</code></p>
+                </div>
+
+                <p>If you password contains special characters, you would need to encode it using URI standards.</p>
+
+                <p>And that's it, try a test print with: </p>
+                <div class="container mb-4">
+                    <p><code>lp -d PRINTER_NAME -o sides=two-sided-long-edge /PATH/TO/PDF_FILE</code></p>
+                </div>
+
+                <p>It might take up to one minute to register on the printer.</p>
+
+                <p>Your credentials will be saved in plain text in /etc/cups/printers.conf! If this is a shared device, I would not recommend this.</p>
+
+
+            </div>
+
+            <hr>
+
+            <h3>Questions, Comments, Concerns</h3>
+            <p>Feel free to email me at 136@johang.dev</p>
+        
+
+
+        </div>
+
+
+
+
+        <div class="mx-4">
+            <hr>
+            <div class = "d-flex justify-content-between">
+            
+                <p><a href="https://github.com/Johang727/website">GitHub Repository</a></p>
+
+            </div>
+            
+        </div>
+        <script src = "scripts/theme.js"></script>
+
+    </body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</html>

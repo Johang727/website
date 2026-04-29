@@ -1,0 +1,148 @@
+:root {
+    --background-color: #ffe3ca;
+    --text-color: #000;
+    --accent-color: #ffc18a;
+    --text-muted: #292929;
+
+    --card-bg: #ffcfb9;
+    --card-hover: #ffa77e;
+
+    --link-color: #5f3100; 
+    --link-hover: #2b1200;
+}
+
+body.dark-mode {
+    --background-color: #3b1c00;
+    --text-color: #ffffff;
+    --accent-color: #853f01;
+    --text-muted: #e7e7e7;
+
+    --card-bg: #502700;
+    --card-hover: #783a00;
+
+    --link-color: #f8d3b2; 
+    --link-hover: #fff3e8;
+}
+
+body.dark-mode .text-muted, 
+body.dark-mode .text-secondary {
+    color: var(--text-muted) !important; 
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Space Mono', monospace;
+}
+
+body .text-muted, 
+body .text-secondary {
+    color: var(--text-muted) !important; 
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--link-hover);
+}
+
+.card {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--accent-color) !important;
+    color: var(--text-color) !important;
+    transition: background-color 0.3s ease;
+    border-radius: 0;
+}
+
+.card-toggle {
+    color: var(--text-color);
+    background-color: transparent;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+}
+
+.card-toggle:hover {
+    background-color: transparent; /* let card-header hover handle it */
+}
+
+.card-header {
+    cursor: pointer;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-bottom: 1px solid var(--accent-color);
+    padding: 0; 
+    transition: background-color 0.2s;
+}
+
+.card-header:has(button:hover) {
+    background-color: var(--card-hover);
+}
+
+.text-muted, .text-secondary {
+    transition: color 0.3s ease;
+}
+
+.rank-tag {
+    font-weight: bold;
+    border: 1px solid;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    background-color: #000;
+}
+
+.button-block {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: var(--accent-color);
+    transition: background-color 0.2s; /* fixed missing 's' */
+}
+
+.button-block:hover {
+    background-color: var(--card-hover);
+}
+
+.btn-secondary {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease; /* added */
+}
+
+.btn-secondary:hover {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+}
+
+summary.big-summary {
+    font-size: x-large;
+}
+
+.spoiler {
+    color: transparent;
+    background-color: black;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.spoiler:hover,
+.spoiler:focus {
+    color: white;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
