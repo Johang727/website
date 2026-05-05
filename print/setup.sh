@@ -1,7 +1,8 @@
 #!/usr/bin/bash
 
-PPD_FILE="./Sharp-MX-C304W-ps.ppd"
 TEST_FILE="./TESTPRINT.pdf"
+
+custom_ppd="false"
 
 # Function to URL-encode strings (for passwords with #, @, etc.)
 urlencode() {
@@ -21,7 +22,116 @@ urlencode() {
     echo "${encoded}"
 }
 
+# credits for a double sided color print
+creds="3.0" # i think it was 3.0, but it could be something like 1.5 or 2.0
+
+echo "Note: Your credentials will be saved in /etc/cups/printers.conf! This file is read protected by root."
+echo "Continuing is not recommended on a shared device! I am not responsible for leaked passwords."
+
+read -r -p "Would you like to proceed? (y/N): " confirmation
+if [[ "$confirmation" =~ ^[Nn]$ ]]; then
+    exit 0
+fi
+
+while true; do
+    read -r -p "Select Printer:
+1) Lied Media
+2) Library Printer 1 (Inconsistent)
+3) Library Printer 2 (Inconsistent)
+4) 24/7 Library Printer
+5) Other
+
+Selection: " printer
+
+    case "$printer" in
+        "1")
+        PRINTER="LiedMedia"
+        PPD_FILE="./Sharp-MX-C304W-ps.ppd"
+        break
+        ;;
+
+        "2")
+        PRINTER="Lib1Sharp"
+        PPD_FILE="./Sharp-MX-5071-ps.ppd"
+        break
+        ;;
+
+        "3")
+        PRINTER="Lib2Sharp"
+        PPD_FILE="./Sharp-MX-M5071-ps.ppd"
+        echo "Note: This is a Black/White only printer."
+        break
+        ;;
+
+        "4")
+        PRINTER="Lib247Color"
+        PPD_FILE="./Sharp-MX-4071-ps.ppd"
+        break
+        ;;
+
+        "5")
+        read -r -p "Input the internal name of the printer
+Ex: LiedMedia: " PRINTER
+        while true; do
+            read -r -p "Select Model:
+1) Sharp MX C304W
+2) Sharp-MX-5071
+3) Sharp-MX-M5071
+4) Sharp-MX-4071
+5) Provide Own PPD
+
+Selection: " model
+
+
+            case "$model" in
+                "1")
+                PPD_FILE="./Sharp-MX-C304W-ps.ppd"
+                break
+                ;;
+
+                "2")
+                PPD_FILE="./Sharp-MX-5071-ps.ppd"
+                break
+                ;;
+
+                "3")
+                PPD_FILE="./Sharp-MX-M5071-ps.ppd"
+                break
+                ;;
+
+                "4")
+                PPD_FILE="./Sharp-MX-4071-ps.ppd"
+                break
+                ;;
+
+                "5")
+                read -r -p "Enter the path to the PPD file
+Ex: ./Sharp-MX-4071-ps.ppd: " PPD_FILE
+                custom_ppd="true"
+                break
+                ;;
+
+                *)
+                echo "Invalid input"
+                ;;
+            esac
+        done
+        break
+        ;;
+
+
+        *)
+        echo "Invalid input"
+        ;;
+    esac
+done
+
+
 if [[ ! -f "$PPD_FILE" ]]; then
+    if [ "$custom_ppd" = "true" ]; then
+        echo "File ($PPD_FILE) not found! Check the path and try again"
+        exit 1
+    fi
     echo "Error: PPD file ($PPD_FILE) not found in current directory."
     read -r -p "Would you like to download it? (y/N): " confirmation
     if [[ "$confirmation" =~ ^[Yy]$ ]]; then
@@ -35,52 +145,6 @@ if [[ ! -f "$PPD_FILE" ]]; then
     fi
 fi
 
-# credits for a double sided color print
-creds="3.0" # i think it was 3.0, but it could be something like 1.5 or 2.0
-
-while true; do
-    read -r -p "Select Printer:
-1) Lied Media
-2) Library Printer 1 (WIP)
-3) Library Printer 2 (WIP)
-4) 24/7 Library Printer (WIP)
-5) Other
-
-Selection: " printer
-
-    case "$printer" in
-        "1")
-        PRINTER="LiedMedia"
-        break
-        ;;
-
-        "2")
-        echo "This printer option is a placeholder!"
-        exit
-        ;;
-
-        "3")
-        echo "This printer option is a placeholder!"
-        exit
-        ;;
-
-        "4")
-        echo "This printer option is a placeholder!"
-        exit
-        ;;
-
-        "5")
-        read -r -p "Input the internal name of the printer
-Ex: Lied Media -> LiedMedia: " PRINTER
-        break
-        ;;
-
-
-        *)
-        echo "Invalid input"
-        ;;
-    esac
-done
 
 read -r -p "Enter Doane Username (first.last): " USERNAME
 
@@ -137,8 +201,8 @@ fi
 
 
 echo "
-Note: Your credentials are saved in /etc/cups/printers.conf!
-
 For the most consistent printing, use the CLI directly:
-lp -d $PRINTER -o sides=two-sided-long-edge -o Duplex=DuplexNoTumble <file.pdf>"
+lp -d $PRINTER -o sides=two-sided-long-edge -o Duplex=DuplexNoTumble <file.pdf>
+
+Note: Print jobs on the printer will be under $USER rather than $ENCODED_USER. Regardless, $ENCODED_USER will be charged."
 

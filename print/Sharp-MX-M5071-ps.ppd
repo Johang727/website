@@ -1,0 +1,2522 @@
+*PPD-Adobe: "4.3"
+*% PPD file for SHARP MX-M5071 PS with CUPS.
+*% Copyright (c) 2019 SHARP CORPORATION. All rights reserved.
+*% 
+*% This software is free software; you can redistribute it and/or
+*% modify it under the terms of the GNU General Public License as
+*% published by the Free Software Foundation; either version 2 of
+*% the License, or (at your option) any later version.
+*% 
+*% This software is distributed in the hope that it will be useful,
+*% but WITHOUT ANY WARRANTY; without even the implied warranty of
+*% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+*% GNU General Public License for more details.
+*% 
+*% You should have received a copy of the GNU General Public
+*% License along with this software; if not, write to the Free
+*% Software Foundation, Inc., 59 Temple Place, Suite 330, Boston,
+*% MA 02111 USA
+*% 
+*FormatVersion: "4.3"
+*FileVersion: "1.1"
+*LanguageVersion: English
+*LanguageEncoding: ISOLatin1
+*PCFileName: "SHXM5071.PPD"
+*Product: "(Sharp MX-M5071)"
+*Manufacturer: "Sharp"
+*ModelName: "Sharp MX-M5071 PS"
+*ShortNickName: "Sharp MX-M5071 PS"
+*NickName: "Sharp MX-M5071 PS, 1.1"
+*PSVersion: "(3018.103) 0"
+*LanguageLevel: "3"
+*ColorDevice: False
+*DefaultColorSpace: Gray
+*FileSystem: False
+*Throughput: "50"
+*LandscapeOrientation: Plus90
+*TTRasterizer: Type42
+*% Driver-defined attributes...
+*1284Modes Parallel: Compat Nibble
+*AccurateScreensSupport: False
+*CenterRegistered: False
+*DefaultHalftoneType: 9
+*DefaultScreenProc: Dot
+*DefaultTransfer: Null
+*ExitServer: "
+	count 0 eq
+	{ false } { true exch startjob } ifelse
+	not
+	{ (WARNING: Cannot modify initial VM.) =
+	(Missing or invalid password.) =
+	(Please contact the author of this software.) = flush quit
+	} if"
+*End
+*FreeVM: "32767000"
+*HWMargins: "12 12 12 12"
+*JCLBegin: "<1B>%-12345X@PJL JOB<0A>"
+*JCLEnd: "<1B>%-12345X@PJL EOJ<0A><1B>%-12345X"
+*JCLToPSInterpreter: "@PJL ENTER LANGUAGE = POSTSCRIPT <0A>"
+*Password: "(0)"
+*Protocols: PJL
+*RequiresPageRegion All: True
+*Reset: "
+	count 0 eq
+	{ false } { true exch startjob } ifelse
+	not
+	{ (WARNING: Cannot reset printer.) =
+	(Missing or invalid password.) =
+	(Please contact the author of this software.) = flush quit
+	} if
+	systemdict /quit get exec
+	(WARNING : Printer Reset Failed.) = flush"
+*End
+*ScreenAngle: "45.0"
+*ScreenFreq: "80.0"
+*ScreenProc Dot: "{180 mul cos exch 180 mul cos add 2 div} bind"
+*SuggestedJobTimeout: "0"
+*SuggestedManualFeedTimeout: "60"
+*SuggestedWaitTimeout: "300"
+*Transfer Null: "{ }"
+*Transfer Null.Inverse: "{ 1 exch sub } bind"
+*VMOption None/Standard: "32767000"
+
+*% === Constraints =============================================================
+
+*% **** InstallableOption <---> InstallableOption ******************************
+*% ---- Input Tray Options -----------------------------------------------------
+*% ---- Output Tray Options ----------------------------------------------------
+*% ---- Not Installed
+*UIConstraints: *Option1 NotInstalled		*Option9 PModule33
+*UIConstraints: *Option1 NotInstalled		*Option9 PModule24
+*UIConstraints: *Option1 NotInstalled		*Option9 PModule4W
+*% ---- Inner Finisher
+*UIConstraints: *Option1 InnerFinisher		*Option3 Installed
+
+*% **** InstallableOption <---> Option *****************************************
+*% ---- Input Tray Options -----------------------------------------------------
+*% ---- None
+*UIConstraints: *Option5 NotInstalled		*InputSlot Tray2
+*UIConstraints: *Option5 NotInstalled		*InputSlot Tray3
+*UIConstraints: *Option5 NotInstalled		*InputSlot Tray4
+*% ---- 1 Tray Desk
+*UIConstraints: *Option5 1TrayDrawer		*InputSlot Tray3
+*UIConstraints: *Option5 1TrayDrawer		*InputSlot Tray4
+*% ---- 2 Tray Desk
+*UIConstraints: *Option5 2TrayDrawer		*InputSlot Tray4
+*% ---- Large Capacity Tray ----------------------------------------------------
+*UIConstraints: *Option6 NotInstalled		*InputSlot LCT
+*% ---- Output Tray Options ----------------------------------------------------
+*% ---- Not Installed
+*UIConstraints: *Option1 NotInstalled		*OutputBin Output3
+*UIConstraints: *Option1 NotInstalled		*OutputBin Output4
+*UIConstraints: *Option1 NotInstalled		*OutputBin Output7
+*UIConstraints: *Option1 NotInstalled		*OutputBin OutputSS
+*UIConstraints: *Option1 NotInstalled		*ARStaple Staple1
+*UIConstraints: *Option1 NotInstalled		*ARStaple Staple2
+*UIConstraints: *Option1 NotInstalled		*ARStaple Staple3
+*UIConstraints: *Option1 NotInstalled		*ARStaple Staple4
+*UIConstraints: *Option1 NotInstalled		*ARFold FoldHalf
+*% ---- Inner Finisher
+*UIConstraints: *Option1 InnerFinisher		*OutputBin Output0
+*UIConstraints: *Option1 InnerFinisher		*OutputBin Output4
+*UIConstraints: *Option1 InnerFinisher		*OutputBin Output7
+*UIConstraints: *Option1 InnerFinisher		*OutputBin OutputSS
+*UIConstraints: *Option1 InnerFinisher		*ARStaple Staple4
+*UIConstraints: *Option1 InnerFinisher		*ARFold FoldHalf
+*% ---- Finisher
+*UIConstraints: *Option1 Finisher		*OutputBin Output0
+*UIConstraints: *Option1 Finisher		*OutputBin Output2
+*UIConstraints: *Option1 Finisher		*OutputBin Output3
+*UIConstraints: *Option1 Finisher		*OutputBin OutputSS
+*UIConstraints: *Option1 Finisher		*ARStaple Staple3
+*UIConstraints: *Option1 Finisher		*ARStaple Staple4
+*UIConstraints: *Option1 Finisher		*ARFold FoldHalf
+*% ---- Finisher(Large Stacker)
+*UIConstraints: *Option1 LSFinisher		*OutputBin Output0
+*UIConstraints: *Option1 LSFinisher		*OutputBin Output2
+*UIConstraints: *Option1 LSFinisher		*OutputBin Output3
+*UIConstraints: *Option1 LSFinisher		*OutputBin OutputSS
+*UIConstraints: *Option1 LSFinisher		*ARStaple Staple4
+*UIConstraints: *Option1 LSFinisher		*ARFold FoldHalf
+*% ---- Saddle Stitch Finisher
+*UIConstraints: *Option1 SSFinisher		*OutputBin Output0
+*UIConstraints: *Option1 SSFinisher		*OutputBin Output2
+*UIConstraints: *Option1 SSFinisher		*OutputBin Output3
+*UIConstraints: *Option1 SSFinisher		*ARStaple Staple3
+*% ---- Saddle Stitch Finisher(Large Stacker)
+*UIConstraints: *Option1 LSSFinisher		*OutputBin Output0
+*UIConstraints: *Option1 LSSFinisher		*OutputBin Output2
+*UIConstraints: *Option1 LSSFinisher		*OutputBin Output3
+
+*% ---- Punch Module -----------------------------------------------------------
+*UIConstraints: *Option9 NotInstalled		*ARPunch Punch2
+*UIConstraints: *Option9 NotInstalled		*ARPunch Punch3
+*UIConstraints: *Option9 NotInstalled		*ARPunch Punch4
+*UIConstraints: *Option9 NotInstalled		*ARPunch PunchW
+*UIConstraints: *Option9 PModule33		*ARPunch Punch2
+*UIConstraints: *Option9 PModule33		*ARPunch Punch4
+*UIConstraints: *Option9 PModule33		*ARPunch PunchW
+*UIConstraints: *Option9 PModule24		*ARPunch Punch3
+*UIConstraints: *Option9 PModule24		*ARPunch PunchW
+*UIConstraints: *Option9 PModule4W		*ARPunch Punch2
+*UIConstraints: *Option9 PModule4W		*ARPunch Punch3
+*UIConstraints: *Option9 PModule4W		*ARPunch Punch4
+*% ---- Job Separator ----------------------------------------------------------
+*UIConstraints: *Option3 NotInstalled		*OutputBin Output1
+*UIConstraints: *Option3 NotInstalled		*OutputBin Output2
+*UIConstraints: *Option3 Installed			*OutputBin Output0
+*% ---- Right Tray -------------------------------------------------------------
+*UIConstraints: *Option2 NotInstalled		*OutputBin Output8
+*% ---- Data Security Kit ------------------------------------------------------
+*UIConstraints: *Option4 NotInstalled		*ARDocControl True
+
+*% **** Option <---> Option ****************************************************
+*% ---- InputSlot <---> PageSize -----------------------------------------------
+*% ---- Auto -> All
+*% ---- Bypass Tray -> All
+*% ---- Tray 1
+*UIConstraints: *InputSlot Tray1		*PageSize EnvDL
+*UIConstraints: *InputSlot Tray1		*PageSize EnvC4
+*UIConstraints: *InputSlot Tray1		*PageSize EnvC5
+*UIConstraints: *InputSlot Tray1		*PageSize EnvC6
+*UIConstraints: *InputSlot Tray1		*PageSize Env10
+*UIConstraints: *InputSlot Tray1		*PageSize EnvYou2
+*UIConstraints: *InputSlot Tray1		*PageSize EnvYou4
+*UIConstraints: *InputSlot Tray1		*PageSize EnvYouChou3
+
+*% ---- Tray 2
+*UIConstraints: *InputSlot Tray2		*PageSize EnvDL
+*UIConstraints: *InputSlot Tray2		*PageSize EnvC4
+*UIConstraints: *InputSlot Tray2		*PageSize EnvC5
+*UIConstraints: *InputSlot Tray2		*PageSize EnvC6
+*UIConstraints: *InputSlot Tray2		*PageSize Env9
+*UIConstraints: *InputSlot Tray2		*PageSize Env10
+*UIConstraints: *InputSlot Tray2		*PageSize EnvMonarch
+*UIConstraints: *InputSlot Tray2		*PageSize EnvKaku2
+*UIConstraints: *InputSlot Tray2		*PageSize EnvKaku3
+*UIConstraints: *InputSlot Tray2		*PageSize EnvKaku6
+*UIConstraints: *InputSlot Tray2		*PageSize EnvChou3
+*UIConstraints: *InputSlot Tray2		*PageSize EnvChou4
+*UIConstraints: *InputSlot Tray2		*PageSize EnvChou40
+*UIConstraints: *InputSlot Tray2		*PageSize EnvYou2
+*UIConstraints: *InputSlot Tray2		*PageSize EnvYou4
+*UIConstraints: *InputSlot Tray2		*PageSize EnvYouChou3
+*UIConstraints: *InputSlot Tray2		*PageSize Postcard
+*UIConstraints: *InputSlot Tray2		*PageSize PostcardD
+*UIConstraints: *InputSlot Tray2		*PageSize PostcardF
+
+*% ---- Tray 3
+*UIConstraints: *InputSlot Tray3		*PageSize EnvDL
+*UIConstraints: *InputSlot Tray3		*PageSize EnvC4
+*UIConstraints: *InputSlot Tray3		*PageSize EnvC5
+*UIConstraints: *InputSlot Tray3		*PageSize EnvC6
+*UIConstraints: *InputSlot Tray3		*PageSize Env9
+*UIConstraints: *InputSlot Tray3		*PageSize Env10
+*UIConstraints: *InputSlot Tray3		*PageSize EnvMonarch
+*UIConstraints: *InputSlot Tray3		*PageSize EnvKaku2
+*UIConstraints: *InputSlot Tray3		*PageSize EnvKaku3
+*UIConstraints: *InputSlot Tray3		*PageSize EnvKaku6
+*UIConstraints: *InputSlot Tray3		*PageSize EnvChou3
+*UIConstraints: *InputSlot Tray3		*PageSize EnvChou4
+*UIConstraints: *InputSlot Tray3		*PageSize EnvChou40
+*UIConstraints: *InputSlot Tray3		*PageSize EnvYou2
+*UIConstraints: *InputSlot Tray3		*PageSize EnvYou4
+*UIConstraints: *InputSlot Tray3		*PageSize EnvYouChou3
+*UIConstraints: *InputSlot Tray3		*PageSize Postcard
+*UIConstraints: *InputSlot Tray3		*PageSize PostcardD
+*UIConstraints: *InputSlot Tray3		*PageSize PostcardF
+
+*% ---- Tray 4
+*UIConstraints: *InputSlot Tray4		*PageSize EnvDL
+*UIConstraints: *InputSlot Tray4		*PageSize EnvC4
+*UIConstraints: *InputSlot Tray4		*PageSize EnvC5
+*UIConstraints: *InputSlot Tray4		*PageSize EnvC6
+*UIConstraints: *InputSlot Tray4		*PageSize Env9
+*UIConstraints: *InputSlot Tray4		*PageSize Env10
+*UIConstraints: *InputSlot Tray4		*PageSize EnvMonarch
+*UIConstraints: *InputSlot Tray4		*PageSize EnvKaku2
+*UIConstraints: *InputSlot Tray4		*PageSize EnvKaku3
+*UIConstraints: *InputSlot Tray4		*PageSize EnvKaku6
+*UIConstraints: *InputSlot Tray4		*PageSize EnvChou3
+*UIConstraints: *InputSlot Tray4		*PageSize EnvChou4
+*UIConstraints: *InputSlot Tray4		*PageSize EnvChou40
+*UIConstraints: *InputSlot Tray4		*PageSize EnvYou2
+*UIConstraints: *InputSlot Tray4		*PageSize EnvYou4
+*UIConstraints: *InputSlot Tray4		*PageSize EnvYouChou3
+*UIConstraints: *InputSlot Tray4		*PageSize Postcard
+*UIConstraints: *InputSlot Tray4		*PageSize PostcardD
+*UIConstraints: *InputSlot Tray4		*PageSize PostcardF
+
+*% ---- LCT
+*UIConstraints: *InputSlot LCT			*PageSize Legal
+*UIConstraints: *InputSlot LCT			*PageSize Ledger
+*UIConstraints: *InputSlot LCT			*PageSize Executive
+*UIConstraints: *InputSlot LCT			*PageSize Statement
+*UIConstraints: *InputSlot LCT			*PageSize ARCHB
+*UIConstraints: *InputSlot LCT			*PageSize A3W
+*UIConstraints: *InputSlot LCT			*PageSize A3
+*UIConstraints: *InputSlot LCT			*PageSize A5
+*UIConstraints: *InputSlot LCT			*PageSize B4
+*UIConstraints: *InputSlot LCT			*PageSize Foolscap
+*UIConstraints: *InputSlot LCT			*PageSize 8K
+*UIConstraints: *InputSlot LCT			*PageSize 16K
+*UIConstraints: *InputSlot LCT			*PageSize AsLegal
+*UIConstraints: *InputSlot LCT			*PageSize MxLegal
+*UIConstraints: *InputSlot LCT			*PageSize EnvDL
+*UIConstraints: *InputSlot LCT			*PageSize EnvC4
+*UIConstraints: *InputSlot LCT			*PageSize EnvC5
+*UIConstraints: *InputSlot LCT			*PageSize EnvC6
+*UIConstraints: *InputSlot LCT			*PageSize Env9
+*UIConstraints: *InputSlot LCT			*PageSize Env10
+*UIConstraints: *InputSlot LCT			*PageSize EnvMonarch
+*UIConstraints: *InputSlot LCT			*PageSize EnvKaku2
+*UIConstraints: *InputSlot LCT			*PageSize EnvKaku3
+*UIConstraints: *InputSlot LCT			*PageSize EnvKaku6
+*UIConstraints: *InputSlot LCT			*PageSize EnvChou3
+*UIConstraints: *InputSlot LCT			*PageSize EnvChou4
+*UIConstraints: *InputSlot LCT			*PageSize EnvChou40
+*UIConstraints: *InputSlot LCT			*PageSize EnvYou2
+*UIConstraints: *InputSlot LCT			*PageSize EnvYou4
+*UIConstraints: *InputSlot LCT			*PageSize EnvYouChou3
+*UIConstraints: *InputSlot LCT			*PageSize Postcard
+*UIConstraints: *InputSlot LCT			*PageSize PostcardD
+*UIConstraints: *InputSlot LCT			*PageSize PostcardF
+
+*% ---- InputSlot <---> MediaType ----------------------------------------------
+*% ---- Auto -> All
+*UIConstraints: *InputSlot Bypass		*MediaType Auto
+*% ---- Bypass Tray
+*% ---- Tray 1
+*UIConstraints: *InputSlot Tray1		*MediaType Plain1
+*UIConstraints: *InputSlot Tray1		*MediaType Plain2
+*UIConstraints: *InputSlot Tray1		*MediaType Letterhead
+*UIConstraints: *InputSlot Tray1		*MediaType Preprinted
+*UIConstraints: *InputSlot Tray1		*MediaType Prepunched
+*UIConstraints: *InputSlot Tray1		*MediaType Recycled
+*UIConstraints: *InputSlot Tray1		*MediaType Color
+*UIConstraints: *InputSlot Tray1		*MediaType Labels
+*UIConstraints: *InputSlot Tray1		*MediaType Bond1
+*UIConstraints: *InputSlot Tray1		*MediaType Bond2
+*UIConstraints: *InputSlot Tray1		*MediaType Bond3
+*UIConstraints: *InputSlot Tray1		*MediaType Bond4
+*UIConstraints: *InputSlot Tray1		*MediaType Thin
+*UIConstraints: *InputSlot Tray1		*MediaType Transparency
+*UIConstraints: *InputSlot Tray1		*MediaType Envelope
+*UIConstraints: *InputSlot Tray1		*MediaType Postcard
+*UIConstraints: *InputSlot Tray1		*MediaType Tab
+*UIConstraints: *InputSlot Tray1		*MediaType Glossy
+*UIConstraints: *InputSlot Tray1		*MediaType UserSet1
+*UIConstraints: *InputSlot Tray1		*MediaType UserSet2
+*UIConstraints: *InputSlot Tray1		*MediaType UserSet3
+*UIConstraints: *InputSlot Tray1		*MediaType UserSet4
+*UIConstraints: *InputSlot Tray1		*MediaType UserSet5
+*UIConstraints: *InputSlot Tray1		*MediaType UserSet6
+*UIConstraints: *InputSlot Tray1		*MediaType UserSet7
+
+*% ---- Tray 2
+*UIConstraints: *InputSlot Tray2		*MediaType Plain1
+*UIConstraints: *InputSlot Tray2		*MediaType Plain2
+*UIConstraints: *InputSlot Tray2		*MediaType Letterhead
+*UIConstraints: *InputSlot Tray2		*MediaType Preprinted
+*UIConstraints: *InputSlot Tray2		*MediaType Prepunched
+*UIConstraints: *InputSlot Tray2		*MediaType Recycled
+*UIConstraints: *InputSlot Tray2		*MediaType Color
+*UIConstraints: *InputSlot Tray2		*MediaType Labels
+*UIConstraints: *InputSlot Tray2		*MediaType Bond1
+*UIConstraints: *InputSlot Tray2		*MediaType Bond2
+*UIConstraints: *InputSlot Tray2		*MediaType Bond3
+*UIConstraints: *InputSlot Tray2		*MediaType Bond4
+*UIConstraints: *InputSlot Tray2		*MediaType Thin
+*UIConstraints: *InputSlot Tray2		*MediaType Transparency
+*UIConstraints: *InputSlot Tray2		*MediaType Envelope
+*UIConstraints: *InputSlot Tray2		*MediaType Postcard
+*UIConstraints: *InputSlot Tray2		*MediaType Tab
+*UIConstraints: *InputSlot Tray2		*MediaType Glossy
+*UIConstraints: *InputSlot Tray2		*MediaType UserSet1
+*UIConstraints: *InputSlot Tray2		*MediaType UserSet2
+*UIConstraints: *InputSlot Tray2		*MediaType UserSet3
+*UIConstraints: *InputSlot Tray2		*MediaType UserSet4
+*UIConstraints: *InputSlot Tray2		*MediaType UserSet5
+*UIConstraints: *InputSlot Tray2		*MediaType UserSet6
+*UIConstraints: *InputSlot Tray2		*MediaType UserSet7
+
+*% ---- Tray 3
+*UIConstraints: *InputSlot Tray3		*MediaType Plain1
+*UIConstraints: *InputSlot Tray3		*MediaType Plain2
+*UIConstraints: *InputSlot Tray3		*MediaType Letterhead
+*UIConstraints: *InputSlot Tray3		*MediaType Preprinted
+*UIConstraints: *InputSlot Tray3		*MediaType Prepunched
+*UIConstraints: *InputSlot Tray3		*MediaType Recycled
+*UIConstraints: *InputSlot Tray3		*MediaType Color
+*UIConstraints: *InputSlot Tray3		*MediaType Labels
+*UIConstraints: *InputSlot Tray3		*MediaType Bond1
+*UIConstraints: *InputSlot Tray3		*MediaType Bond2
+*UIConstraints: *InputSlot Tray3		*MediaType Bond3
+*UIConstraints: *InputSlot Tray3		*MediaType Bond4
+*UIConstraints: *InputSlot Tray3		*MediaType Thin
+*UIConstraints: *InputSlot Tray3		*MediaType Transparency
+*UIConstraints: *InputSlot Tray3		*MediaType Envelope
+*UIConstraints: *InputSlot Tray3		*MediaType Postcard
+*UIConstraints: *InputSlot Tray3		*MediaType Tab
+*UIConstraints: *InputSlot Tray3		*MediaType Glossy
+*UIConstraints: *InputSlot Tray3		*MediaType UserSet1
+*UIConstraints: *InputSlot Tray3		*MediaType UserSet2
+*UIConstraints: *InputSlot Tray3		*MediaType UserSet3
+*UIConstraints: *InputSlot Tray3		*MediaType UserSet4
+*UIConstraints: *InputSlot Tray3		*MediaType UserSet5
+*UIConstraints: *InputSlot Tray3		*MediaType UserSet6
+*UIConstraints: *InputSlot Tray3		*MediaType UserSet7
+
+*% ---- Tray 4
+*UIConstraints: *InputSlot Tray4		*MediaType Plain1
+*UIConstraints: *InputSlot Tray4		*MediaType Plain2
+*UIConstraints: *InputSlot Tray4		*MediaType Letterhead
+*UIConstraints: *InputSlot Tray4		*MediaType Preprinted
+*UIConstraints: *InputSlot Tray4		*MediaType Prepunched
+*UIConstraints: *InputSlot Tray4		*MediaType Recycled
+*UIConstraints: *InputSlot Tray4		*MediaType Color
+*UIConstraints: *InputSlot Tray4		*MediaType Labels
+*UIConstraints: *InputSlot Tray4		*MediaType Bond1
+*UIConstraints: *InputSlot Tray4		*MediaType Bond2
+*UIConstraints: *InputSlot Tray4		*MediaType Bond3
+*UIConstraints: *InputSlot Tray4		*MediaType Bond4
+*UIConstraints: *InputSlot Tray4		*MediaType Thin
+*UIConstraints: *InputSlot Tray4		*MediaType Transparency
+*UIConstraints: *InputSlot Tray4		*MediaType Envelope
+*UIConstraints: *InputSlot Tray4		*MediaType Postcard
+*UIConstraints: *InputSlot Tray4		*MediaType Tab
+*UIConstraints: *InputSlot Tray4		*MediaType Glossy
+*UIConstraints: *InputSlot Tray4		*MediaType UserSet1
+*UIConstraints: *InputSlot Tray4		*MediaType UserSet2
+*UIConstraints: *InputSlot Tray4		*MediaType UserSet3
+*UIConstraints: *InputSlot Tray4		*MediaType UserSet4
+*UIConstraints: *InputSlot Tray4		*MediaType UserSet5
+*UIConstraints: *InputSlot Tray4		*MediaType UserSet6
+*UIConstraints: *InputSlot Tray4		*MediaType UserSet7
+
+*% ---- LCT
+*UIConstraints: *InputSlot LCT			*MediaType Plain1
+*UIConstraints: *InputSlot LCT			*MediaType Plain2
+*UIConstraints: *InputSlot LCT			*MediaType Letterhead
+*UIConstraints: *InputSlot LCT			*MediaType Preprinted
+*UIConstraints: *InputSlot LCT			*MediaType Prepunched
+*UIConstraints: *InputSlot LCT			*MediaType Recycled
+*UIConstraints: *InputSlot LCT			*MediaType Color
+*UIConstraints: *InputSlot LCT			*MediaType Labels
+*UIConstraints: *InputSlot LCT			*MediaType Bond1
+*UIConstraints: *InputSlot LCT			*MediaType Bond2
+*UIConstraints: *InputSlot LCT			*MediaType Bond3
+*UIConstraints: *InputSlot LCT			*MediaType Bond4
+*UIConstraints: *InputSlot LCT			*MediaType Thin
+*UIConstraints: *InputSlot LCT			*MediaType Transparency
+*UIConstraints: *InputSlot LCT			*MediaType Envelope
+*UIConstraints: *InputSlot LCT			*MediaType Postcard
+*UIConstraints: *InputSlot LCT			*MediaType Tab
+*UIConstraints: *InputSlot LCT			*MediaType Glossy
+*UIConstraints: *InputSlot LCT			*MediaType UserSet1
+*UIConstraints: *InputSlot LCT			*MediaType UserSet2
+*UIConstraints: *InputSlot LCT			*MediaType UserSet3
+*UIConstraints: *InputSlot LCT			*MediaType UserSet4
+*UIConstraints: *InputSlot LCT			*MediaType UserSet5
+*UIConstraints: *InputSlot LCT			*MediaType UserSet6
+*UIConstraints: *InputSlot LCT			*MediaType UserSet7
+
+*% ---- OutputBin <---> PageSize -----------------------------------------------
+*% ---- Center Tray -> All
+*% ---- Upper Tray -> All
+*UIConstraints: *OutputBin Output1		*PageSize EnvDL
+*UIConstraints: *OutputBin Output1		*PageSize EnvC4
+*UIConstraints: *OutputBin Output1		*PageSize EnvC5
+*UIConstraints: *OutputBin Output1		*PageSize EnvC6
+*UIConstraints: *OutputBin Output1		*PageSize Env9
+*UIConstraints: *OutputBin Output1		*PageSize Env10
+*UIConstraints: *OutputBin Output1		*PageSize EnvMonarch
+*UIConstraints: *OutputBin Output1		*PageSize EnvKaku2
+*UIConstraints: *OutputBin Output1		*PageSize EnvKaku3
+*UIConstraints: *OutputBin Output1		*PageSize EnvKaku6
+*UIConstraints: *OutputBin Output1		*PageSize EnvChou3
+*UIConstraints: *OutputBin Output1		*PageSize EnvChou4
+*UIConstraints: *OutputBin Output1		*PageSize EnvChou40
+*UIConstraints: *OutputBin Output1		*PageSize EnvYou2
+*UIConstraints: *OutputBin Output1		*PageSize EnvYou4
+*UIConstraints: *OutputBin Output1		*PageSize EnvYouChou3
+
+*% ---- Lower Tray -> All
+*% ---- Finisher Tray / Inner Finisher -> All
+*% ---- Finisher Tray / Finisher -> All
+*UIConstraints: *OutputBin Output4		*PageSize EnvDL
+*UIConstraints: *OutputBin Output4		*PageSize EnvC4
+*UIConstraints: *OutputBin Output4		*PageSize EnvC5
+*UIConstraints: *OutputBin Output4		*PageSize EnvC6
+*UIConstraints: *OutputBin Output4		*PageSize Env9
+*UIConstraints: *OutputBin Output4		*PageSize Env10
+*UIConstraints: *OutputBin Output4		*PageSize EnvMonarch
+*UIConstraints: *OutputBin Output4		*PageSize EnvKaku2
+*UIConstraints: *OutputBin Output4		*PageSize EnvKaku3
+*UIConstraints: *OutputBin Output4		*PageSize EnvKaku6
+*UIConstraints: *OutputBin Output4		*PageSize EnvChou3
+*UIConstraints: *OutputBin Output4		*PageSize EnvChou4
+*UIConstraints: *OutputBin Output4		*PageSize EnvChou40
+*UIConstraints: *OutputBin Output4		*PageSize EnvYou2
+*UIConstraints: *OutputBin Output4		*PageSize EnvYou4
+*UIConstraints: *OutputBin Output4		*PageSize EnvYouChou3
+*% ---- Finisher Top Tray -> All
+*% ---- Saddle Stitch Tray -> All
+*% ---- Right Tray
+*UIConstraints: *OutputBin Output8		*PageSize EnvDL
+*UIConstraints: *OutputBin Output8		*PageSize EnvC4
+*UIConstraints: *OutputBin Output8		*PageSize EnvC5
+*UIConstraints: *OutputBin Output8		*PageSize EnvC6
+*UIConstraints: *OutputBin Output8		*PageSize Env9
+*UIConstraints: *OutputBin Output8		*PageSize Env10
+*UIConstraints: *OutputBin Output8		*PageSize EnvMonarch
+*UIConstraints: *OutputBin Output8		*PageSize EnvKaku2
+*UIConstraints: *OutputBin Output8		*PageSize EnvKaku3
+*UIConstraints: *OutputBin Output8		*PageSize EnvKaku6
+*UIConstraints: *OutputBin Output8		*PageSize EnvChou3
+*UIConstraints: *OutputBin Output8		*PageSize EnvChou4
+*UIConstraints: *OutputBin Output8		*PageSize EnvChou40
+*UIConstraints: *OutputBin Output8		*PageSize EnvYou2
+*UIConstraints: *OutputBin Output8		*PageSize EnvYou4
+*UIConstraints: *OutputBin Output8		*PageSize EnvYouChou3
+
+*% ---- OutputBin <---> MediaType ----------------------------------------------
+*% ---- Center Tray -> All
+*% ---- Upper Tray -> All
+*UIConstraints: *OutputBin Output1		*MediaType Bond4
+*UIConstraints: *OutputBin Output1		*MediaType Envelope
+*UIConstraints: *OutputBin Output1		*MediaType Tab
+*UIConstraints: *OutputBin Output1		*MediaType Glossy
+*% ---- Lower Tray -> All
+*% ---- Finisher Tray / Inner Finisher -> All
+*% ---- Finisher Tray / Finisher -> All
+*UIConstraints: *OutputBin Output4		*MediaType Envelope
+*UIConstraints: *OutputBin Output4		*MediaType Tab
+*% ---- Finisher Top Tray
+*UIConstraints: *OutputBin Output7		*MediaType Bond4
+*% ---- Saddle Stitch Tray -> All
+*% ---- Right Tray
+*UIConstraints: *OutputBin Output8		*MediaType Bond4
+*UIConstraints: *OutputBin Output8		*MediaType Envelope
+*UIConstraints: *OutputBin Output8		*MediaType Tab
+*UIConstraints: *OutputBin Output8		*MediaType Glossy
+
+*% ---- OutputBin <---> Staple -------------------------------------------------
+*% ---- Center Tray
+*UIConstraints: *OutputBin Output0		*ARStaple Staple1
+*UIConstraints: *OutputBin Output0		*ARStaple Staple2
+*UIConstraints: *OutputBin Output0		*ARStaple Staple3
+*UIConstraints: *OutputBin Output0		*ARStaple Staple4
+*% ---- Upper Tray
+*UIConstraints: *OutputBin Output1		*ARStaple Staple1
+*UIConstraints: *OutputBin Output1		*ARStaple Staple2
+*UIConstraints: *OutputBin Output1		*ARStaple Staple3
+*UIConstraints: *OutputBin Output1		*ARStaple Staple4
+*% ---- Lower Tray
+*UIConstraints: *OutputBin Output2		*ARStaple Staple1
+*UIConstraints: *OutputBin Output2		*ARStaple Staple2
+*UIConstraints: *OutputBin Output2		*ARStaple Staple3
+*UIConstraints: *OutputBin Output2		*ARStaple Staple4
+*% ---- Finisher Tray / Inner Finisher
+*UIConstraints: *OutputBin Output3		*ARStaple Staple4
+*% ---- Finisher Tray / Finisher
+*UIConstraints: *OutputBin Output4		*ARStaple Staple4
+*% ---- Finisher Top Tray
+*UIConstraints: *OutputBin Output7		*ARStaple Staple1
+*UIConstraints: *OutputBin Output7		*ARStaple Staple2
+*UIConstraints: *OutputBin Output7		*ARStaple Staple3
+*UIConstraints: *OutputBin Output7		*ARStaple Staple4
+*% ---- Saddle Stitch Tray
+*UIConstraints: *OutputBin OutputSS		*ARStaple Staple1
+*UIConstraints: *OutputBin OutputSS		*ARStaple Staple2
+*UIConstraints: *OutputBin OutputSS		*ARStaple Staple3
+*% ---- Right Tray
+*UIConstraints: *OutputBin Output8		*ARStaple Staple1
+*UIConstraints: *OutputBin Output8		*ARStaple Staple2
+*UIConstraints: *OutputBin Output8		*ARStaple Staple3
+*UIConstraints: *OutputBin Output8		*ARStaple Staple4
+
+*% ---- OutputBin <---> Punch --------------------------------------------------
+*% ---- Center Tray
+*UIConstraints: *OutputBin Output0		*ARPunch Punch2
+*UIConstraints: *OutputBin Output0		*ARPunch Punch3
+*UIConstraints: *OutputBin Output0		*ARPunch Punch4
+*UIConstraints: *OutputBin Output0		*ARPunch PunchW
+*% ---- Upper Tray
+*UIConstraints: *OutputBin Output1		*ARPunch Punch2
+*UIConstraints: *OutputBin Output1		*ARPunch Punch3
+*UIConstraints: *OutputBin Output1		*ARPunch Punch4
+*UIConstraints: *OutputBin Output1		*ARPunch PunchW
+*% ---- Lower Tray
+*UIConstraints: *OutputBin Output2		*ARPunch Punch2
+*UIConstraints: *OutputBin Output2		*ARPunch Punch3
+*UIConstraints: *OutputBin Output2		*ARPunch Punch4
+*UIConstraints: *OutputBin Output2		*ARPunch PunchW
+*% ---- Finisher Tray / Inner Finisher -> All
+*% ---- Finisher Tray / Finisher -> All
+*% ---- Finisher Top Tray -> All
+*% ---- Saddle Stitch Tray
+*UIConstraints: *OutputBin OutputSS		*ARPunch Punch2
+*UIConstraints: *OutputBin OutputSS		*ARPunch Punch3
+*UIConstraints: *OutputBin OutputSS		*ARPunch Punch4
+*UIConstraints: *OutputBin OutputSS		*ARPunch PunchW
+*% ---- Right Tray
+*UIConstraints: *OutputBin Output8		*ARPunch Punch2
+*UIConstraints: *OutputBin Output8		*ARPunch Punch3
+*UIConstraints: *OutputBin Output8		*ARPunch Punch4
+*UIConstraints: *OutputBin Output8		*ARPunch PunchW
+
+*% ---- OutputBin <---> Fold ---------------------------------------------------
+*% ---- Center Tray
+*UIConstraints: *OutputBin Output0		*ARFold FoldHalf
+*% ---- Upper Tray
+*UIConstraints: *OutputBin Output1		*ARFold FoldHalf
+*% ---- Lower Tray
+*UIConstraints: *OutputBin Output2		*ARFold FoldHalf
+*% ---- Finisher Tray / Inner Finisher
+*UIConstraints: *OutputBin Output3		*ARFold FoldHalf
+*% ---- Finisher Tray / Finisher
+*UIConstraints: *OutputBin Output4		*ARFold FoldHalf
+*% ---- Finisher Top Tray
+*UIConstraints: *OutputBin Output7		*ARFold FoldHalf
+*% ---- Saddle Stitch Tray -> All
+*% ---- Right Tray
+*UIConstraints: *OutputBin Output8		*ARFold FoldHalf
+
+*% ---- Duplex <---> PageSize --------------------------------------------------
+*UIConstraints: *Duplex DuplexNoTumble		*PageSize Executive
+*UIConstraints: *Duplex DuplexNoTumble		*PageSize EnvDL
+*UIConstraints: *Duplex DuplexNoTumble		*PageSize EnvC4
+*UIConstraints: *Duplex DuplexNoTumble		*PageSize EnvC5
+*UIConstraints: *Duplex DuplexNoTumble		*PageSize EnvC6
+*UIConstraints: *Duplex DuplexNoTumble		*PageSize Env9
+*UIConstraints: *Duplex DuplexNoTumble		*PageSize Env10
+*UIConstraints: *Duplex DuplexNoTumble		*PageSize EnvMonarch
+*UIConstraints: *Duplex DuplexNoTumble		*PageSize EnvKaku2
+*UIConstraints: *Duplex DuplexNoTumble		*PageSize EnvKaku3
+*UIConstraints: *Duplex DuplexNoTumble		*PageSize EnvKaku6
+*UIConstraints: *Duplex DuplexNoTumble		*PageSize EnvChou3
+*UIConstraints: *Duplex DuplexNoTumble		*PageSize EnvChou4
+*UIConstraints: *Duplex DuplexNoTumble		*PageSize EnvChou40
+*UIConstraints: *Duplex DuplexNoTumble		*PageSize EnvYou2
+*UIConstraints: *Duplex DuplexNoTumble		*PageSize EnvYou4
+*UIConstraints: *Duplex DuplexNoTumble		*PageSize EnvYouChou3
+*UIConstraints: *Duplex DuplexNoTumble		*PageSize Postcard
+*UIConstraints: *Duplex DuplexNoTumble		*PageSize PostcardD
+
+*UIConstraints: *Duplex DuplexTumble		*PageSize Executive
+*UIConstraints: *Duplex DuplexTumble		*PageSize EnvDL
+*UIConstraints: *Duplex DuplexTumble		*PageSize EnvC4
+*UIConstraints: *Duplex DuplexTumble		*PageSize EnvC5
+*UIConstraints: *Duplex DuplexTumble		*PageSize EnvC6
+*UIConstraints: *Duplex DuplexTumble		*PageSize Env9
+*UIConstraints: *Duplex DuplexTumble		*PageSize Env10
+*UIConstraints: *Duplex DuplexTumble		*PageSize EnvMonarch
+*UIConstraints: *Duplex DuplexTumble		*PageSize EnvKaku2
+*UIConstraints: *Duplex DuplexTumble		*PageSize EnvKaku3
+*UIConstraints: *Duplex DuplexTumble		*PageSize EnvKaku6
+*UIConstraints: *Duplex DuplexTumble		*PageSize EnvChou3
+*UIConstraints: *Duplex DuplexTumble		*PageSize EnvChou4
+*UIConstraints: *Duplex DuplexTumble		*PageSize EnvChou40
+*UIConstraints: *Duplex DuplexTumble		*PageSize EnvYou2
+*UIConstraints: *Duplex DuplexTumble		*PageSize EnvYou4
+*UIConstraints: *Duplex DuplexTumble		*PageSize EnvYouChou3
+*UIConstraints: *Duplex DuplexTumble		*PageSize Postcard
+*UIConstraints: *Duplex DuplexTumble		*PageSize PostcardD
+
+*% ---- Duplex <---> MediaType -------------------------------------------------
+*UIConstraints: *Duplex DuplexNoTumble		*MediaType Labels
+*UIConstraints: *Duplex DuplexNoTumble		*MediaType Bond4
+*UIConstraints: *Duplex DuplexNoTumble		*MediaType Thin
+*UIConstraints: *Duplex DuplexNoTumble		*MediaType Transparency
+*UIConstraints: *Duplex DuplexNoTumble		*MediaType Envelope
+*UIConstraints: *Duplex DuplexNoTumble		*MediaType Tab
+*UIConstraints: *Duplex DuplexNoTumble		*MediaType Glossy
+
+*UIConstraints: *Duplex DuplexTumble		*MediaType Labels
+*UIConstraints: *Duplex DuplexTumble		*MediaType Bond4
+*UIConstraints: *Duplex DuplexTumble		*MediaType Thin
+*UIConstraints: *Duplex DuplexTumble		*MediaType Transparency
+*UIConstraints: *Duplex DuplexTumble		*MediaType Envelope
+*UIConstraints: *Duplex DuplexTumble		*MediaType Tab
+*UIConstraints: *Duplex DuplexTumble		*MediaType Glossy
+
+*% ---- Duplex <---> Pamphlet --------------------------------------------------
+*UIConstraints: *Duplex DuplexTumble		*ARBooklet True
+*UIConstraints: *Duplex DuplexNoTumble		*ARBooklet True
+
+*% ---- Staple <---> PageSize --------------------------------------------------
+*% ---- 1 Staple
+*UIConstraints: *ARStaple Staple1		*PageSize Statement
+*UIConstraints: *ARStaple Staple1		*PageSize A5
+*UIConstraints: *ARStaple Staple1		*PageSize EnvDL
+*UIConstraints: *ARStaple Staple1		*PageSize EnvC4
+*UIConstraints: *ARStaple Staple1		*PageSize EnvC5
+*UIConstraints: *ARStaple Staple1		*PageSize EnvC6
+*UIConstraints: *ARStaple Staple1		*PageSize Env9
+*UIConstraints: *ARStaple Staple1		*PageSize Env10
+*UIConstraints: *ARStaple Staple1		*PageSize EnvMonarch
+*UIConstraints: *ARStaple Staple1		*PageSize EnvKaku2
+*UIConstraints: *ARStaple Staple1		*PageSize EnvKaku3
+*UIConstraints: *ARStaple Staple1		*PageSize EnvKaku6
+*UIConstraints: *ARStaple Staple1		*PageSize EnvChou3
+*UIConstraints: *ARStaple Staple1		*PageSize EnvChou4
+*UIConstraints: *ARStaple Staple1		*PageSize EnvChou40
+*UIConstraints: *ARStaple Staple1		*PageSize EnvYou2
+*UIConstraints: *ARStaple Staple1		*PageSize EnvYou4
+*UIConstraints: *ARStaple Staple1		*PageSize EnvYouChou3
+*UIConstraints: *ARStaple Staple1		*PageSize Postcard
+*UIConstraints: *ARStaple Staple1		*PageSize PostcardD
+*UIConstraints: *ARStaple Staple1		*PageSize PostcardF
+
+*% ---- 2 Staples
+*UIConstraints: *ARStaple Staple2		*PageSize Statement
+*UIConstraints: *ARStaple Staple2		*PageSize A5
+*UIConstraints: *ARStaple Staple2		*PageSize EnvDL
+*UIConstraints: *ARStaple Staple2		*PageSize EnvC4
+*UIConstraints: *ARStaple Staple2		*PageSize EnvC5
+*UIConstraints: *ARStaple Staple2		*PageSize EnvC6
+*UIConstraints: *ARStaple Staple2		*PageSize Env9
+*UIConstraints: *ARStaple Staple2		*PageSize Env10
+*UIConstraints: *ARStaple Staple2		*PageSize EnvMonarch
+*UIConstraints: *ARStaple Staple2		*PageSize EnvKaku2
+*UIConstraints: *ARStaple Staple2		*PageSize EnvKaku3
+*UIConstraints: *ARStaple Staple2		*PageSize EnvKaku6
+*UIConstraints: *ARStaple Staple2		*PageSize EnvChou3
+*UIConstraints: *ARStaple Staple2		*PageSize EnvChou4
+*UIConstraints: *ARStaple Staple2		*PageSize EnvChou40
+*UIConstraints: *ARStaple Staple2		*PageSize EnvYou2
+*UIConstraints: *ARStaple Staple2		*PageSize EnvYou4
+*UIConstraints: *ARStaple Staple2		*PageSize EnvYouChou3
+*UIConstraints: *ARStaple Staple2		*PageSize Postcard
+*UIConstraints: *ARStaple Staple2		*PageSize PostcardD
+*UIConstraints: *ARStaple Staple2		*PageSize PostcardF
+
+*% ---- Stapleless
+*UIConstraints: *ARStaple Staple3		*PageSize Legal
+*UIConstraints: *ARStaple Staple3		*PageSize Executive
+*UIConstraints: *ARStaple Staple3		*PageSize Statement
+*UIConstraints: *ARStaple Staple3		*PageSize ARCHB
+*UIConstraints: *ARStaple Staple3		*PageSize A3W
+*UIConstraints: *ARStaple Staple3		*PageSize A5
+*UIConstraints: *ARStaple Staple3		*PageSize Foolscap
+*UIConstraints: *ARStaple Staple3		*PageSize AsLegal
+*UIConstraints: *ARStaple Staple3		*PageSize MxLegal
+*UIConstraints: *ARStaple Staple3		*PageSize EnvDL
+*UIConstraints: *ARStaple Staple3		*PageSize EnvC4
+*UIConstraints: *ARStaple Staple3		*PageSize EnvC5
+*UIConstraints: *ARStaple Staple3		*PageSize EnvC6
+*UIConstraints: *ARStaple Staple3		*PageSize Env9
+*UIConstraints: *ARStaple Staple3		*PageSize Env10
+*UIConstraints: *ARStaple Staple3		*PageSize EnvMonarch
+*UIConstraints: *ARStaple Staple3		*PageSize EnvKaku2
+*UIConstraints: *ARStaple Staple3		*PageSize EnvKaku3
+*UIConstraints: *ARStaple Staple3		*PageSize EnvKaku6
+*UIConstraints: *ARStaple Staple3		*PageSize EnvChou3
+*UIConstraints: *ARStaple Staple3		*PageSize EnvChou4
+*UIConstraints: *ARStaple Staple3		*PageSize EnvChou40
+*UIConstraints: *ARStaple Staple3		*PageSize EnvYou2
+*UIConstraints: *ARStaple Staple3		*PageSize EnvYou4
+*UIConstraints: *ARStaple Staple3		*PageSize EnvYouChou3
+*UIConstraints: *ARStaple Staple3		*PageSize Postcard
+*UIConstraints: *ARStaple Staple3		*PageSize PostcardD
+*UIConstraints: *ARStaple Staple3		*PageSize PostcardF
+
+*% ---- Saddle Stitch
+*UIConstraints: *ARStaple Staple3		*PageSize Executive
+*UIConstraints: *ARStaple Staple3		*PageSize EnvDL
+*UIConstraints: *ARStaple Staple3		*PageSize EnvC4
+*UIConstraints: *ARStaple Staple3		*PageSize EnvC5
+*UIConstraints: *ARStaple Staple3		*PageSize EnvC6
+*UIConstraints: *ARStaple Staple3		*PageSize Env9
+*UIConstraints: *ARStaple Staple3		*PageSize Env10
+*UIConstraints: *ARStaple Staple3		*PageSize EnvMonarch
+*UIConstraints: *ARStaple Staple3		*PageSize EnvKaku2
+*UIConstraints: *ARStaple Staple3		*PageSize EnvKaku3
+*UIConstraints: *ARStaple Staple3		*PageSize EnvKaku6
+*UIConstraints: *ARStaple Staple3		*PageSize EnvChou3
+*UIConstraints: *ARStaple Staple3		*PageSize EnvChou4
+*UIConstraints: *ARStaple Staple3		*PageSize EnvChou40
+*UIConstraints: *ARStaple Staple3		*PageSize EnvYou2
+*UIConstraints: *ARStaple Staple3		*PageSize EnvYou4
+*UIConstraints: *ARStaple Staple3		*PageSize EnvYouChou3
+*UIConstraints: *ARStaple Staple3		*PageSize Postcard
+*UIConstraints: *ARStaple Staple3		*PageSize PostcardD
+*UIConstraints: *ARStaple Staple3		*PageSize PostcardF
+
+*% ---- Staple <---> MediaType -------------------------------------------------
+*% ---- 1 Staple
+*UIConstraints: *ARStaple Staple1		*MediaType Labels
+*UIConstraints: *ARStaple Staple1		*MediaType Bond1
+*UIConstraints: *ARStaple Staple1		*MediaType Bond2
+*UIConstraints: *ARStaple Staple1		*MediaType Bond3
+*UIConstraints: *ARStaple Staple1		*MediaType Bond4
+*UIConstraints: *ARStaple Staple1		*MediaType Transparency
+*UIConstraints: *ARStaple Staple1		*MediaType Envelope
+*UIConstraints: *ARStaple Staple1		*MediaType Postcard
+*UIConstraints: *ARStaple Staple1		*MediaType Tab
+*UIConstraints: *ARStaple Staple1		*MediaType Glossy
+*% ---- 2 Staples
+*UIConstraints: *ARStaple Staple2		*MediaType Labels
+*UIConstraints: *ARStaple Staple2		*MediaType Bond1
+*UIConstraints: *ARStaple Staple2		*MediaType Bond2
+*UIConstraints: *ARStaple Staple2		*MediaType Bond3
+*UIConstraints: *ARStaple Staple2		*MediaType Bond4
+*UIConstraints: *ARStaple Staple2		*MediaType Transparency
+*UIConstraints: *ARStaple Staple2		*MediaType Envelope
+*UIConstraints: *ARStaple Staple2		*MediaType Postcard
+*UIConstraints: *ARStaple Staple2		*MediaType Tab
+*UIConstraints: *ARStaple Staple2		*MediaType Glossy
+*% ---- Stapleless
+*UIConstraints: *ARStaple Staple3		*MediaType Labels
+*UIConstraints: *ARStaple Staple3		*MediaType Bond1
+*UIConstraints: *ARStaple Staple3		*MediaType Bond2
+*UIConstraints: *ARStaple Staple3		*MediaType Bond3
+*UIConstraints: *ARStaple Staple3		*MediaType Bond4
+*UIConstraints: *ARStaple Staple3		*MediaType Transparency
+*UIConstraints: *ARStaple Staple3		*MediaType Envelope
+*UIConstraints: *ARStaple Staple3		*MediaType Postcard
+*UIConstraints: *ARStaple Staple3		*MediaType Tab
+*UIConstraints: *ARStaple Staple3		*MediaType Glossy
+*% ---- Saddle Stitch
+*UIConstraints: *ARStaple Staple4		*MediaType Letterhead
+*UIConstraints: *ARStaple Staple4		*MediaType Preprinted
+*UIConstraints: *ARStaple Staple4		*MediaType Prepunched
+*UIConstraints: *ARStaple Staple4		*MediaType Labels
+*UIConstraints: *ARStaple Staple4		*MediaType Bond1
+*UIConstraints: *ARStaple Staple4		*MediaType Bond2
+*UIConstraints: *ARStaple Staple4		*MediaType Bond3
+*UIConstraints: *ARStaple Staple4		*MediaType Bond4
+*UIConstraints: *ARStaple Staple4		*MediaType Thin
+*UIConstraints: *ARStaple Staple4		*MediaType Transparency
+*UIConstraints: *ARStaple Staple4		*MediaType Envelope
+*UIConstraints: *ARStaple Staple4		*MediaType Postcard
+*UIConstraints: *ARStaple Staple4		*MediaType Tab
+*UIConstraints: *ARStaple Staple4		*MediaType Glossy
+
+*% ---- Staple <---> Pamphlet --------------------------------------------------
+*UIConstraints: *ARStaple Staple1		*ARBooklet True
+*UIConstraints: *ARStaple Staple2		*ARBooklet True
+*UIConstraints: *ARStaple Staple3		*ARBooklet True
+*UIConstraints: *ARStaple Staple4		*ARBooklet False
+
+*% ---- Staple <---> Fold ------------------------------------------------------
+*UIConstraints: *ARStaple Staple1		*ARFold FoldHalf
+*UIConstraints: *ARStaple Staple2		*ARFold FoldHalf
+*UIConstraints: *ARStaple Staple3		*ARFold FoldHalf
+*UIConstraints: *ARStaple Staple4		*ARFold FoldHalf
+
+*% ---- Punch <---> PageSize ---------------------------------------------------
+*% ---- 2 Holes
+*UIConstraints: *ARPunch Punch2			*PageSize Statement
+*UIConstraints: *ARPunch Punch2			*PageSize ARCHB
+*UIConstraints: *ARPunch Punch2			*PageSize A3W
+*UIConstraints: *ARPunch Punch2			*PageSize A5
+*UIConstraints: *ARPunch Punch2			*PageSize EnvDL
+*UIConstraints: *ARPunch Punch2			*PageSize EnvC4
+*UIConstraints: *ARPunch Punch2			*PageSize EnvC5
+*UIConstraints: *ARPunch Punch2			*PageSize EnvC6
+*UIConstraints: *ARPunch Punch2			*PageSize Env9
+*UIConstraints: *ARPunch Punch2			*PageSize Env10
+*UIConstraints: *ARPunch Punch2			*PageSize EnvMonarch
+*UIConstraints: *ARPunch Punch2			*PageSize EnvKaku2
+*UIConstraints: *ARPunch Punch2			*PageSize EnvKaku3
+*UIConstraints: *ARPunch Punch2			*PageSize EnvKaku6
+*UIConstraints: *ARPunch Punch2			*PageSize EnvChou3
+*UIConstraints: *ARPunch Punch2			*PageSize EnvChou4
+*UIConstraints: *ARPunch Punch2			*PageSize EnvChou40
+*UIConstraints: *ARPunch Punch2			*PageSize EnvYou2
+*UIConstraints: *ARPunch Punch2			*PageSize EnvYou4
+*UIConstraints: *ARPunch Punch2			*PageSize EnvYouChou3
+*UIConstraints: *ARPunch Punch2			*PageSize Postcard
+*UIConstraints: *ARPunch Punch2			*PageSize PostcardD
+*UIConstraints: *ARPunch Punch2			*PageSize PostcardF
+*% ---- 3 Holes
+*UIConstraints: *ARPunch Punch3			*PageSize Statement
+*UIConstraints: *ARPunch Punch3			*PageSize ARCHB
+*UIConstraints: *ARPunch Punch3			*PageSize A3W
+*UIConstraints: *ARPunch Punch3			*PageSize A5
+*UIConstraints: *ARPunch Punch3			*PageSize B4
+*UIConstraints: *ARPunch Punch3			*PageSize B5
+*UIConstraints: *ARPunch Punch3			*PageSize 8K
+*UIConstraints: *ARPunch Punch3			*PageSize 16K
+*UIConstraints: *ARPunch Punch3			*PageSize EnvDL
+*UIConstraints: *ARPunch Punch3			*PageSize EnvC4
+*UIConstraints: *ARPunch Punch3			*PageSize EnvC5
+*UIConstraints: *ARPunch Punch3			*PageSize EnvC6
+*UIConstraints: *ARPunch Punch3			*PageSize Env9
+*UIConstraints: *ARPunch Punch3			*PageSize Env10
+*UIConstraints: *ARPunch Punch3			*PageSize EnvMonarch
+*UIConstraints: *ARPunch Punch3			*PageSize EnvKaku2
+*UIConstraints: *ARPunch Punch3			*PageSize EnvKaku3
+*UIConstraints: *ARPunch Punch3			*PageSize EnvKaku6
+*UIConstraints: *ARPunch Punch3			*PageSize EnvChou3
+*UIConstraints: *ARPunch Punch3			*PageSize EnvChou4
+*UIConstraints: *ARPunch Punch3			*PageSize EnvChou40
+*UIConstraints: *ARPunch Punch3			*PageSize EnvYou2
+*UIConstraints: *ARPunch Punch3			*PageSize EnvYou4
+*UIConstraints: *ARPunch Punch3			*PageSize EnvYouChou3
+*UIConstraints: *ARPunch Punch3			*PageSize Postcard
+*UIConstraints: *ARPunch Punch3			*PageSize PostcardD
+*UIConstraints: *ARPunch Punch3			*PageSize PostcardF
+*% ---- 4 Holes
+*UIConstraints: *ARPunch Punch4			*PageSize Legal
+*UIConstraints: *ARPunch Punch4			*PageSize Executive
+*UIConstraints: *ARPunch Punch4			*PageSize Statement
+*UIConstraints: *ARPunch Punch4			*PageSize ARCHB
+*UIConstraints: *ARPunch Punch4			*PageSize A3W
+*UIConstraints: *ARPunch Punch4			*PageSize A5
+*UIConstraints: *ARPunch Punch4			*PageSize B4
+*UIConstraints: *ARPunch Punch4			*PageSize B5
+*UIConstraints: *ARPunch Punch4			*PageSize Foolscap
+*UIConstraints: *ARPunch Punch4			*PageSize 8K
+*UIConstraints: *ARPunch Punch4			*PageSize 16K
+*UIConstraints: *ARPunch Punch4			*PageSize AsLegal
+*UIConstraints: *ARPunch Punch4			*PageSize MxLegal
+*UIConstraints: *ARPunch Punch4			*PageSize EnvDL
+*UIConstraints: *ARPunch Punch4			*PageSize EnvC4
+*UIConstraints: *ARPunch Punch4			*PageSize EnvC5
+*UIConstraints: *ARPunch Punch4			*PageSize EnvC6
+*UIConstraints: *ARPunch Punch4			*PageSize Env9
+*UIConstraints: *ARPunch Punch4			*PageSize Env10
+*UIConstraints: *ARPunch Punch4			*PageSize EnvMonarch
+*UIConstraints: *ARPunch Punch4			*PageSize EnvKaku2
+*UIConstraints: *ARPunch Punch4			*PageSize EnvKaku3
+*UIConstraints: *ARPunch Punch4			*PageSize EnvKaku6
+*UIConstraints: *ARPunch Punch4			*PageSize EnvChou3
+*UIConstraints: *ARPunch Punch4			*PageSize EnvChou4
+*UIConstraints: *ARPunch Punch4			*PageSize EnvChou40
+*UIConstraints: *ARPunch Punch4			*PageSize EnvYou2
+*UIConstraints: *ARPunch Punch4			*PageSize EnvYou4
+*UIConstraints: *ARPunch Punch4			*PageSize EnvYouChou3
+*UIConstraints: *ARPunch Punch4			*PageSize Postcard
+*UIConstraints: *ARPunch Punch4			*PageSize PostcardD
+*UIConstraints: *ARPunch Punch4			*PageSize PostcardF
+*% ---- 4 Holes (Wide)
+*UIConstraints: *ARPunch PunchW			*PageSize Statement
+*UIConstraints: *ARPunch PunchW			*PageSize ARCHB
+*UIConstraints: *ARPunch PunchW			*PageSize A3W
+*UIConstraints: *ARPunch PunchW			*PageSize A5
+*UIConstraints: *ARPunch PunchW			*PageSize EnvDL
+*UIConstraints: *ARPunch PunchW			*PageSize EnvC4
+*UIConstraints: *ARPunch PunchW			*PageSize EnvC5
+*UIConstraints: *ARPunch PunchW			*PageSize EnvC6
+*UIConstraints: *ARPunch PunchW			*PageSize Env9
+*UIConstraints: *ARPunch PunchW			*PageSize Env10
+*UIConstraints: *ARPunch PunchW			*PageSize EnvMonarch
+*UIConstraints: *ARPunch PunchW			*PageSize EnvKaku2
+*UIConstraints: *ARPunch PunchW			*PageSize EnvKaku3
+*UIConstraints: *ARPunch PunchW			*PageSize EnvKaku6
+*UIConstraints: *ARPunch PunchW			*PageSize EnvChou3
+*UIConstraints: *ARPunch PunchW			*PageSize EnvChou4
+*UIConstraints: *ARPunch PunchW			*PageSize EnvChou40
+*UIConstraints: *ARPunch PunchW			*PageSize EnvYou2
+*UIConstraints: *ARPunch PunchW			*PageSize EnvYou4
+*UIConstraints: *ARPunch PunchW			*PageSize EnvYouChou3
+*UIConstraints: *ARPunch PunchW			*PageSize Postcard
+*UIConstraints: *ARPunch PunchW			*PageSize PostcardD
+*UIConstraints: *ARPunch PunchW			*PageSize PostcardF
+
+*% ---- Punch <---> MediaType --------------------------------------------------
+*% ---- 2 Holes
+*UIConstraints: *ARPunch Punch2			*MediaType Prepunched
+*UIConstraints: *ARPunch Punch2			*MediaType Labels
+*UIConstraints: *ARPunch Punch2			*MediaType Transparency
+*UIConstraints: *ARPunch Punch2			*MediaType Envelope
+*UIConstraints: *ARPunch Punch2			*MediaType Postcard
+*UIConstraints: *ARPunch Punch2			*MediaType Tab
+*% ---- 3 Holes
+*UIConstraints: *ARPunch Punch3			*MediaType Prepunched
+*UIConstraints: *ARPunch Punch3			*MediaType Labels
+*UIConstraints: *ARPunch Punch3			*MediaType Transparency
+*UIConstraints: *ARPunch Punch3			*MediaType Envelope
+*UIConstraints: *ARPunch Punch3			*MediaType Postcard
+*UIConstraints: *ARPunch Punch3			*MediaType Tab
+*% ---- 4 Holes
+*UIConstraints: *ARPunch Punch4			*MediaType Prepunched
+*UIConstraints: *ARPunch Punch4			*MediaType Labels
+*UIConstraints: *ARPunch Punch4			*MediaType Transparency
+*UIConstraints: *ARPunch Punch4			*MediaType Envelope
+*UIConstraints: *ARPunch Punch4			*MediaType Postcard
+*UIConstraints: *ARPunch Punch4			*MediaType Tab
+*% ---- 4 Holes (Wide)
+*UIConstraints: *ARPunch PunchW			*MediaType Prepunched
+*UIConstraints: *ARPunch PunchW			*MediaType Labels
+*UIConstraints: *ARPunch PunchW			*MediaType Transparency
+*UIConstraints: *ARPunch PunchW			*MediaType Envelope
+*UIConstraints: *ARPunch PunchW			*MediaType Postcard
+*UIConstraints: *ARPunch PunchW			*MediaType Tab
+
+*% ---- Punch <---> Pamphlet ---------------------------------------------------
+*UIConstraints: *ARPunch Punch2			*ARBooklet True
+*UIConstraints: *ARPunch Punch3			*ARBooklet True
+*UIConstraints: *ARPunch Punch4			*ARBooklet True
+*UIConstraints: *ARPunch PunchW			*ARBooklet True
+
+*% ---- Pamphlet <---> PageSize ------------------------------------------------
+*UIConstraints: *ARBooklet True			*PageSize Legal
+*UIConstraints: *ARBooklet True			*PageSize Ledger
+*UIConstraints: *ARBooklet True			*PageSize Executive
+*UIConstraints: *ARBooklet True			*PageSize ARCHB
+*UIConstraints: *ARBooklet True			*PageSize A3W
+*UIConstraints: *ARBooklet True			*PageSize A3
+*UIConstraints: *ARBooklet True			*PageSize B4
+*UIConstraints: *ARBooklet True			*PageSize Foolscap
+*UIConstraints: *ARBooklet True			*PageSize 8K
+*UIConstraints: *ARBooklet True			*PageSize AsLegal
+*UIConstraints: *ARBooklet True			*PageSize MxLegal
+*UIConstraints: *ARBooklet True			*PageSize EnvDL
+*UIConstraints: *ARBooklet True			*PageSize EnvC4
+*UIConstraints: *ARBooklet True			*PageSize EnvC5
+*UIConstraints: *ARBooklet True			*PageSize EnvC6
+*UIConstraints: *ARBooklet True			*PageSize Env9
+*UIConstraints: *ARBooklet True			*PageSize Env10
+*UIConstraints: *ARBooklet True			*PageSize EnvMonarch
+*UIConstraints: *ARBooklet True			*PageSize EnvKaku2
+*UIConstraints: *ARBooklet True			*PageSize EnvKaku3
+*UIConstraints: *ARBooklet True			*PageSize EnvKaku6
+*UIConstraints: *ARBooklet True			*PageSize EnvChou3
+*UIConstraints: *ARBooklet True			*PageSize EnvChou4
+*UIConstraints: *ARBooklet True			*PageSize EnvChou40
+*UIConstraints: *ARBooklet True			*PageSize EnvYou2
+*UIConstraints: *ARBooklet True			*PageSize EnvYou4
+*UIConstraints: *ARBooklet True			*PageSize EnvYouChou3
+*UIConstraints: *ARBooklet True			*PageSize Postcard
+*UIConstraints: *ARBooklet True			*PageSize PostcardD
+*UIConstraints: *ARBooklet True			*PageSize PostcardF
+
+*% ---- Pamphlet <---> MediaType -----------------------------------------------
+*UIConstraints: *ARBooklet True			*MediaType Labels
+*UIConstraints: *ARBooklet True			*MediaType Bond4
+*UIConstraints: *ARBooklet True			*MediaType Thin
+*UIConstraints: *ARBooklet True			*MediaType Transparency
+*UIConstraints: *ARBooklet True			*MediaType Envelope
+*UIConstraints: *ARBooklet True			*MediaType Postcard
+*UIConstraints: *ARBooklet True			*MediaType Tab
+*UIConstraints: *ARBooklet True			*MediaType Glossy
+
+*% ---- Pamphlet <---> Margin Shift --------------------------------------------
+*UIConstraints: *ARBooklet True			*MarginShift Small
+*UIConstraints: *ARBooklet True			*MarginShift Medium
+*UIConstraints: *ARBooklet True			*MarginShift Large
+
+*% ---- Pamphlet <---> Fold ----------------------------------------------------
+*UIConstraints: *ARBooklet True			*ARFold FoldHalf
+
+*% ---- PageSize <---> MediaType -----------------------------------------------
+*% ---- Plain -> All
+*% ---- Letter Head -> All
+*% ---- Pre-Printed -> All
+*% ---- Pre-Punched -> All
+*% ---- Recycled -> All
+*% ---- Color -> All
+*% ---- Labels -> All
+*% ---- Heavy Paper-1 -> All
+*% ---- Heavy Paper-2 -> All
+*% ---- Heavy Paper-3 -> All
+*% ---- Heavy Paper-4 -> All
+*% ---- Thin Paper -> All
+*% ---- Transparency -> All
+*% ---- Envelope
+*UIConstraints: *MediaType Envelope		*PageSize Letter
+*UIConstraints: *MediaType Envelope		*PageSize Legal
+*UIConstraints: *MediaType Envelope		*PageSize Ledger
+*UIConstraints: *MediaType Envelope		*PageSize Executive
+*UIConstraints: *MediaType Envelope		*PageSize Statement
+*UIConstraints: *MediaType Envelope		*PageSize ARCHB
+*UIConstraints: *MediaType Envelope		*PageSize A3W
+*UIConstraints: *MediaType Envelope		*PageSize A3
+*UIConstraints: *MediaType Envelope		*PageSize A4
+*UIConstraints: *MediaType Envelope		*PageSize A5
+*UIConstraints: *MediaType Envelope		*PageSize B4
+*UIConstraints: *MediaType Envelope		*PageSize B5
+*UIConstraints: *MediaType Envelope		*PageSize Foolscap
+*UIConstraints: *MediaType Envelope		*PageSize 8K
+*UIConstraints: *MediaType Envelope		*PageSize 16K
+*UIConstraints: *MediaType Envelope		*PageSize AsLegal
+*UIConstraints: *MediaType Envelope		*PageSize MxLegal
+*UIConstraints: *MediaType Envelope		*PageSize Postcard
+*UIConstraints: *MediaType Envelope		*PageSize PostcardD
+*UIConstraints: *MediaType Envelope		*PageSize PostcardF
+
+*% ---- Postcard
+*UIConstraints: *MediaType Postcard		*PageSize Letter
+*UIConstraints: *MediaType Postcard		*PageSize Legal
+*UIConstraints: *MediaType Postcard		*PageSize Ledger
+*UIConstraints: *MediaType Postcard		*PageSize Executive
+*UIConstraints: *MediaType Postcard		*PageSize Statement
+*UIConstraints: *MediaType Postcard		*PageSize ARCHB
+*UIConstraints: *MediaType Postcard		*PageSize A3W
+*UIConstraints: *MediaType Postcard		*PageSize A3
+*UIConstraints: *MediaType Postcard		*PageSize A4
+*UIConstraints: *MediaType Postcard		*PageSize A5
+*UIConstraints: *MediaType Postcard		*PageSize B4
+*UIConstraints: *MediaType Postcard		*PageSize B5
+*UIConstraints: *MediaType Postcard		*PageSize Foolscap
+*UIConstraints: *MediaType Postcard		*PageSize 8K
+*UIConstraints: *MediaType Postcard		*PageSize 16K
+*UIConstraints: *MediaType Postcard		*PageSize AsLegal
+*UIConstraints: *MediaType Postcard		*PageSize MxLegal
+*UIConstraints: *MediaType Postcard		*PageSize EnvDL
+*UIConstraints: *MediaType Postcard		*PageSize EnvC4
+*UIConstraints: *MediaType Postcard		*PageSize EnvC5
+*UIConstraints: *MediaType Postcard		*PageSize EnvC6
+*UIConstraints: *MediaType Postcard		*PageSize Env9
+*UIConstraints: *MediaType Postcard		*PageSize Env10
+*UIConstraints: *MediaType Postcard		*PageSize EnvMonarch
+*UIConstraints: *MediaType Postcard		*PageSize EnvKaku2
+*UIConstraints: *MediaType Postcard		*PageSize EnvKaku3
+*UIConstraints: *MediaType Postcard		*PageSize EnvKaku6
+*UIConstraints: *MediaType Postcard		*PageSize EnvChou3
+*UIConstraints: *MediaType Postcard		*PageSize EnvChou4
+*UIConstraints: *MediaType Postcard		*PageSize EnvChou40
+*UIConstraints: *MediaType Postcard		*PageSize EnvYou2
+*UIConstraints: *MediaType Postcard		*PageSize EnvYou4
+*UIConstraints: *MediaType Postcard		*PageSize EnvYouChou3
+
+*% ---- Tab Paper
+*UIConstraints: *MediaType Tab			*PageSize Legal
+*UIConstraints: *MediaType Tab			*PageSize Ledger
+*UIConstraints: *MediaType Tab			*PageSize Executive
+*UIConstraints: *MediaType Tab			*PageSize Statement
+*UIConstraints: *MediaType Tab			*PageSize ARCHB
+*UIConstraints: *MediaType Tab			*PageSize A3W
+*UIConstraints: *MediaType Tab			*PageSize A3
+*UIConstraints: *MediaType Tab			*PageSize A5
+*UIConstraints: *MediaType Tab			*PageSize B4
+*UIConstraints: *MediaType Tab			*PageSize B5
+*UIConstraints: *MediaType Tab			*PageSize Foolscap
+*UIConstraints: *MediaType Tab			*PageSize 8K
+*UIConstraints: *MediaType Tab			*PageSize 16K
+*UIConstraints: *MediaType Tab			*PageSize AsLegal
+*UIConstraints: *MediaType Tab			*PageSize MxLegal
+*UIConstraints: *MediaType Tab			*PageSize EnvDL
+*UIConstraints: *MediaType Tab			*PageSize EnvC4
+*UIConstraints: *MediaType Tab			*PageSize EnvC5
+*UIConstraints: *MediaType Tab			*PageSize EnvC6
+*UIConstraints: *MediaType Tab			*PageSize Env9
+*UIConstraints: *MediaType Tab			*PageSize Env10
+*UIConstraints: *MediaType Tab			*PageSize EnvMonarch
+*UIConstraints: *MediaType Tab			*PageSize EnvKaku2
+*UIConstraints: *MediaType Tab			*PageSize EnvKaku3
+*UIConstraints: *MediaType Tab			*PageSize EnvKaku6
+*UIConstraints: *MediaType Tab			*PageSize EnvChou3
+*UIConstraints: *MediaType Tab			*PageSize EnvChou4
+*UIConstraints: *MediaType Tab			*PageSize EnvChou40
+*UIConstraints: *MediaType Tab			*PageSize EnvYou2
+*UIConstraints: *MediaType Tab			*PageSize EnvYou4
+*UIConstraints: *MediaType Tab			*PageSize EnvYouChou3
+*UIConstraints: *MediaType Tab			*PageSize Postcard
+*UIConstraints: *MediaType Tab			*PageSize PostcardD
+*UIConstraints: *MediaType Tab			*PageSize PostcardF
+
+*% ---- Glossy Paper -> All
+*% ---- Embossed Paper -> All
+*% ---- USER TYPE1 - 7 -> All
+
+*% ---- Watermark Outline <---> Transparent ------------------------------------
+*UIConstraints: *ARwmOutline True		*ARwmTransparent Trans25
+*UIConstraints: *ARwmOutline True		*ARwmTransparent Trans50
+*UIConstraints: *ARwmOutline True		*ARwmTransparent Trans75
+
+*% ---- Print Mode <---> Sharpness ---------------------------------------------
+*UIConstraints: *ARCPPriority Normal		*ARCSharpness SVerySoft
+*UIConstraints: *ARCPPriority Normal		*ARCSharpness SSoft
+*UIConstraints: *ARCPPriority Normal		*ARCSharpness SCenter
+*UIConstraints: *ARCPPriority Normal		*ARCSharpness SSharp
+*UIConstraints: *ARCPPriority Normal		*ARCSharpness SVerySharp
+
+*% ---- Print Mode <---> Text/Line control -------------------------------------
+*UIConstraints: *ARCPPriority Normal		*ARTextLineControl ThickText
+*UIConstraints: *ARCPPriority Normal		*ARTextLineControl ThickGraphics
+*UIConstraints: *ARCPPriority Normal		*ARTextLineControl ThickTGraphics
+*UIConstraints: *ARCPPriority Normal		*ARTextLineControl ThickPhoto
+
+*% ---- Print Mode <---> Text/Line Knockout control ----------------------------
+*UIConstraints: *ARCPPriority Normal		*ARTextLineKnockout ThickText
+*UIConstraints: *ARCPPriority Normal		*ARTextLineKnockout ThickTGraphics
+
+*% ---- Print Mode <---> Fine Text ---------------------------------------------
+*UIConstraints: *ARCPPriority Normal		*ARFineText True
+
+*% ---- Print Mode <---> Photo Image -------------------------------------------
+*UIConstraints: *ARCPPriority Normal		*ARPhotoImage True
+
+*% ---- Print Mode <---> Image Enhancement -------------------------------------
+*UIConstraints: *ARCPPriority Normal		*AREdgeEnhancement SharpText
+*UIConstraints: *ARCPPriority Normal		*AREdgeEnhancement SharpTGraphics
+*UIConstraints: *ARCPPriority Normal		*AREdgeEnhancement SharpTKText
+*UIConstraints: *ARCPPriority Normal		*AREdgeEnhancement SharpTGKText
+*UIConstraints: *ARCPPriority Normal		*AREdgeEnhancement SharpTGKnockout
+*UIConstraints: *ARCPPriority Normal		*AREdgeEnhancement SoftText
+*UIConstraints: *ARCPPriority Normal		*AREdgeEnhancement SoftTGraphics
+*UIConstraints: *ARCPPriority Normal		*AREdgeEnhancement SoftTKText
+*UIConstraints: *ARCPPriority Normal		*AREdgeEnhancement SoftTGKText
+*UIConstraints: *ARCPPriority Normal		*AREdgeEnhancement SoftTGKnockout
+*UIConstraints: *ARCPPriority Fine		*AREdgeEnhancement SoftText
+*UIConstraints: *ARCPPriority Fine		*AREdgeEnhancement SoftTGraphics
+*UIConstraints: *ARCPPriority Fine		*AREdgeEnhancement SoftTKText
+*UIConstraints: *ARCPPriority Fine		*AREdgeEnhancement SoftTGKText
+*UIConstraints: *ARCPPriority Fine		*AREdgeEnhancement SoftTGKnockout
+
+*% ---- Toner Save <---> Print Mode --------------------------------------------
+*UIConstraints: *ARSaveToner True		*ARCPPriority Normal
+*UIConstraints: *ARSaveToner True		*ARCPPriority Fine
+
+*% ---- Print Mode <---> Boldness Adjustment -----------------------------------
+*UIConstraints: *ARCPPriority Normal		*ARBold BM2
+*UIConstraints: *ARCPPriority Normal		*ARBold BM1
+*UIConstraints: *ARCPPriority Normal		*ARBold BP1
+*UIConstraints: *ARCPPriority Normal		*ARBold BP2
+
+*% ---- Document Filing <---> PIN Code(Retention) ------------------------------
+*UIConstraints: *JCLRetentionSetting None	*CustomJCLRetentionPassword True
+
+*% ---- Document Filing <---> Stored  ------------------------------------------
+*UIConstraints: *JCLRetentionSetting None	*JCLDocumentFilingSetting Quick
+*UIConstraints: *JCLRetentionSetting None	*JCLDocumentFilingSetting Main
+*UIConstraints: *JCLRetentionSetting None	*CustomJCLDocumentFilingSetting True
+*UIConstraints: *JCLRetentionSetting Before	*JCLDocumentFilingSetting None
+*UIConstraints: *JCLRetentionSetting Before	*JCLDocumentFilingSetting Quick
+*UIConstraints: *JCLRetentionSetting After	*JCLDocumentFilingSetting None
+*UIConstraints: *JCLRetentionSetting Proof	*JCLDocumentFilingSetting None
+*UIConstraints: *JCLRetentionSetting Proof	*JCLDocumentFilingSetting Quick
+
+*% ---- Login Name / Password <---> User Number --------------------------------
+*UIConstraints: *CustomJCLLoginName True	*CustomJCLUserNumber True
+*UIConstraints: *CustomJCLLoginPassword True	*CustomJCLUserNumber True
+
+*% ---- Login Name <---> Password ----------------------------------------------
+*UIConstraints: *JCLLoginName None		*CustomJCLLoginPassword True
+
+*% =============================================================================
+
+*% **** Paper Size *************************************************************
+*OpenUI *PageSize: PickOne
+*OrderDependency: 70 AnySetup *PageSize
+*DefaultPageSize: Letter
+*PageSize Letter/Letter: "<</PageSize [612 792] /ImagingBBox null>> setpagedevice"
+*PageSize Legal/Legal: "<</PageSize [612 1008] /ImagingBBox null>> setpagedevice"
+*PageSize Ledger/Ledger: "<</PageSize [792 1224] /ImagingBBox null>> setpagedevice"
+*PageSize Executive/Executive: "<</PageSize [522 756] /ImagingBBox null>> setpagedevice"
+*PageSize Statement/Invoice: "<</PageSize [396 612] /ImagingBBox null>> setpagedevice"
+*PageSize ARCHB/12 x 18: "<</PageSize [864 1297] /ImagingBBox null>> setpagedevice"
+*PageSize A3W/A3 Wide: "<</PageSize [864 1296] /ImagingBBox null>> setpagedevice"
+*PageSize A3/A3: "<</PageSize [842 1191] /ImagingBBox null>> setpagedevice"
+*PageSize A4/A4: "<</PageSize [595 842] /ImagingBBox null>> setpagedevice"
+*PageSize A5/A5: "<</PageSize [420 595] /ImagingBBox null>> setpagedevice"
+*PageSize B4/B4: "<</PageSize [729 1032] /ImagingBBox null>> setpagedevice"
+*PageSize B5/B5: "<</PageSize [516 729] /ImagingBBox null>> setpagedevice"
+*PageSize Foolscap/Foolscap: "<</PageSize [612 936] /ImagingBBox null>> setpagedevice"
+*PageSize 8K/8K: "<</PageSize [765 1105] /ImagingBBox null>> setpagedevice"
+*PageSize 16K/16K: "<</PageSize [552 765] /ImagingBBox null>> setpagedevice"
+*PageSize EnvDL/DL: "<</PageSize [312 624] /ImagingBBox null>> setpagedevice"
+*PageSize EnvC4/C4: "<</PageSize [649 918] /ImagingBBox null>> setpagedevice"
+*PageSize EnvC5/C5: "<</PageSize [459 649] /ImagingBBox null>> setpagedevice"
+*PageSize EnvC6/C6: "<</PageSize [323 459] /ImagingBBox null>> setpagedevice"
+*PageSize Env9/COM9: "<</PageSize [279 639] /ImagingBBox null>> setpagedevice"
+*PageSize Env10/COM10: "<</PageSize [297 684] /ImagingBBox null>> setpagedevice"
+*PageSize EnvMonarch/Monarch: "<</PageSize [279 540] /ImagingBBox null>> setpagedevice"
+*PageSize AsLegal/216 x 343: "<</PageSize [612 970] /ImagingBBox null>> setpagedevice"
+*PageSize MxLegal/8.5 x 13.4: "<</PageSize [612 963] /ImagingBBox null>> setpagedevice"
+*PageSize EnvChou3/Envelope Choukei 3: "<</PageSize [340 666] /ImagingBBox null>> setpagedevice"
+*PageSize EnvChou4/Envelope Choukei 4: "<</PageSize [255 581] /ImagingBBox null>> setpagedevice"
+*PageSize EnvChou40/Envelope Choukei 40: "<</PageSize [255 638] /ImagingBBox null>> setpagedevice"
+*PageSize EnvYou2/Envelope You2: "<</PageSize [323 459] /ImagingBBox null>> setpagedevice"
+*PageSize EnvYou4/Envelope You4: "<</PageSize [298 666] /ImagingBBox null>> setpagedevice"
+*PageSize EnvYouChou3/Envelope YouChou3: "<</PageSize [340 667] /ImagingBBox null>> setpagedevice"
+*PageSize EnvKaku2/Envelope Kaku2: "<</PageSize [680 941] /ImagingBBox null>> setpagedevice"
+*PageSize EnvKaku3/Envelope Kaku3: "<</PageSize [612 785] /ImagingBBox null>> setpagedevice"
+*PageSize EnvKaku6/Envelope Kaku6: "<</PageSize [459 650] /ImagingBBox null>> setpagedevice"
+*PageSize Postcard/Postcard: "<</PageSize [284 420] /ImagingBBox null>> setpagedevice"
+*PageSize PostcardD/Double Postcard: "<</PageSize [420 568] /ImagingBBox null>> setpagedevice"
+*PageSize PostcardF/4-Postcard Printed Sheet: "<</PageSize [567 839] /ImagingBBox null>> setpagedevice"
+*?PageSize: "
+	save
+	currentpagedevice /PageSize get aload pop
+	2 copy gt {exch} if (Unknown)
+	38 dict
+		dup [612 792] (Letter) put
+		dup [612 1008] (Legal) put
+		dup [792 1224] (Ledger) put
+		dup [522 756] (Executive) put
+		dup [396 612] (Invoice) put
+		dup [864 1297] (ARCHB) put
+		dup [864 1296] (A3W) put
+		dup [842 1191] (A3) put
+		dup [595 842] (A4) put
+		dup [420 595] (A5) put
+		dup [729 1032] (B4) put
+		dup [516 729] (B5) put
+		dup [612 936] (Foolscap) put
+		dup [765 1105] (8K) put
+		dup [552 765] (16K) put
+		dup [312 624] (EnvDL) put
+		dup [649 918] (EnvC4) put
+		dup [459 649] (EnvC5) put
+		dup [323 459] (EnvC6) put
+		dup [279 639] (Env9) put
+		dup [297 684] (Env10) put
+		dup [279 540] (EnvMonarch) put
+		dup [612 970] (AsLegal) put
+		dup [612 963] (MxLegal) put
+		dup [340 666] (EnvChou3) put
+		dup [255 581] (EnvChou4) put
+		dup [255 638] (EnvChou40) put
+		dup [323 459] (EnvYou2) put
+		dup [298 666] (EnvYou4) put
+		dup [340 667] (EnvYouChou3) put
+		dup [680 941] (EnvKaku2) put
+		dup [612 785] (EnvKaku3) put
+		dup [459 650] (EnvKaku6) put
+		dup [284 420] (Postcard) put
+		dup [420 568] (PostcardD) put
+		dup [567 839] (PostcardF) put
+	{exch aload pop 4 index sub abs 5 le exch
+	5 index sub abs 5 le and
+	{exch pop exit} {pop} ifelse
+	} bind forall = flush pop pop
+	restore"
+*End
+*CloseUI: *PageSize
+
+*OpenUI *PageRegion: PickOne
+*OrderDependency: 70 AnySetup *PageRegion
+*DefaultPageRegion: Letter
+*PageRegion Letter/Letter: "<</PageSize [612 792] /ImagingBBox null>> setpagedevice"
+*PageRegion Legal/Legal: "<</PageSize [612 1008] /ImagingBBox null>> setpagedevice"
+*PageRegion Ledger/Ledger: "<</PageSize [792 1224] /ImagingBBox null>> setpagedevice"
+*PageRegion Executive/Executive: "<</PageSize [522 756] /ImagingBBox null>> setpagedevice"
+*PageRegion Statement/Invoice: "<</PageSize [396 612] /ImagingBBox null>> setpagedevice"
+*PageRegion ARCHB/12 x 18: "<</PageSize [864 1297] /ImagingBBox null>> setpagedevice"
+*PageRegion A3W/A3 Wide: "<</PageSize [864 1296] /ImagingBBox null>> setpagedevice"
+*PageRegion A3/A3: "<</PageSize [842 1191] /ImagingBBox null>> setpagedevice"
+*PageRegion A4/A4: "<</PageSize [595 842] /ImagingBBox null>> setpagedevice"
+*PageRegion A5/A5: "<</PageSize [420 595] /ImagingBBox null>> setpagedevice"
+*PageRegion B4/B4: "<</PageSize [729 1032] /ImagingBBox null>> setpagedevice"
+*PageRegion B5/B5: "<</PageSize [516 729] /ImagingBBox null>> setpagedevice"
+*PageRegion Foolscap/Foolscap: "<</PageSize [612 936] /ImagingBBox null>> setpagedevice"
+*PageRegion 8K/8K: "<</PageSize [765 1105] /ImagingBBox null>> setpagedevice"
+*PageRegion 16K/16K: "<</PageSize [552 765] /ImagingBBox null>> setpagedevice"
+*PageRegion EnvDL/DL: "<</PageSize [312 624] /ImagingBBox null>> setpagedevice"
+*PageRegion EnvC4/C4:	"<</PageSize [649 918] /ImagingBBox null>> setpagedevice"
+*PageRegion EnvC5/C5:	"<</PageSize [459 649] /ImagingBBox null>> setpagedevice"
+*PageRegion EnvC6/C6:	"<</PageSize [323 459] /ImagingBBox null>> setpagedevice"
+*PageRegion Env9/COM9:	"<</PageSize [279 639] /ImagingBBox null>> setpagedevice"
+*PageRegion Env10/COM10: "<</PageSize [297 684] /ImagingBBox null>> setpagedevice"
+*PageRegion EnvMonarch/Monarch: "<</PageSize [279 540] /ImagingBBox null>> setpagedevice"
+*PageRegion AsLegal/216 x 343: "<</PageSize [612 970] /ImagingBBox null>> setpagedevice"
+*PageRegion MxLegal/8.5 x 13.4: "<</PageSize [612 963] /ImagingBBox null>> setpagedevice"
+*PageRegion EnvChou3/Envelope Choukei 3:	"<</PageSize [340 666] /ImagingBBox null>> setpagedevice"
+*PageRegion EnvChou4/Envelope Choukei 4:	"<</PageSize [255 581] /ImagingBBox null>> setpagedevice"
+*PageRegion EnvChou40/Envelope Choukei 40:	"<</PageSize [255 638] /ImagingBBox null>> setpagedevice"
+*PageRegion EnvYou2/Envelope You2:	"<</PageSize [323 459] /ImagingBBox null>> setpagedevice"
+*PageRegion EnvYou4/Envelope You4:	"<</PageSize [298 666] /ImagingBBox null>> setpagedevice"
+*PageRegion EnvYouChou3/Envelope YouChou3:	"<</PageSize [340 667] /ImagingBBox null>> setpagedevice"
+*PageRegion EnvKaku2/Envelope Kaku2:	"<</PageSize [680 941] /ImagingBBox null>> setpagedevice"
+*PageRegion EnvKaku3/Envelope Kaku3:	"<</PageSize [612 785] /ImagingBBox null>> setpagedevice"
+*PageRegion EnvKaku6/Envelope Kaku6:	"<</PageSize [459 650] /ImagingBBox null>> setpagedevice"
+*PageRegion Postcard/Postcard:	"<</PageSize [284 420] /ImagingBBox null>> setpagedevice"
+*PageRegion PostcardD/Double Postcard:	"<</PageSize [420 568] /ImagingBBox null>> setpagedevice"
+*PageRegion PostcardF/4-Postcard Printed Sheet:	"<</PageSize [567 839] /ImagingBBox null>> setpagedevice"
+*CloseUI: *PageRegion
+
+*DefaultImageableArea: Letter
+*ImageableArea Letter/Letter: "12.00 12.00 600.00 780.00"
+*ImageableArea Legal/Legal: "12.00 12.00 600.00 996.00"
+*ImageableArea Ledger/Ledger: "12.00 12.00 780.00 1212.00"
+*ImageableArea Executive/Executive: "12.00 12.00 510.00 744.00"
+*ImageableArea Statement/Invoice: "12.00 12.00 384.00 600.00"
+*ImageableArea ARCHB/12 x 18: "12.00 12.00 852.00 1285.00"
+*ImageableArea A3W/A3 Wide: "9.00 12.00 855.00 1284.00"
+*ImageableArea A3/A3: "12.00 12.00 830.00 1179.00"
+*ImageableArea A4/A4: "12.00 12.00 583.00 830.00"
+*ImageableArea A5/A5: "12.00 12.00 408.00 583.00"
+*ImageableArea B4/B4: "12.00 12.00 717.00 1020.00"
+*ImageableArea B5/B5: "12.00 12.00 504.00 717.00"
+*ImageableArea Foolscap/Foolscap: "12.00 12.00 600.00 924.00"
+*ImageableArea 8K/8K: "12.00 12.00 753.00 1093.00"
+*ImageableArea 16K/16K: "12.00 12.00 540.00 753.00"
+*ImageableArea EnvDL/DL: "12.00 12.00 300.00 612.00"
+*ImageableArea EnvC4/C4:	"12.0 12.0 637.0 906.0"
+*ImageableArea EnvC5/C5:	"12.0 12.0 447.0 637.0"
+*ImageableArea EnvC6/C6:	"12.0 12.0 311.0 447.0"
+*ImageableArea Env9/COM9:	"12.0 12.0 267.0 627.0"
+*ImageableArea Env10/COM10: "12.00 12.00 285.00 672.00"
+*ImageableArea EnvMonarch/Monarch: "12.00 12.00 267.00 528.00"
+*ImageableArea AsLegal/216 x 343: "12.00 12.00 600.00 958.00"
+*ImageableArea MxLegal/8.5 x 13.4: "12.00 12.00 600.00 951.00"
+*ImageableArea EnvChou3/Envelope Choukei 3:		"12.0 12.0 328.0 654.0"
+*ImageableArea EnvChou4/Envelope Choukei 4:		"12.0 12.0 243.0 569.0"
+*ImageableArea EnvChou40/Envelope Choukei 40:	"12.0 12.0 243.0 626.0"
+*ImageableArea EnvYou2/Envelope You2:		"12.0 12.0 311.0 447.0"
+*ImageableArea EnvYou4/Envelope You4:		"12.0 12.0 286.0 654.0"
+*ImageableArea EnvYouChou3/Envelope YouChou3:	"12.0 12.0 328.0 655.0"
+*ImageableArea EnvKaku2/Envelope Kaku2:		"12.0 12.0 668.0 929.0"
+*ImageableArea EnvKaku3/Envelope Kaku3:		"12.0 12.0 600.0 773.0"
+*ImageableArea EnvKaku6/Envelope Kaku6:		"12.0 12.0 447.0 638.0"
+*ImageableArea Postcard/Postcard:		"12.0 12.0 272.0 408.0"
+*ImageableArea PostcardD/Double Postcard:	"12.0 12.0 408.0 556.0"
+*ImageableArea PostcardF/4-Postcard Printed Sheet:	"12.0 12.0 555.0 827.0"
+*?ImageableArea: "
+	save
+	/cvp { (                ) cvs print ( ) print } bind def
+	/upperright {10000 mul floor 10000 div} bind def
+	/lowerleft {10000 mul ceiling 10000 div} bind def
+	newpath clippath pathbbox
+	4 -2 roll exch 2 {lowerleft cvp} repeat
+	exch 2 {upperright cvp} repeat flush
+	restore"
+*End
+
+*DefaultPaperDimension: Letter
+*PaperDimension Letter/Letter: "612.00 792.00"
+*PaperDimension Legal/Legal: "612.00 1008.00"
+*PaperDimension Ledger/Ledger: "792.00 1224.00"
+*PaperDimension Executive/Executive: "522.00 756.00"
+*PaperDimension Statement/Invoice: "396.00 612.00"
+*PaperDimension ARCHB/12 x 18: "864.00 1297.00"
+*PaperDimension A3W/A3 Wide: "864.00 1296.00"
+*PaperDimension A3/A3: "842.00 1191.00"
+*PaperDimension A4/A4: "595.00 842.00"
+*PaperDimension A5/A5: "420.00 595.00"
+*PaperDimension B4/B4: "729.00 1032.00"
+*PaperDimension B5/B5: "516.00 729.00"
+*PaperDimension Foolscap/Foolscap: "612.00 936.00"
+*PaperDimension 8K/8K: "765.00 1105.00"
+*PaperDimension 16K/16K: "552.00 765.00"
+*PaperDimension EnvDL/DL: "312.00 624.00"
+*PaperDimension EnvC4/C4:	"649 918"
+*PaperDimension EnvC5/C5:	"459 649"
+*PaperDimension EnvC6/C6:	"323 459"
+*PaperDimension Env9/COM9:	"279 639"
+*PaperDimension Env10/COM10: "297.00 684.00"
+*PaperDimension EnvMonarch/Monarch: "279.00 540.00"
+*PaperDimension AsLegal/216 x 343: "612.00 970.00"
+*PaperDimension MxLegal/8.5 x 13.4: "612.00 963.00"
+*PaperDimension EnvChou3/Envelope Choukei 3:		"340 666"
+*PaperDimension EnvChou4/Envelope Choukei 4:		"255 581"
+*PaperDimension EnvChou40/Envelope Choukei 40:		"255 638"
+*PaperDimension EnvYou2/Envelope You2:		"323 459"
+*PaperDimension EnvYou4/Envelope You4:		"298 666"
+*PaperDimension EnvYouChou3/Envelope YouChou3:	"340 667"
+*PaperDimension EnvKaku2/Envelope Kaku2:		"680 941"
+*PaperDimension EnvKaku3/Envelope Kaku3:		"612 785"
+*PaperDimension EnvKaku6/Envelope Kaku6:		"459 650"
+*PaperDimension Postcard/Postcard:		"284 420"
+*PaperDimension PostcardD/Double Postcard:	"420 568"
+*PaperDimension PostcardF/4-Postcard Printed Sheet:	"567 839"
+*% *****************************************************************************
+
+*% **** Input Slot *************************************************************
+*OpenUI *InputSlot: PickOne
+*OrderDependency: 70.0 AnySetup *InputSlot
+*DefaultInputSlot: Auto
+*InputSlot Auto/Auto Select: "<</DeferredMediaSelection true /MediaPosition 9 /ManualFeed false>> setpagedevice"
+*InputSlot Bypass/Bypass Tray: "<</DeferredMediaSelection true /MediaPosition 3 /ManualFeed false>> setpagedevice"
+*InputSlot Tray1/Tray 1: "<</DeferredMediaSelection true /MediaPosition 0 /ManualFeed false>> setpagedevice"
+*InputSlot Tray2/Tray 2: "<</DeferredMediaSelection true /MediaPosition 1 /ManualFeed false>> setpagedevice"
+*InputSlot Tray3/Tray 3: "<</DeferredMediaSelection true /MediaPosition 4 /ManualFeed false>> setpagedevice"
+*InputSlot Tray4/Tray 4: "<</DeferredMediaSelection true /MediaPosition 5 /ManualFeed false>> setpagedevice"
+*InputSlot LCT/LCT: "<</DeferredMediaSelection true /MediaPosition 7 /ManualFeed false>> setpagedevice"
+*CloseUI: *InputSlot
+*% *****************************************************************************
+
+*% **** Media Type *************************************************************
+*OpenUI *MediaType: PickOne
+*OrderDependency: 70.0 AnySetup *MediaType
+*DefaultMediaType: Auto
+*MediaType Auto/Auto Select: "<</MediaType (None)>> setpagedevice"
+*MediaType Plain1/Plain-1: "<</MediaType (Plain1)>> setpagedevice"
+*MediaType Plain2/Plain-2: "<</MediaType (Plain2)>> setpagedevice"
+*MediaType Letterhead/Letter Head: "<</MediaType (Letterhead)>> setpagedevice"
+*MediaType Preprinted/Pre-Printed: "<</MediaType (Preprinted)>> setpagedevice"
+*MediaType Prepunched/Pre-Punched: "<</MediaType (Prepunched)>> setpagedevice"
+*MediaType Recycled/Recycled: "<</MediaType (Recycled)>> setpagedevice"
+*MediaType Color/Color: "<</MediaType (Color)>> setpagedevice"
+*MediaType Labels/Labels: "<</MediaType (Labels)>> setpagedevice"
+*MediaType Bond1/Heavy Paper-1: "<</MediaType (Bond)>> setpagedevice"
+*MediaType Bond2/Heavy Paper-2: "<</MediaType (Bond2)>> setpagedevice"
+*MediaType Bond3/Heavy Paper-3: "<</MediaType (Bond3)>> setpagedevice"
+*MediaType Bond4/Heavy Paper-4: "<</MediaType (Bond4)>> setpagedevice"
+*MediaType Thin/Thin Paper: "<</MediaType (Thin)>> setpagedevice"
+*MediaType Transparency/Transparency: "<</MediaType (Transparency)>> setpagedevice"
+*MediaType Envelope/Envelope: "<</MediaType (Envelope)>> setpagedevice"
+*MediaType Postcard/Postcard: "<</MediaType (Postcard)>> setpagedevice"
+*MediaType Tab/Tab Paper: "<</MediaType (Tab)>> setpagedevice"
+*MediaType Glossy/Glossy Paper: "<</MediaType (Glossy)>> setpagedevice"
+*MediaType UserSet1/USER TYPE1: "<</MediaType (UserSet1)>> setpagedevice"
+*MediaType UserSet2/USER TYPE2: "<</MediaType (UserSet2)>> setpagedevice"
+*MediaType UserSet3/USER TYPE3: "<</MediaType (UserSet3)>> setpagedevice"
+*MediaType UserSet4/USER TYPE4: "<</MediaType (UserSet4)>> setpagedevice"
+*MediaType UserSet5/USER TYPE5: "<</MediaType (UserSet5)>> setpagedevice"
+*MediaType UserSet6/USER TYPE6: "<</MediaType (UserSet6)>> setpagedevice"
+*MediaType UserSet7/USER TYPE7: "<</MediaType (UserSet7)>> setpagedevice"
+*CloseUI: *MediaType
+*% *****************************************************************************
+
+*OpenGroup: InstallableOptions/Installable Options
+
+*% **** Input Tray Options *****************************************************
+*OpenUI *Option5/Input Tray Options: PickOne
+*OrderDependency: 0.0 AnySetup *Option5
+*DefaultOption5: NotInstalled
+*Option5 NotInstalled/One Tray: ""
+*Option5 1TrayDrawer/Two Trays: ""
+*Option5 2TrayDrawer/Three Trays: ""
+*Option5 3TrayDrawer/Four Trays: ""
+*Option5 TandemTrayDrawer/Large Capacity Desk: ""
+*?Option5: "
+	save
+	currentpagedevice
+	/InputAttributes get 19 known
+	{(TandemTrayDrawer)}
+	{
+		currentpagedevice
+		/InputAttributes get 5 known
+		{(3TrayDrawer)}
+		{
+			currentpagedevice
+			/InputAttributes get 4 known
+			{(2TrayDrawer)}
+			{
+				currentpagedevice
+				/InputAttributes get 1 known
+				{(1TrayDrawer)}
+				{(NotInstalled)} ifelse
+			} ifelse
+		} ifelse
+	} ifelse = flush
+	restore"
+*End
+*CloseUI: *Option5
+*% *****************************************************************************
+
+*% **** Large Capacity Tray ****************************************************
+*OpenUI *Option6/Large Capacity Tray: PickOne
+*OrderDependency: 0.0 AnySetup *Option6
+*DefaultOption6: NotInstalled
+*Option6 NotInstalled/Not Installed: ""
+*Option6 Installed/MX-LC17: ""
+*?Option6: "
+	save
+	currentpagedevice
+	/InputAttributes get 7 known {(Installed)}{(NotInstalled)} ifelse = flush
+	restore"
+*End
+*CloseUI: *Option6
+*% *****************************************************************************
+
+*% **** Output Tray Options ****************************************************
+*OpenUI *Option1/Output Tray Options: PickOne
+*OrderDependency: 0.0 AnySetup *Option1
+*DefaultOption1: NotInstalled
+*Option1 NotInstalled/Not Installed: ""
+*Option1 InnerFinisher/Inner Finisher: ""
+*Option1 Finisher/Finisher: ""
+*Option1 LSFinisher/Finisher(Large Stacker): ""
+*Option1 SSFinisher/Saddle Stitch Finisher: ""
+*Option1 LSSFinisher/Saddle Stitch Finisher(Large Stacker): ""
+*?Option1: "
+	save
+	currentpagedevice
+	/OutputAttributes get 5 known
+	{
+		currentpagedevice
+		/OutputAttributes get 4 known
+		{(LSSFinisher)}
+		{(LSFinisher)} ifelse
+	}
+	{
+		currentpagedevice
+		/OutputAttributes get 3 known
+		{
+			currentpagedevice
+			/OutputAttributes get 4 known
+			{(SSFinisher)}
+			{(Finisher)} ifelse
+		}
+		{
+			currentpagedevice
+			/OutputAttributes get 2 known
+			{(InnerFinisher)}
+			{(NotInstalled)} ifelse
+		} ifelse
+	} ifelse = flush
+	restore"
+*End
+*CloseUI: *Option1
+*% *****************************************************************************
+
+*% **** Punch Module ***********************************************************
+*OpenUI *Option9/Punch Module: PickOne
+*OrderDependency: 0.0 AnySetup *Option9
+*DefaultOption9: NotInstalled
+*Option9 NotInstalled/Not Installed: ""
+*Option9 PModule33/3 Holes: ""
+*Option9 PModule24/2<2F>4 Holes: ""
+*Option9 PModule4W/4 Holes (Wide): ""
+*?Option9: "
+	save
+	currentpagedevice /PunchType get dup 4 eq
+	{pop (PModule4W)}
+	{
+		dup 3 eq
+		{pop (PModule24)}
+		{
+			dup 2 eq
+			{pop (PModule33)}
+			{
+				1 eq
+				{(PModule24)}
+				{(NotInstalled)} ifelse
+			} ifelse
+		} ifelse
+	} ifelse = flush
+	restore"
+*End
+*CloseUI: *Option9
+*% *****************************************************************************
+
+*% **** Job Separator **********************************************************
+*OpenUI *Option3/Job Separator: PickOne
+*OrderDependency: 0.0 AnySetup *Option3
+*DefaultOption3: NotInstalled
+*Option3 NotInstalled/Not Installed: ""
+*Option3 Installed/Installed: ""
+*?Option3: "
+	save
+	currentpagedevice
+	/OutputAttributes get 7 known {(Installed)}{(NotInstalled)} ifelse = flush
+	restore"
+*End
+*CloseUI: *Option3
+*% *****************************************************************************
+
+*% **** Right Tray *************************************************************
+*OpenUI *Option2/Right Tray: PickOne
+*OrderDependency: 0.0 AnySetup *Option2
+*DefaultOption2: NotInstalled
+*Option2 NotInstalled/Not Installed: ""
+*Option2 Installed/Installed: ""
+*?Option2: "
+	save
+	currentpagedevice
+	/OutputAttributes get 1 known {(Installed)}{(NotInstalled)} ifelse = flush
+	restore"
+*End
+*CloseUI: *Option2
+*% *****************************************************************************
+
+*% **** Data Security Kit ******************************************************
+*OpenUI *Option4/Data Security Kit: PickOne
+*OrderDependency: 0.0 AnySetup *Option4
+*DefaultOption4: NotInstalled
+*Option4 NotInstalled/Not Installed: ""
+*Option4 Installed/Installed: ""
+*?Option4: "
+	save
+	currentpagedevice
+	/DocumentControl known {(Installed)}{(NotInstalled)} ifelse = flush
+	restore"
+*End
+*CloseUI: *Option4
+*% *****************************************************************************
+
+*CloseGroup: InstallableOptions
+
+*OpenGroup: Advanced/Advanced
+
+*% **** Resolution *************************************************************
+*%*OpenUI *Resolution/Resolution: PickOne
+*%*OrderDependency: 80.0 AnySetup *Resolution
+*DefaultResolution: 600dpi
+*%*Resolution 600dpi/600 dpi: ""
+*%*Resolution 1200dpi/1200 dpi: ""
+*%*CloseUI: *Resolution
+*% *****************************************************************************
+
+*% **** Job Offset *************************************************************
+*OpenUI *ARJobOffset/Offset: PickOne
+*OrderDependency: 290 AnySetup *ARJobOffset
+*DefaultARJobOffset: OffsetOn
+*ARJobOffset OffsetOff/Off: "
+	<</JobOffset 0>> setpagedevice
+
+	userdict /ARRipStyle known not {userdict /ARRipStyle 0 put} if
+	userdict /ARCPPriority known not {userdict /ARCPPriority 0 put} if
+	userdict /ARCMode known not {userdict /ARCMode 0 put} if
+	[{
+	ARRipStyle 1 eq ARCPPriority 0 ne and
+		{<</ProcessColorModel /DeviceRGB>> setpagedevice}
+		{	ARCMode 2 eq
+				{<</ProcessColorModel /DeviceGray>> setpagedevice}
+				{<</ProcessColorModel /DeviceCMYK>> setpagedevice} ifelse
+		} ifelse
+	} stopped cleartomark
+
+	userdict /ARSaveToner known not {userdict /ARSaveToner 0 put} if
+	[{
+	<</PostRenderingEnhance true /TonerSave ARSaveToner>> setpagedevice
+	} stopped cleartomark
+
+	[{
+	ARCPPriority 2 eq
+		{<</HWResolution [1200 1200]>> setpagedevice}
+		{<</HWResolution [600 600]>> setpagedevice} ifelse
+	ARCPPriority 1 eq
+		{<</PixelDepth 4>> setpagedevice}
+		{<</PixelDepth 1>> setpagedevice} ifelse
+	} stopped cleartomark
+
+	userdict /ARCSharpness known not {userdict /ARCSharpness 0 put} if
+	[{
+	ARCSharpness setsharpness
+	} stopped cleartomark
+
+	userdict /ARFineText known not {userdict /ARFineText 0 put} if
+	ARCPPriority 0 eq {userdict /ARFineText 0 put} if
+	ARFineText 0 eq
+		{userdict /ARCScreen known not {userdict /ARCScreen 0 put} if}
+		{userdict /ARCScreen known not {userdict /ARCScreen 8 put} if} ifelse
+	[{
+	ARCScreen setscreentype
+	} stopped cleartomark
+
+	[{
+	ARTextLineControl settxtlinectrl
+	} stopped cleartomark
+
+	[{
+	ARTextLineKnockout settxtlineknockctrl
+	} stopped cleartomark
+
+	[{
+	AREEnhancement setedgeenhancement AREEnhanceValue setedgeenhancementvalue
+	} stopped cleartomark"
+*End
+*ARJobOffset OffsetOn/Offset each set: "
+	<</JobOffset 1>> setpagedevice
+
+	userdict /ARRipStyle known not {userdict /ARRipStyle 0 put} if
+	userdict /ARCPPriority known not {userdict /ARCPPriority 0 put} if
+	userdict /ARCMode known not {userdict /ARCMode 0 put} if
+	[{
+	ARRipStyle 1 eq ARCPPriority 0 ne and
+		{<</ProcessColorModel /DeviceRGB>> setpagedevice}
+		{	ARCMode 2 eq
+				{<</ProcessColorModel /DeviceGray>> setpagedevice}
+				{<</ProcessColorModel /DeviceCMYK>> setpagedevice} ifelse
+		} ifelse
+	} stopped cleartomark
+
+	userdict /ARSaveToner known not {userdict /ARSaveToner 0 put} if
+	[{
+	<</PostRenderingEnhance true /TonerSave ARSaveToner>> setpagedevice
+	} stopped cleartomark
+
+	[{
+	ARCPPriority 2 eq
+		{<</HWResolution [1200 1200]>> setpagedevice}
+		{<</HWResolution [600 600]>> setpagedevice} ifelse
+	ARCPPriority 1 eq
+		{<</PixelDepth 4>> setpagedevice}
+		{<</PixelDepth 1>> setpagedevice} ifelse
+	} stopped cleartomark
+
+	userdict /ARCSharpness known not {userdict /ARCSharpness 0 put} if
+	[{
+	ARCSharpness setsharpness
+	} stopped cleartomark
+
+	userdict /ARFineText known not {userdict /ARFineText 0 put} if
+	ARCPPriority 0 eq {userdict /ARFineText 0 put} if
+	ARFineText 0 eq
+		{userdict /ARCScreen known not {userdict /ARCScreen 0 put} if}
+		{userdict /ARCScreen known not {userdict /ARCScreen 8 put} if} ifelse
+	[{
+	ARCScreen setscreentype
+	} stopped cleartomark
+
+	[{
+	ARTextLineControl settxtlinectrl
+	} stopped cleartomark
+
+	[{
+	ARTextLineKnockout settxtlineknockctrl
+	} stopped cleartomark
+
+	[{
+	AREEnhancement setedgeenhancement AREEnhanceValue setedgeenhancementvalue
+	} stopped cleartomark"
+*End
+*CloseUI: *ARJobOffset
+*% *****************************************************************************
+
+*% **** Rotate 180 degrees *****************************************************
+*OpenUI *ARRotate/Rotate 180 degrees: Boolean
+*OrderDependency: 80.0 AnySetup *ARRotate
+*DefaultARRotate: False
+*ARRotate False/Off: "<</ReverseImage 0>> setpagedevice"
+*ARRotate True/On: "<</ReverseImage 1>> setpagedevice"
+*CloseUI: *ARRotate
+*% *****************************************************************************
+
+*% **** Margin Shift ***********************************************************
+*OpenUI *MarginShift/Margin Shift: PickOne
+*OrderDependency: 80.0 AnySetup *MarginShift
+*DefaultMarginShift: None
+*MarginShift None/None: "<</MarginShift 0>> setpagedevice"
+*MarginShift Small/0.4 in.: "<</MarginShift 240>> setpagedevice"
+*MarginShift Medium/0.8 in.: "<</MarginShift 472>> setpagedevice"
+*MarginShift Large/1.2 in.: "<</MarginShift 708>> setpagedevice"
+*CloseUI: *MarginShift
+*% *****************************************************************************
+
+*% **** Collate ****************************************************************
+*OpenUI *Collate/Collate: Boolean
+*OrderDependency: 80.0 AnySetup *Collate
+*DefaultCollate: True
+*Collate False/Off: "<</Collate false>> setpagedevice"
+*Collate True/On (turn off in application): "<</Collate true>> setpagedevice"
+*CloseUI: *Collate
+*% *****************************************************************************
+
+*% **** Text/Line control ******************************************************
+*OpenUI *ARTextLineControl/Text<2F>Line control: PickOne
+*OrderDependency: 80 AnySetup *ARTextLineControl
+*DefaultARTextLineControl: Off
+*ARTextLineControl Off/Off:					"userdict /ARTextLineControl 0 put"
+*ARTextLineControl ThickText/Thick (Text):			"userdict /ARTextLineControl 1 put"
+*ARTextLineControl ThickGraphics/Thick (Graphics):		"userdict /ARTextLineControl 2 put"
+*ARTextLineControl ThickTGraphics/Thick (Text+Graphics):	"userdict /ARTextLineControl 3 put"
+*ARTextLineControl ThickPhoto/Thick (Text+Graphics+Photo):	"userdict /ARTextLineControl 4 put"
+*CloseUI: *ARTextLineControl
+*% *****************************************************************************
+
+*% **** Text/Line Knockout control *********************************************
+*OpenUI *ARTextLineKnockout/Text<2F>Line Knockout control: PickOne
+*OrderDependency: 80 AnySetup *ARTextLineKnockout
+*DefaultARTextLineKnockout: Off
+*ARTextLineKnockout Off/Off:					"userdict /ARTextLineKnockout 0 put"
+*ARTextLineKnockout ThickText/Thick (Text):			"userdict /ARTextLineKnockout 1 put"
+*ARTextLineKnockout ThickTGraphics/Thick (Text+Graphics):	"userdict /ARTextLineKnockout 2 put"
+*CloseUI: *ARTextLineKnockout
+*% *****************************************************************************
+
+*% **** Fine Text **************************************************************
+*OpenUI *ARFineText/Fine Text: Boolean
+*OrderDependency: 80.0 AnySetup *ARFineText
+*DefaultARFineText: False
+*ARFineText False/Off: "userdict /ARFineText 0 put"
+*ARFineText True/On: "userdict /ARFineText 1 put"
+*CloseUI: *ARFineText
+
+*% **** Photo Image ************************************************************
+*OpenUI *ARPhotoImage/Photo Image: Boolean
+*OrderDependency: 80 AnySetup *ARPhotoImage
+*DefaultARPhotoImage: False
+*ARPhotoImage False/Off:	"userdict /ARPhotoImage 0 put"
+*ARPhotoImage True/On:		"userdict /ARPhotoImage 1 put"
+*CloseUI: *ARPhotoImage
+*% *****************************************************************************
+
+*% **** Image Enhancement ******************************************************
+*OpenUI *AREdgeEnhancement/Image Enhancement: PickOne
+*OrderDependency: 80 AnySetup *AREdgeEnhancement
+*DefaultAREdgeEnhancement: Off
+*AREdgeEnhancement Off/Off:						"userdict /AREEnhancement 0 put userdict /AREEnhanceValue 0 put"
+*AREdgeEnhancement SharpText/Sharp (Text):				"userdict /AREEnhancement 1 put userdict /AREEnhanceValue 1 put"
+*AREdgeEnhancement SharpTGraphics/Sharp (Text+Graphics):		"userdict /AREEnhancement 1 put userdict /AREEnhanceValue 2 put"
+*AREdgeEnhancement SharpTKText/Sharp (Text+knockout text):		"userdict /AREEnhancement 1 put userdict /AREEnhanceValue 3 put"
+*AREdgeEnhancement SharpTGKText/Sharp (Text+Graphics+knockout text):	"userdict /AREEnhancement 1 put userdict /AREEnhanceValue 4 put"
+*AREdgeEnhancement SharpTGKnockout/Sharp (Text+Graphics+knockout):	"userdict /AREEnhancement 1 put userdict /AREEnhanceValue 5 put"
+*AREdgeEnhancement SoftText/Soft (Text):				"userdict /AREEnhancement 2 put userdict /AREEnhanceValue 1 put"
+*AREdgeEnhancement SoftTGraphics/Soft (Text+Graphics):			"userdict /AREEnhancement 2 put userdict /AREEnhanceValue 2 put"
+*AREdgeEnhancement SoftTKText/Soft (Text+knockout text):		"userdict /AREEnhancement 2 put userdict /AREEnhanceValue 3 put"
+*AREdgeEnhancement SoftTGKText/Soft (Text+Graphics+knockout text):	"userdict /AREEnhancement 2 put userdict /AREEnhanceValue 4 put"
+*AREdgeEnhancement SoftTGKnockout/Soft (Text+Graphics+knockout):	"userdict /AREEnhancement 2 put userdict /AREEnhanceValue 5 put"
+*CloseUI: *AREdgeEnhancement
+*% *****************************************************************************
+
+*CloseGroup: Advanced
+
+*OpenGroup: OutputControl/Output
+
+*% **** Output *****************************************************************
+*OpenUI *OutputBin/Output: PickOne
+*OrderDependency: 80.0 AnySetup *OutputBin
+*DefaultOutputBin: Output0
+*OutputBin Output0/Center Tray: "<</OutputType (exit bin 1)>> setpagedevice"
+*OutputBin Output1/Upper Tray: "<</OutputType (job separation bin)>> setpagedevice"
+*OutputBin Output2/Lower Tray: "<</OutputType (exit bin 1)>> setpagedevice"
+*OutputBin Output3/Finisher Tray <2F> Inner Finisher: "<</OutputType (inner finisher bin1)>> setpagedevice"
+*OutputBin Output4/Finisher Tray <2F> Finisher: "
+  currentpagedevice /OutputAttributes get 3 known
+  {<</OutputType (saddle finisher bin1)>> setpagedevice}
+  {<</OutputType (finisher bin1)>> setpagedevice} ifelse"
+*End
+*OutputBin Output7/Finisher Top Tray: "<</OutputType (finisher escape bin)>> setpagedevice"
+*OutputBin OutputSS/Saddle Stitch Tray: "<</OutputType (saddle finisher bin2)>> setpagedevice"
+*OutputBin Output8/Right Tray: "<</OutputType (exit bin 2)>> setpagedevice"
+*CloseUI: *OutputBin
+*% *****************************************************************************
+
+*% **** 2-Side Printing ********************************************************
+*OpenUI *Duplex/2-Side Printing: PickOne
+*OrderDependency: 80.0 AnySetup *Duplex
+*DefaultDuplex: None
+*Duplex None/Off: "<</Duplex false>> setpagedevice"
+*Duplex DuplexNoTumble/Flip on long edge: "<</Duplex true /Tumble false>> setpagedevice"
+*Duplex DuplexTumble/Flip on short edge: "<</Duplex true /Tumble true>> setpagedevice"
+*CloseUI: *Duplex
+*% *****************************************************************************
+
+*% **** Binding Edge ***********************************************************
+*OpenUI *ARBinding/Binding Edge: PickOne
+*OrderDependency: 30.0 AnySetup *ARBinding
+*DefaultARBinding: BindLeft
+*ARBinding BindLeft/Left: "<</StapleLocation 3>> setpagedevice"
+*ARBinding BindRight/Right: "<</StapleLocation 1>> setpagedevice"
+*ARBinding BindTop/Top: "<</StapleLocation 2>> setpagedevice"
+*CloseUI: *ARBinding
+*% *****************************************************************************
+
+*% **** Staple *****************************************************************
+*OpenUI *ARStaple/Staple: PickOne
+*OrderDependency: 80.0 AnySetup *ARStaple
+*DefaultARStaple: Staple0
+*ARStaple Staple0/Off: "<</Staple 0>> setpagedevice"
+*ARStaple Staple1/1 Staple:	"<</Staple 1>> setpagedevice"
+*ARStaple Staple2/2 Staples: "<</Staple 2>> setpagedevice"
+*ARStaple Staple3/Stapleless: "<</Staple 5>> setpagedevice"
+*ARStaple Staple4/Saddle Stitch: "<</Staple 3>> setpagedevice"
+*CloseUI: *ARStaple
+*% *****************************************************************************
+
+*% **** Punch ******************************************************************
+*OpenUI *ARPunch/Punch: PickOne
+*OrderDependency: 80.0 AnySetup *ARPunch
+*DefaultARPunch: PunchNone
+*ARPunch PunchNone/None:	"<</Punch 0>> setpagedevice"
+*ARPunch Punch2/2 Holes:	"<</Punch 1 /PunchNumber 2>> setpagedevice"
+*ARPunch Punch3/3 Holes:	"<</Punch 1 /PunchNumber 3>> setpagedevice"
+*ARPunch Punch4/4 Holes:	"<</Punch 1 /PunchNumber 4>> setpagedevice"
+*ARPunch PunchW/4 Holes (Wide):	"<</Punch 1 /PunchNumber 41>> setpagedevice"
+*CloseUI: *ARPunch
+*% *****************************************************************************
+
+*% **** Booklet ****************************************************************
+*OpenUI *ARBooklet/Booklet: Boolean
+*OrderDependency: 100.0 AnySetup *ARBooklet
+*DefaultARBooklet: False
+*ARBooklet False/Off: ""
+*ARBooklet True/On: "
+	currentpagedevice /StapleLocation get 3 eq
+	{<</Duplex true /Tumble false /BookletMode (left)>> setpagedevice}
+	{<</Duplex true /Tumble false /BookletMode (right)>> setpagedevice}
+	ifelse"
+*End
+*CloseUI: *ARBooklet
+*% *****************************************************************************
+
+*CloseGroup: OutputControl
+
+*% **** Document Filing ********************************************************
+*JCLOpenUI *JCLRetentionSetting/Document Filing: PickOne
+*OrderDependency: 12 JCLSetup *JCLRetentionSetting
+*DefaultJCLRetentionSetting: None
+*JCLRetentionSetting None/None		:	"@PJL SET HOLD = OFF<0A>"
+*JCLRetentionSetting Before/Hold Only:		"@PJL SET HOLD = STORE<0A>"
+*JCLRetentionSetting After/Hold After Print:	"@PJL SET HOLD = ON<0A>"
+*JCLRetentionSetting Proof/Sample Print:	"@PJL SET HOLD = PROOF<0A>"
+*JCLCloseUI: *JCLRetentionSetting
+*% *****************************************************************************
+
+*% **** PIN Code ***************************************************************
+*JCLOpenUI *JCLRetentionPassword/PIN Code: PickOne
+*OrderDependency: 13 JCLSetup *JCLRetentionPassword
+*DefaultJCLRetentionPassword: None
+*JCLRetentionPassword None/None: ""
+*JCLCloseUI: *JCLRetentionPassword
+
+*% Custom JCL RetentionPassword option
+*CustomJCLRetentionPassword True: "@PJL SET HOLDTYPE = PRIVATE<0A>@PJL SET HOLDKEY = "\1"<0A>"
+*ParamCustomJCLRetentionPassword Password/ : 1 passcode 4 5
+*% *****************************************************************************
+
+*% **** Stored to **************************************************************
+*JCLOpenUI *JCLDocumentFilingSetting/Stored to: PickOne
+*OrderDependency: 10 JCLSetup *JCLDocumentFilingSetting
+*DefaultJCLDocumentFilingSetting: None
+*JCLDocumentFilingSetting None/None: ""
+*JCLDocumentFilingSetting Main/Main Folder:		"@PJL SET FILING = PERMANENCE<0A>@PJL SET FILINGFOLDERPATH = "*standard"<0A>"
+*JCLDocumentFilingSetting Quick/Quick File:		"@PJL SET FILING = TEMPORALITY<0A>"
+*JCLCloseUI: *JCLDocumentFilingSetting
+
+*% Custom JCL DocumentFiling Setting option
+*CustomJCLDocumentFilingSetting True: "@PJL SET FILING = PERMANENCE<0A>@PJL SET FILINGFOLDERPATH = "\1"<0A>"
+*ParamCustomJCLDocumentFilingSetting CustomFolder/Folder: 1 string 1 255
+*% *****************************************************************************
+
+*% **** Login Name *************************************************************
+*% Base JCL LoginName option
+*JCLOpenUI *JCLLoginName/Login Name: PickOne
+*OrderDependency: 15 JCLSetup *JCLLoginName
+*DefaultJCLLoginName: None
+*JCLLoginName None/None: ""
+*JCLCloseUI: *JCLLoginName
+
+*% Custom JCL LoginName option
+*CustomJCLLoginName True: "@PJL SET ASTYPE = PL<0A>@PJL SET ACCOUNTLOGIN = "\1"<0A>"
+*ParamCustomJCLLoginName Custom/ : 1 string 1 255
+*% *****************************************************************************
+
+*% **** Password ***************************************************************
+*% Base JCL LoginPassword option
+*JCLOpenUI *JCLLoginPassword/Password: PickOne
+*OrderDependency: 16 JCLSetup *JCLLoginPassword
+*DefaultJCLLoginPassword: None
+*JCLLoginPassword None/None: ""
+*JCLCloseUI: *JCLLoginPassword
+
+*% Custom JCL LoginPassword option
+*CustomJCLLoginPassword True: "@PJL SET ACCOUNTPASSWORD = "\1"<0A>"
+*ParamCustomJCLLoginPassword Custom/ : 1 password 1 32
+*% *****************************************************************************
+
+*% **** User Number ************************************************************
+*% Base JCL UserNumber option
+*JCLOpenUI *JCLUserNumber/User Number: PickOne
+*OrderDependency: 17 JCLSetup *JCLUserNumber
+*DefaultJCLUserNumber: None
+*JCLUserNumber None/None: ""
+*JCLCloseUI: *JCLUserNumber
+
+*% Custom JCL UserNumber option
+*CustomJCLUserNumber True: "@PJL SET ACCOUNTNUMBER = "\1"<0A>"
+*ParamCustomJCLUserNumber Custom/ : 1 passcode 5 8
+*% *****************************************************************************
+
+*% **** User Name **************************************************************
+*% Base JCL UserName option
+*JCLOpenUI *JCLUserName/User Name: PickOne
+*OrderDependency: 18 JCLSetup *JCLUserName
+*DefaultJCLUserName: None
+*JCLUserName None/None: ""
+*JCLCloseUI: *JCLUserName
+
+*% Custom JCL UserName option
+*CustomJCLUserName True: "@PJL SET USERNAME = "\1"<0A>"
+*ParamCustomJCLUserName Custom/ : 1 string 1 32
+*% *****************************************************************************
+
+*% **** Job Name ***************************************************************
+*% Base JCL Job Name option
+*JCLOpenUI *JCLJobName/Job Name: PickOne
+*OrderDependency: 19 JCLSetup *JCLJobName
+*DefaultJCLJobName: None
+*JCLJobName None/None: ""
+*JCLCloseUI: *JCLJobName
+
+*% Custom JCL Job Name option
+*CustomJCLJobName True: "@PJL SET JOBNAME = "\1"<0A>"
+*ParamCustomJCLJobName Custom/ : 1 string 1 80
+*% *****************************************************************************
+
+*OpenGroup: Watermark/Watermarks
+
+*% **** Watermark Text *********************************************************
+*OpenUI *ARwmText/Watermark: PickOne
+*OrderDependency: 500.0 AnySetup *ARwmText
+*DefaultARwmText: None
+*ARwmText None/None: ""
+*ARwmText WMText1/TOP SECRET: "userdict /ARwmText (TOP SECRET) put"
+*ARwmText WMText2/CONFIDENTIAL: "userdict /ARwmText (CONFIDENTIAL) put"
+*ARwmText WMText3/DRAFT: "userdict /ARwmText (DRAFT) put"
+*ARwmText WMText4/ORIGINAL: "userdict /ARwmText (ORIGINAL) put"
+*ARwmText WMText5/COPY: "userdict /ARwmText (COPY) put"
+*CloseUI: *ARwmText
+*% *****************************************************************************
+
+*% **** Watermark Size *********************************************************
+*OpenUI *ARwmSize/Watermark Size: PickOne
+*OrderDependency: 520.0 AnySetup *ARwmSize
+*DefaultARwmSize: pt48
+*ARwmSize pt24/24 Points: "userdict /ARwmSize 24 put"
+*ARwmSize pt30/30 Points: "userdict /ARwmSize 30 put"
+*ARwmSize pt36/36 Points: "userdict /ARwmSize 36 put"
+*ARwmSize pt42/42 Points: "userdict /ARwmSize 42 put"
+*ARwmSize pt48/48 Points: "userdict /ARwmSize 48 put"
+*ARwmSize pt54/54 Points: "userdict /ARwmSize 54 put"
+*ARwmSize pt60/60 Points: "userdict /ARwmSize 60 put"
+*ARwmSize pt66/66 Points: "userdict /ARwmSize 66 put"
+*ARwmSize pt72/72 Points: "userdict /ARwmSize 72 put"
+*ARwmSize pt78/78 Points: "userdict /ARwmSize 78 put"
+*ARwmSize pt84/84 Points: "userdict /ARwmSize 84 put"
+*ARwmSize pt90/90 Points: "userdict /ARwmSize 90 put"
+*CloseUI: *ARwmSize
+*% *****************************************************************************
+
+*% **** Watermark Angle ********************************************************
+*OpenUI *ARwmAngle/Watermark Angle: PickOne
+*OrderDependency: 530.0 AnySetup *ARwmAngle
+*DefaultARwmAngle: Deg45
+*ARwmAngle Deg180/180: "userdict /ARwmAngle 180 put"
+*ARwmAngle Deg165/165: "userdict /ARwmAngle 165 put"
+*ARwmAngle Deg150/150: "userdict /ARwmAngle 150 put"
+*ARwmAngle Deg135/135: "userdict /ARwmAngle 135 put"
+*ARwmAngle Deg120/120: "userdict /ARwmAngle 120 put"
+*ARwmAngle Deg105/105: "userdict /ARwmAngle 105 put"
+*ARwmAngle Deg90/90: "userdict /ARwmAngle 90 put"
+*ARwmAngle Deg75/75: "userdict /ARwmAngle 75 put"
+*ARwmAngle Deg60/60: "userdict /ARwmAngle 60 put"
+*ARwmAngle Deg45/45: "userdict /ARwmAngle 45 put"
+*ARwmAngle Deg30/30: "userdict /ARwmAngle 30 put"
+*ARwmAngle Deg15/15: "userdict /ARwmAngle 15 put"
+*ARwmAngle Deg0/0: "userdict /ARwmAngle 0 put"
+*ARwmAngle DegN15/-15: "userdict /ARwmAngle -15 put"
+*ARwmAngle DegN30/-30: "userdict /ARwmAngle -30 put"
+*ARwmAngle DegN45/-45: "userdict /ARwmAngle -45 put"
+*ARwmAngle DegN60/-60: "userdict /ARwmAngle -60 put"
+*ARwmAngle DegN75/-75: "userdict /ARwmAngle -75 put"
+*ARwmAngle DegN90/-90: "userdict /ARwmAngle -90 put"
+*ARwmAngle DegN105/-105: "userdict /ARwmAngle -105 put"
+*ARwmAngle DegN120/-120: "userdict /ARwmAngle -120 put"
+*ARwmAngle DegN135/-135: "userdict /ARwmAngle -135 put"
+*ARwmAngle DegN150/-150: "userdict /ARwmAngle -150 put"
+*ARwmAngle DegN165/-165: "userdict /ARwmAngle -165 put"
+*CloseUI: *ARwmAngle
+*% *****************************************************************************
+
+*% **** Watermark Outline ******************************************************
+*OpenUI *ARwmOutline/Outline Text: Boolean
+*OrderDependency: 540.0 AnySetup *ARwmOutline
+*DefaultARwmOutline: False
+*ARwmOutline False/Off:	"userdict /ARwmOutline false put"
+*ARwmOutline True/On:	"userdict /ARwmOutline true put"
+*CloseUI: *ARwmOutline
+*% *****************************************************************************
+
+*% **** Watermark Pages ********************************************************
+*OpenUI *ARwmLocation/On First Page Only: Boolean
+*OrderDependency: 570 AnySetup *ARwmLocation
+*DefaultARwmLocation: False
+*ARwmLocation False/Off: "
+  userdict begin
+  true setglobal /ARwm 4 dict dup begin /ARwmOn true def /ARwmOdd true def end def false setglobal
+
+  userdict /ARwmAngle known not {/ARwmAngle 45 def} if
+  userdict /ARwmSize known not {/ARwmSize 48 def} if
+  userdict /ARwmLocation known not {/ARwmLocation true def} if
+  userdict /ARwmDuplex known not {/ARwmDuplex 0 def} if
+  /ARwmFont /Helvetica-Bold findfont dup length dict copy
+  dup /FID undef dup /Encoding ISOLatin1Encoding put
+  definefont pop
+  userdict /ARwmOutline known {ARwmOutline{userdict/ARwmPattern undef}if}if
+  userdict /ARwmColor known not {/ARwmColor [0 0 0] def} if
+
+  /ARwmEOP {ARwmDuplex 0 eq {true}{ARwmDuplex 1 eq ARwmOdd eq dup not {erasepage}if
+    true setglobal /ARwmOdd ARwmOdd not def false setglobal}ifelse} bind def
+  end
+
+  <<
+  /EndPage {
+  2 eq { pop false }{
+  userdict begin
+  userdict /ARwmText known ARwm /ARwmOn get and
+    {gsave
+     initmatrix
+     userdict /ARwmColor known{userdict /ARwmPattern known
+     {[/Pattern /DeviceRGB] setcolorspace ARwmColor aload pop ARwmPattern setcolor}
+     {ARwmColor aload pop setrgbcolor}ifelse}{0 setgray}ifelse
+     1 setlinewidth true setstrokeadjust 0 setlinejoin 0 setlinecap [] 0 setdash
+     currentpagedevice /PageSize get aload pop 2 div exch 2 div exch translate
+     ARwmAngle rotate /ARwmFont userdict /ARppScale known {ARwmSize ARppScale mul}{ARwmSize}ifelse selectfont
+     ARwmText stringwidth 2 div neg exch 2 div neg exch
+       userdict /ARppScale known {ARwmSize ARppScale mul}{ARwmSize}ifelse .25 mul sub moveto
+     ARwmText userdict /ARwmOutline known{ARwmOutline}{true}ifelse
+     {false charpath .48 setlinewidth stroke}{show}ifelse
+     ARwmLocation not {true setglobal ARwm /ARwmOn false put false setglobal} if
+     grestore
+    } if
+    pop ARwm begin ARwmEOP end
+    end } ifelse } bind
+  >> setpagedevice
+  userdict /ARwmLocation true put"
+*End
+*ARwmLocation True/On: "
+  userdict begin
+  true setglobal /ARwm 4 dict dup begin /ARwmOn true def /ARwmOdd true def end def false setglobal
+
+  userdict /ARwmAngle known not {/ARwmAngle 45 def} if
+  userdict /ARwmSize known not {/ARwmSize 48 def} if
+  userdict /ARwmLocation known not {/ARwmLocation true def} if
+  userdict /ARwmDuplex known not {/ARwmDuplex 0 def} if
+  /ARwmFont /Helvetica-Bold findfont dup length dict copy
+  dup /FID undef dup /Encoding ISOLatin1Encoding put
+  definefont pop
+  userdict /ARwmOutline known {ARwmOutline{userdict/ARwmPattern undef}if}if
+  userdict /ARwmColor known not {/ARwmColor [0 0 0] def} if
+
+  /ARwmEOP {ARwmDuplex 0 eq {true}{ARwmDuplex 1 eq ARwmOdd eq dup not {erasepage}if
+    true setglobal /ARwmOdd ARwmOdd not def false setglobal}ifelse} bind def
+  end
+
+  <<
+  /EndPage {
+  2 eq { pop false }{
+  userdict begin
+  userdict /ARwmText known ARwm /ARwmOn get and
+    {gsave
+     initmatrix
+     userdict /ARwmColor known{userdict /ARwmPattern known
+     {[/Pattern /DeviceRGB] setcolorspace ARwmColor aload pop ARwmPattern setcolor}
+     {ARwmColor aload pop setrgbcolor}ifelse}{0 setgray}ifelse
+     1 setlinewidth true setstrokeadjust 0 setlinejoin 0 setlinecap [] 0 setdash
+     currentpagedevice /PageSize get aload pop 2 div exch 2 div exch translate
+     ARwmAngle rotate /ARwmFont userdict /ARppScale known {ARwmSize ARppScale mul}{ARwmSize}ifelse selectfont
+     ARwmText stringwidth 2 div neg exch 2 div neg exch
+       userdict /ARppScale known {ARwmSize ARppScale mul}{ARwmSize}ifelse .25 mul sub moveto
+     ARwmText userdict /ARwmOutline known{ARwmOutline}{true}ifelse
+     {false charpath .48 setlinewidth stroke}{show}ifelse
+     ARwmLocation not {true setglobal ARwm /ARwmOn false put false setglobal} if
+     grestore
+    } if
+    pop ARwm begin ARwmEOP end
+    end } ifelse } bind
+  >> setpagedevice
+  userdict /ARwmLocation false put"
+*End
+*CloseUI: *ARwmLocation
+*% *****************************************************************************
+
+*% **** Watermark Transparent **************************************************
+*OpenUI *ARwmTransparent/Transparent Text: PickOne
+*OrderDependency: 550.0 AnySetup *ARwmTransparent
+*DefaultARwmTransparent: Trans50
+*ARwmTransparent TransNOT/Off:	""
+*ARwmTransparent Trans25/25%:	"
+  userdict /ARwmPattern <</PaintType 2/PatternType 1/TilingType 3/XStep 32/YStep 32
+  /BBox [0 0 32 32]/PaintProc{ pop 32 32 true [1 0 0 1 0 0] 128 string 0 16 112
+  {1 index exch <EEEEEEEEBBBBBBBB77777777DDDDDDDD> putinterval }for imagemask}>> matrix makepattern put"
+*End
+*ARwmTransparent Trans50/50%:	"
+  userdict /ARwmPattern <</PaintType 2/PatternType 1/TilingType 3/XStep 32/YStep 32
+  /BBox [0 0 32 32]/PaintProc{ pop 32 32 true [1 0 0 1 0 0] 128 string 0 16 112
+  {1 index exch <AAAAAAAA55555555AAAAAAAA55555555> putinterval }for imagemask}>> matrix makepattern put"
+*End
+*ARwmTransparent Trans75/75%:	"
+  userdict /ARwmPattern <</PaintType 2/PatternType 1/TilingType 3/XStep 32/YStep 32
+  /BBox [0 0 32 32]/PaintProc{ pop 32 32 true [1 0 0 1 0 0] 128 string 0 16 112
+  {1 index exch <88888888222222221111111144444444> putinterval }for imagemask}>> matrix makepattern put"
+*End
+*CloseUI: *ARwmTransparent
+*% *****************************************************************************
+
+*CloseGroup: Watermark
+
+*OpenGroup: ImageQuality1/Image Quality
+
+*% **** Print Mode *************************************************************
+*OpenUI *ARCPPriority/Print Mode: PickOne
+*OrderDependency: 200 AnySetup *ARCPPriority
+*DefaultARCPPriority: HQuality
+*ARCPPriority Normal/600 dpi: "
+	userdict /ARCPPriority known not {userdict /ARCPPriority 0 put} if"
+*End
+*ARCPPriority HQuality/600 dpi (High Quality): "
+	userdict /ARCPPriority known not {userdict /ARCPPriority 1 put} if"
+*End
+*ARCPPriority Fine/1200 dpi: "
+	userdict /ARCPPriority known not {userdict /ARCPPriority 2 put} if"
+*End
+*CloseUI: *ARCPPriority
+*% *****************************************************************************
+
+*% **** Screening **************************************************************
+*OpenUI *ARCScreen/Screening: PickOne
+*OrderDependency: 205 AnySetup *ARCScreen
+*DefaultARCScreen: SDefault
+*ARCScreen SDefault/Default: "
+	userdict /ARFineText known not {userdict /ARFineText 0 put} if
+	userdict /ARPhotoImage known not {userdict /ARPhotoImage 0 put} if
+	ARFineText 1 eq
+		{	ARPhotoImage 1 eq
+				{userdict /ARCScreen known not {userdict /ARCScreen 14 put} if}
+				{userdict /ARCScreen known not {userdict /ARCScreen 9 put} if} ifelse
+		}
+		{	ARPhotoImage 1 eq
+				{userdict /ARCScreen known not {userdict /ARCScreen 11 put} if}
+				{userdict /ARCScreen known not {userdict /ARCScreen 4 put} if} ifelse
+		} ifelse"
+*End
+*ARCScreen STPhoto/Text<2F>Photo: "
+	userdict /ARFineText known not {userdict /ARFineText 0 put} if
+	userdict /ARPhotoImage known not {userdict /ARPhotoImage 0 put} if
+	ARFineText 1 eq
+		{	ARPhotoImage 1 eq
+				{userdict /ARCScreen known not {userdict /ARCScreen 13 put} if}
+				{userdict /ARCScreen known not {userdict /ARCScreen 8 put} if} ifelse
+		}
+		{	ARPhotoImage 1 eq
+				{userdict /ARCScreen known not {userdict /ARCScreen 10 put} if}
+				{userdict /ARCScreen known not {userdict /ARCScreen 0 put} if} ifelse
+		} ifelse"
+*End
+*ARCScreen SText/Text: "
+	userdict /ARFineText known not {userdict /ARFineText 0 put} if
+	ARFineText 1 eq
+		{userdict /ARCScreen known not {userdict /ARCScreen 7 put} if}
+		{userdict /ARCScreen known not {userdict /ARCScreen 1 put} if} ifelse"
+*End
+*ARCScreen SPhoto/Photo: "
+	userdict /ARPhotoImage known not {userdict /ARPhotoImage 0 put} if
+	ARPhotoImage 1 eq
+		{userdict /ARCScreen known not {userdict /ARCScreen 12 put} if}
+		{userdict /ARCScreen known not {userdict /ARCScreen 3 put} if} ifelse"
+*End
+*ARCScreen SDotHight/Dot (High): "
+	userdict /ARCScreen known not {userdict /ARCScreen 5 put} if"
+*End
+*ARCScreen SDotLow/Dot (Low): "
+	userdict /ARCScreen known not {userdict /ARCScreen 6 put} if"
+*End
+*CloseUI: *ARCScreen
+*% *****************************************************************************
+
+*% **** Sharpness **************************************************************
+*OpenUI *ARCSharpness/Sharpness: PickOne
+*OrderDependency: 275 AnySetup *ARCSharpness
+*DefaultARCSharpness: SNone
+*ARCSharpness SNone/None: "
+	userdict /ARCSharpness known not {userdict /ARCSharpness 0 put} if"
+*End
+*ARCSharpness SVerySoft/Very Soft: "
+	userdict /ARCSharpness known not {userdict /ARCSharpness 1 put} if"
+*End
+*ARCSharpness SSoft/Soft: "
+	userdict /ARCSharpness known not {userdict /ARCSharpness 2 put} if"
+*End
+*ARCSharpness SCenter/Center: "
+	userdict /ARCSharpness known not {userdict /ARCSharpness 3 put} if"
+*End
+*ARCSharpness SSharp/Sharp: "
+	userdict /ARCSharpness known not {userdict /ARCSharpness 4 put} if"
+*End
+*ARCSharpness SVerySharp/Very Sharp: "
+	userdict /ARCSharpness known not {userdict /ARCSharpness 5 put} if"
+*End
+*CloseUI: *ARCSharpness
+*% *****************************************************************************
+
+*% ***** Toner Save ************************************************************
+*OpenUI *ARSaveToner/Toner Save: Boolean
+*OrderDependency: 190 AnySetup *ARSaveToner
+*DefaultARSaveToner: False
+*ARSaveToner False/Off: "
+	userdict /ARSaveToner known not {userdict /ARSaveToner 0 put} if"
+*End
+*ARSaveToner True/On: "
+	userdict /ARSaveToner known not {userdict /ARSaveToner 1 put} if
+	userdict /ARCIntent known not {userdict /ARCIntent 0 put} if
+	userdict /ARCNGray known not {userdict /ARCNGray 2 put} if
+	userdict /ARCSConv known not {userdict /ARCSConv 1 put} if
+	userdict /ARCRGBSc known not {userdict /ARCRGBSc 8 put} if
+	userdict /ARCPureB known not {userdict /ARCPureB 2 put} if"
+*End
+*CloseUI: *ARSaveToner
+*% *****************************************************************************
+
+*% **** Boldness Adjustment ****************************************************
+*OpenUI *ARBold/Boldness Adjustment: PickOne
+*OrderDependency: 295 AnySetup *ARBold
+*DefaultARBold: BNone
+*ARBold BM2/-2: "true setbold 4 setboldvalue"
+*ARBold BM1/-1: "true setbold 3 setboldvalue"
+*ARBold BNone/None: "false setbold 2 setboldvalue"
+*ARBold BP1/+1: "true setbold 1 setboldvalue"
+*ARBold BP2/+2: "true setbold 0 setboldvalue"
+*CloseUI: *ARBold
+*% *****************************************************************************
+
+*CloseGroup: ImageQuality1
+
+*OpenGroup: DocumentControl/Document Control
+
+*% **** Document Control *******************************************************
+*OpenUI *ARDocControl/Document Control: Boolean
+*OrderDependency: 300 AnySetup *ARDocControl
+*DefaultARDocControl: False
+*ARDocControl False/Off: "<</DocumentControl 0>> setpagedevice"
+*ARDocControl True/On: "<</DocumentControl 1>> setpagedevice"
+*CloseUI: *ARDocControl
+*% *****************************************************************************
+
+*CloseGroup: DocumentControl
+
+*% **** Fold *******************************************************************
+*OpenGroup: FoldingSettings/Paper Folding Settings
+*OpenUI *ARFold/Fold: PickOne
+*OrderDependency: 100 AnySetup *ARFold
+*DefaultARFold: FoldNone
+*ARFold FoldNone/None: ""
+*ARFold FoldHalf/Half Fold: "
+	userdict /ARPrintSide known not {userdict /ARPrintSide 0 put} if
+	ARPrintSide 0 eq
+		{<</Fold [1 [0]]>> setpagedevice}
+		{<</Fold [1 [1]]>> setpagedevice} ifelse"
+*End
+*CloseUI: *ARFold
+*% *****************************************************************************
+
+*% **** Print Side *************************************************************
+*OpenUI *ARPrintSide/Print Side: PickOne
+*OrderDependency: 99 AnySetup *ARPrintSide
+*DefaultARPrintSide: FoldInside
+*ARPrintSide FoldInside/Inside: "userdict /ARPrintSide 0 put"
+*ARPrintSide FoldOutside/Outside: "userdict /ARPrintSide 1 put"
+*CloseUI: *ARPrintSide
+*% *****************************************************************************
+
+*CloseGroup: FoldingSettings
+
+*DefaultFont: Courier
+*Font AlbertusMT: Standard "(002.003)" Standard ROM
+*Font AlbertusMT-Italic: Standard "(002.003)" Standard ROM
+*Font AlbertusMT-Light: Standard "(002.003)" Standard ROM
+*Font AntiqueOlive-Bold: Standard "(002.003)" Standard ROM
+*Font AntiqueOlive-Compact: Standard "(002.003)" Standard ROM
+*Font AntiqueOlive-Italic: Standard "(002.003)" Standard ROM
+*Font AntiqueOlive-Roman: Standard "(002.003)" Standard ROM
+*Font Apple-Chancery: Standard "(002.003)" Standard ROM
+*Font Arial-BoldItalicMT: Standard "(000.000)" Standard Disk
+*Font Arial-BoldMT: Standard "(000.000)" Standard Disk
+*Font Arial-ItalicMT: Standard "(000.000)" Standard Disk
+*Font ArialMT: Standard "(000.000)" Standard Disk
+*Font AvantGarde-Book: Standard "(002.003)" Standard ROM
+*Font AvantGarde-BookOblique: Standard "(002.003)" Standard ROM
+*Font AvantGarde-Demi: Standard "(002.003)" Standard ROM
+*Font AvantGarde-DemiOblique: Standard "(002.003)" Standard ROM
+*Font Bodoni: Standard "(002.003)" Standard ROM
+*Font Bodoni-Bold: Standard "(002.003)" Standard ROM
+*Font Bodoni-BoldItalic: Standard "(002.003)" Standard ROM
+*Font Bodoni-Italic: Standard "(002.003)" Standard ROM
+*Font Bodoni-Poster: Standard "(002.003)" Standard ROM
+*Font Bodoni-PosterCompressed: Standard "(002.003)" Standard ROM
+*Font Bookman-Demi: Standard "(002.003)" Standard ROM
+*Font Bookman-DemiItalic: Standard "(002.003)" Standard ROM
+*Font Bookman-Light: Standard "(002.003)" Standard ROM
+*Font Bookman-LightItalic: Standard "(002.003)" Standard ROM
+*Font Carta: Special "(002.003)" Standard ROM
+*Font Chicago: Standard "(002.003)" Standard ROM
+*Font Clarendon: Standard "(002.003)" Standard ROM
+*Font Clarendon-Bold: Standard "(002.003)" Standard ROM
+*Font Clarendon-Light: Standard "(002.003)" Standard ROM
+*Font CooperBlack: Standard "(002.003)" Standard ROM
+*Font CooperBlack-Italic: Standard "(002.003)" Standard ROM
+*Font Copperplate-ThirtyThreeBC: Standard "(002.003)" Standard ROM
+*Font Copperplate-ThirtyTwoBC: Standard "(002.003)" Standard ROM
+*Font Coronet-Regular: Standard "(002.003)" Standard ROM
+*Font Courier: Standard "(002.003)" Standard ROM
+*Font Courier-Bold: Standard "(002.003)" Standard ROM
+*Font Courier-BoldOblique: Standard "(002.003)" Standard ROM
+*Font Courier-Oblique: Standard "(002.003)" Standard ROM
+*Font Eurostile: Standard "(002.003)" Standard ROM
+*Font Eurostile-Bold: Standard "(002.003)" Standard ROM
+*Font Eurostile-BoldExtendedTwo: Standard "(002.003)" Standard ROM
+*Font Eurostile-ExtendedTwo: Standard "(002.003)" Standard ROM
+*Font Geneva: Standard "(002.003)" Standard ROM
+*Font GillSans: Standard "(002.003)" Standard ROM
+*Font GillSans-Bold: Standard "(002.003)" Standard ROM
+*Font GillSans-BoldCondensed: Standard "(002.003)" Standard ROM
+*Font GillSans-BoldItalic: Standard "(002.003)" Standard ROM
+*Font GillSans-Condensed: Standard "(002.003)" Standard ROM
+*Font GillSans-ExtraBold: Standard "(002.003)" Standard ROM
+*Font GillSans-Italic: Standard "(002.003)" Standard ROM
+*Font GillSans-Light: Standard "(002.003)" Standard ROM
+*Font GillSans-LightItalic: Standard "(002.003)" Standard ROM
+*Font Goudy: Standard "(002.003)" Standard ROM
+*Font Goudy-Bold: Standard "(002.003)" Standard ROM
+*Font Goudy-BoldItalic: Standard "(002.003)" Standard ROM
+*Font Goudy-ExtraBold: Standard "(002.003)" Standard ROM
+*Font Goudy-Italic: Standard "(002.003)" Standard ROM
+*Font Helvetica: Standard "(002.003)" Standard ROM
+*Font Helvetica-Bold: Standard "(002.003)" Standard ROM
+*Font Helvetica-BoldOblique: Standard "(002.003)" Standard ROM
+*Font Helvetica-Condensed: Standard "(002.003)" Standard ROM
+*Font Helvetica-Condensed-Bold: Standard "(002.003)" Standard ROM
+*Font Helvetica-Condensed-BoldObl: Standard "(002.003)" Standard ROM
+*Font Helvetica-Condensed-Oblique: Standard "(002.003)" Standard ROM
+*Font Helvetica-Narrow: Standard "(002.003)" Standard ROM
+*Font Helvetica-Narrow-Bold: Standard "(002.003)" Standard ROM
+*Font Helvetica-Narrow-BoldOblique: Standard "(002.003)" Standard ROM
+*Font Helvetica-Narrow-Oblique: Standard "(002.003)" Standard ROM
+*Font Helvetica-Oblique: Standard "(002.003)" Standard ROM
+*Font HoeflerText-Black: Standard "(002.003)" Standard ROM
+*Font HoeflerText-BlackItalic: Standard "(002.003)" Standard ROM
+*Font HoeflerText-Italic: Standard "(002.003)" Standard ROM
+*Font HoeflerText-Ornaments: Special "(002.003)" Standard ROM
+*Font HoeflerText-Regular: Standard "(002.003)" Standard ROM
+*Font JoannaMT: Standard "(002.003)" Standard ROM
+*Font JoannaMT-Bold: Standard "(002.003)" Standard ROM
+*Font JoannaMT-BoldItalic: Standard "(002.003)" Standard ROM
+*Font JoannaMT-Italic: Standard "(002.003)" Standard ROM
+*Font LetterGothic: Standard "(002.003)" Standard ROM
+*Font LetterGothic-Bold: Standard "(002.003)" Standard ROM
+*Font LetterGothic-BoldSlanted: Standard "(002.003)" Standard ROM
+*Font LetterGothic-Slanted: Standard "(002.003)" Standard ROM
+*Font LubalinGraph-Book: Standard "(002.003)" Standard ROM
+*Font LubalinGraph-BookOblique: Standard "(002.003)" Standard ROM
+*Font LubalinGraph-Demi: Standard "(002.003)" Standard ROM
+*Font LubalinGraph-DemiOblique: Standard "(002.003)" Standard ROM
+*Font Marigold: Standard "(002.003)" Standard ROM
+*Font Monaco: Standard "(002.003)" Standard ROM
+*Font MonaLisa-Recut: Standard "(002.003)" Standard ROM
+*Font NewCenturySchlbk-Bold: Standard "(002.003)" Standard ROM
+*Font NewCenturySchlbk-BoldItalic: Standard "(002.003)" Standard ROM
+*Font NewCenturySchlbk-Italic: Standard "(002.003)" Standard ROM
+*Font NewCenturySchlbk-Roman: Standard "(002.003)" Standard ROM
+*Font NewYork: Standard "(002.003)" Standard ROM
+*Font Optima: Standard "(002.003)" Standard ROM
+*Font Optima-Bold: Standard "(002.003)" Standard ROM
+*Font Optima-BoldItalic: Standard "(002.003)" Standard ROM
+*Font Optima-Italic: Standard "(002.003)" Standard ROM
+*Font Oxford: Standard "(002.003)" Standard ROM
+*Font Palatino-Bold: Standard "(002.003)" Standard ROM
+*Font Palatino-BoldItalic: Standard "(002.003)" Standard ROM
+*Font Palatino-Italic: Standard "(002.003)" Standard ROM
+*Font Palatino-Roman: Standard "(002.003)" Standard ROM
+*Font StempelGaramond-Bold: Standard "(002.003)" Standard ROM
+*Font StempelGaramond-BoldItalic: Standard "(002.003)" Standard ROM
+*Font StempelGaramond-Italic: Standard "(002.003)" Standard ROM
+*Font StempelGaramond-Roman: Standard "(002.003)" Standard ROM
+*Font Symbol: Special "(002.003)" Standard ROM
+*Font Tekton: Standard "(002.003)" Standard ROM
+*Font Times-Bold: Standard "(002.003)" Standard ROM
+*Font Times-BoldItalic: Standard "(002.003)" Standard ROM
+*Font Times-Italic: Standard "(002.003)" Standard ROM
+*Font Times-Roman: Standard "(002.003)" Standard ROM
+*Font TimesNewRomanPS-BoldItalicMT: Standard "(000.000)" Standard Disk
+*Font TimesNewRomanPS-BoldMT: Standard "(000.000)" Standard Disk
+*Font TimesNewRomanPS-ItalicMT: Standard "(000.000)" Standard Disk
+*Font TimesNewRomanPSMT: Standard "(000.000)" Standard Disk
+*Font Univers: Standard "(002.003)" Standard ROM
+*Font Univers-Bold: Standard "(002.003)" Standard ROM
+*Font Univers-BoldExt: Standard "(002.003)" Standard ROM
+*Font Univers-BoldExtObl: Standard "(002.003)" Standard ROM
+*Font Univers-BoldOblique: Standard "(002.003)" Standard ROM
+*Font Univers-Condensed: Standard "(002.003)" Standard ROM
+*Font Univers-CondensedBold: Standard "(002.003)" Standard ROM
+*Font Univers-CondensedBoldOblique: Standard "(002.003)" Standard ROM
+*Font Univers-CondensedOblique: Standard "(002.003)" Standard ROM
+*Font Univers-Extended: Standard "(002.003)" Standard ROM
+*Font Univers-ExtendedObl: Standard "(002.003)" Standard ROM
+*Font Univers-Light: Standard "(002.003)" Standard ROM
+*Font Univers-LightOblique: Standard "(002.003)" Standard ROM
+*Font Univers-Oblique: Standard "(002.003)" Standard ROM
+*Font Wingdings-Regular: Special "(000.000)" Standard Disk
+*Font ZapfChancery-MediumItalic: Standard "(002.003)" Standard ROM
+*Font ZapfDingbats: Special "(002.003)" Standard ROM
+
+*% End of Sharp-MX-M5071-ps.ppd.

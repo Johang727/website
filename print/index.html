@@ -33,11 +33,13 @@
             
             <h3>Dependencies</h3>
 
-            <p>Most Linux Distros like Linux Mint, Ubuntu, etc. come with these by default. Arch distros typically do not have these installed. Regardless, make sure you have <code>cups</code> and <code>samba</code> installed on your computer.</p>
+            <p>Most Linux Distros like Linux Mint, Ubuntu, etc. come with these by default. Arch distros typically do not have these installed. Regardless, make sure you have <code>cups</code> and <code>samba</code> installed on your computer using your package manager.</p>
 
             <hr>
 
             <h3>Printer Setup</h3>
+
+            <p><i>Note: For both methods, your password will be saved in <b>/etc/cups/printers.conf</b>! This file can only be read by root, however, if you are on a shared device or uncomfortable with this, these methods are not for you!</i></p>
 
             <p><b>For an automated setup</b> that goes through the following steps, download this file: <a href="https://raw.githubusercontent.com/Johang727/website/master/print/setup.sh">setup.sh</a></p>
             <p><small><i>If it doesn't download automatically, you can use CTRL+S to save it.</i></small></p>
@@ -45,12 +47,14 @@
             <div class="container mb-4">
                 <p>Make sure to make it executable with <code>chmod +x setup.sh</code></p>
                 <p>Run it like any other program with <code>./setup.sh</code></p>
+                <p>This script supports both the <b>Lied Lounge</b> and the <b>24/7 Lab</b> printers. The other printers do something differently and are a WIP.</p>
             </div>
+
 
             <p><b>For a manual setup</b> because running shell scripts can be scary...</p>
 
             <div class="container mb-4">
-                <p>Download the PPD for the Sharp MX C304W from the <a href="https://global.sharp/restricted/print/select.html?view=2">official website</a>.</p>
+                <p>Download the PPD for the printer from the <a href="https://global.sharp/restricted/print/select.html?view=2">Sharp official website</a>.</p>
 
                 <p>Find the name of the printer and write it down.</p>
 
@@ -70,15 +74,13 @@
 
                 <p>It might take up to one minute to register on the printer.</p>
 
-                <p>Your credentials will be saved in plain text in /etc/cups/printers.conf! If this is a shared device, I would not recommend this.</p>
-
 
             </div>
 
             <hr>
 
             <h3>Questions, Comments, Concerns</h3>
-            <p>Feel free to email me at 136@johang.dev</p>
+            <p>Feel free to email me at <a href="mailto:136@johang.dev">136@johang.dev</a></p>
         
 
 
