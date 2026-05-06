@@ -36,8 +36,8 @@ fi
 while true; do
     read -r -p "Select Printer:
 1) Lied Media
-2) Library Printer 1 (Inconsistent)
-3) Library Printer 2 (Inconsistent)
+2) Library Printer 1
+3) Library Printer 2
 4) 24/7 Library Printer
 5) Other
 
@@ -51,13 +51,13 @@ Selection: " printer
         ;;
 
         "2")
-        PRINTER="Lib1Sharp"
+        PRINTER="Lib1Sharp-Duplex"
         PPD_FILE="./Sharp-MX-5071-ps.ppd"
         break
         ;;
 
         "3")
-        PRINTER="Lib2Sharp"
+        PRINTER="Lib2Sharp-Duplex"
         PPD_FILE="./Sharp-MX-M5071-ps.ppd"
         echo "Note: This is a Black/White only printer."
         break
