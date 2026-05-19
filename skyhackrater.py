@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 category_weights = {
     "gameplay": 2.0,
     "story": 1.75,
@@ -539,7 +541,7 @@ if max_score_nobono > 0:
     elif score >= 75: grade = "B"
     elif score >= 60: grade = "C"
     elif score >= 50: grade = "D"
-    elif score >= 35: grade = "E"
+    elif score >= 30: grade = "E"
     else: grade = "F"
 
     modifier = ""
