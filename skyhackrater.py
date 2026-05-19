@@ -1,12 +1,16 @@
 #!/usr/bin/env python3
 
+from collections import defaultdict
+
 category_weights = {
     "gameplay": 2.0,
+    "technical": 1.5,
     "story": 1.75,
     "sound": 1.5,
-    "visuals": 1.25,
-    "ui":0.75
+    "visuals": 1.25
 }
+
+print("Version 1.0.1")
 
 class Question:
     def __init__(self, question:str, type:list[str], category:str, inverse=False, exclude_if_wip=False, 
@@ -37,7 +41,7 @@ class Question:
                 print(f"ERR: {item} is an invalid type.")
                 return False
 
-        if self.category not in ["gameplay", "story", "visuals", "sound", "ui"]:
+        if self.category not in ["gameplay", "story", "visuals", "sound", "technical"]:
             print(f"ERR: {self.category} is an invalid category.")
             return False
         
@@ -80,43 +84,72 @@ class Question:
         return self.question
     
 
-questions:list[Question] = [
+questions: list[Question] = [
+
+    # TECHNICAL
+
     Question("Is the creator actively involved/patching bugs?",
              ["all"],
-             "gameplay"),
+             "technical"),
 
     Question("Are there frequent crashes or soft-locks?",
              ["all"],
-             "gameplay",
+             "technical",
              inverse=True,
              exclude_if_wip=True),
 
-        Question("Are there text formatting errors?",
+    Question("Are there text formatting errors?",
              ["all"],
-             "ui",
+             "technical",
              exclude_if_wip=True,
              inverse=True),
 
-    Question("Are there noticable spelling & grammar errors?",
+    Question("Are there noticeable spelling & grammar errors?",
              ["all"],
-             "ui",
+             "technical",
              exclude_if_wip=True,
              inverse=True),
 
-    Question("Are dungeon names / boss room names proper location names\ni.e., no \"TPBoss1\' / \"Beach Boss\"?",
+    Question("Are dungeon names / boss room names proper location names\ni.e., no \"TPBoss1\" / \"Beach Boss\"?",
              ["all"],
-             "ui",
+             "technical",
              exclude_if_wip=True,
              inverse=True),
-    
-    Question("Are there enough save points?",
-             ["all"],
-             "gameplay"),
 
-    Question("Can you choose who you & your partner are?",
+    Question("Are transitions unclean / glitchy?",
              ["all"],
-             "gameplay",
+             "technical",
+             exclude_if_wip=True,
+             inverse=True),
+
+    Question("Does custom music have noise or clicking?",
+             ["all"],
+             "technical",
+             inverse=True),
+
+    # Technical bonus
+    Question("Is the Adventure Log updated to reflect the main and special stories?",
+             ["all"],
+             "technical",
              bonus=True),
+
+    Question("Is the mission objective menu updated with proper text (no 'Dummy' or placeholder entries)?",
+             ["all"],
+             "technical",
+             bonus=True,
+             exclude_if_wip=True),
+
+    Question("Is the in-game help/documentation updated to reflect the hack's lore or mechanics?",
+             ["all"],
+             "technical",
+             bonus=True),
+
+    Question("Are system-level strings changed to fit the hack? (e.g., error messages, cart text, etc.)",
+             ["all"],
+             "technical",
+             bonus=True),
+
+    # STORY
 
     Question("Does the MC's dialog break immersion (if insertion story).",
              ["story", "mixed"],
@@ -136,18 +169,13 @@ questions:list[Question] = [
              "story"),
 
     Question("Does the character's stats match the backing story (i.e., saved the future, but starts off at LV. 5 would be inconsistent.)?",
-         ["story", "mixed"],
-         "story"),
+             ["story", "mixed"],
+             "story"),
 
     Question("If attempting to be a sequel, follow up, or side story, does it fit in well and keep the lore intact?",
              ["story", "mixed"],
              "story"),
-    
-    Question("Does the character's stats increase during story-based timeskips, if it makes sense?",
-         ["all"],
-         "story",
-         bonus=True),
-    
+
     Question("Does it seem like conflict only happens when the user is playing, rather than during timeskips?",
              ["story", "mixed"],
              "story",
@@ -155,14 +183,9 @@ questions:list[Question] = [
 
     Question("Is the character dynamic enjoyable?",
              ["all"],
-             "story"
-             ),
-
-    Question("Is the humor placed well in the story?",
-             ["story", "mixed"],
              "story"),
 
-    Question("Did you like the humor?",
+    Question("Is the humor well timed & enjoyable?",
              ["story", "mixed"],
              "story"),
 
@@ -174,9 +197,13 @@ questions:list[Question] = [
              ["story", "mixed"],
              "story"),
 
-    Question("Are side characters given personality and character?",
+    Question("Does vulgar language help the story in conveying emotion & not excessive?",
              ["story", "mixed"],
              "story"),
+
+    Question("Are side characters given personality and character?",
+             ["story", "mixed"],
+             "story"),  
 
     Question("Does the plot avoid feeling like padding or filler?",
              ["story", "mixed"],
@@ -186,12 +213,63 @@ questions:list[Question] = [
              ["story", "mixed"],
              "story"),
 
-    Question("Does the title screen change based on progression?",
+    Question("Do Special Episodes world-build meaningfully?",
+             ["story", "mixed"],
+             "story"),
+
+    Question("Does the story feel unique (not just EoS with some minor modifications)?",
+             ["story", "mixed"],
+             "story"),
+
+    Question("Did the hack flow well story-wise?",
+             ["story", "mixed"],
+             "story"),
+
+    Question("Does the story feel complete/resolved?",
+             ["story", "mixed"],
+             "story",
+             exclude_if_wip=True),
+
+    Question("If there are multiple endings, do they feel meaningfully distinct?",
+             ["all"],
+             "story"),
+
+    # Story bonus
+    Question("Does the character's stats increase during story-based timeskips, if it makes sense?",
+             ["all"],
+             "story",
+             bonus=True),
+
+    Question("Does the game feature pre-title screen or pre-'New Game' dialogue/cutscenes?",
+             ["all"],
+             "story",
+             bonus=True),
+
+    # Story numeric
+    Question("How many special episodes are there? (If difficulty hack, include if they are modified.)",
+             ["all"],
+             "story",
+             numeric=True),
+
+    Question("How long is the story (in hours)?",
+             ["all"],
+             "story",
+             numeric=True,
+             num_units=0.5),
+
+    # VISUALS
+
+    Question("Do custom animations follow the same PMD style?",
+             ["all"],
+             "visuals"),
+
+    # Visuals bonus
+    Question("Is there a custom title screen?",
              ["all"],
              "visuals",
              bonus=True),
 
-    Question("Is the main menu background changed?",
+    Question("Is there a custom main menu?",
              ["all"],
              "visuals",
              bonus=True),
@@ -211,19 +289,26 @@ questions:list[Question] = [
              "visuals",
              bonus=True),
 
+    Question("Are there custom animations?",
+             ["all"],
+             "visuals",
+             bonus=True),
+
+    # SOUND
+
     Question("Is the existing OST well used?",
              ["all"],
              "sound"),
-
-    Question("How many custom songs are there?",
-             ["all"],
-             "sound",
-             numeric=True),
 
     Question("Do custom songs loop properly?",
              ["all"],
              "sound"),
 
+    Question("Are custom songs balanced well? (not too loud, not too quiet)",
+             ["all"],
+             "sound"),
+
+    # Sound bonus
     Question("Is the Sky Jukebox available?",
              ["all"],
              "sound",
@@ -234,22 +319,60 @@ questions:list[Question] = [
              "sound",
              bonus=True),
 
-    Question("Are custom songs balanced well? (not too loud, not too quiet)",
+    # Sound numeric
+    Question("How many custom songs are there?",
              ["all"],
-             "sound"),
+             "sound",
+             numeric=True),
 
-    Question("Are there custom animations?",
-             ["all"],
-             "visuals",
-             bonus=True),
+    # GAMEPLAY
 
-    Question("Do custom animations follow the same PMD style?",
+    Question("Are there enough save points?",
              ["all"],
-             "visuals"),
+             "gameplay"),
 
     Question("Is the difficulty curve fair?",
              ["mixed"],
              "gameplay"),
+
+    Question("Is the gameplay-to-story ratio balanced well?",
+             ["mixed"],
+             "gameplay"),
+
+    Question("If level / resources are fixed:\n\tAre these sufficient to clear the game without over-reliance on luck?\nElse:\n\tAre there sufficient grinding areas in case you get stuck?",
+             ["all"],
+             "gameplay"),
+
+    Question("Does it feel like transitions are missing?",
+             ["all"],
+             "gameplay",
+             inverse=True),
+
+    Question("Are boss fights balanced (not just HP sponges)?",
+             ["all"],
+             "gameplay"),
+
+    Question("Is the post game engaging/flows well with the main story?",
+             ["story", "mixed"],
+             "gameplay"),
+
+    Question("Are there Easter Eggs or hidden interactions?",
+             ["all"],
+             "gameplay"),
+
+    Question("Are there additional ways to spend Poké on other things apart from dungeon items?",
+             ["all"],
+             "gameplay"),
+
+    Question("Was the game engaging?",
+             ["all"],
+             "gameplay"),
+
+    # Gameplay bonus
+    Question("Can you choose who you & your partner are?",
+             ["all"],
+             "gameplay",
+             bonus=True),
 
     Question("Does the hack introduce new items?",
              ["all"],
@@ -266,12 +389,6 @@ questions:list[Question] = [
              "gameplay",
              bonus=True),
 
-
-    Question("Is the gameplay-to-story ratio balanced well?",
-             ["mixed"],
-             "gameplay"),
-
-    # I personally prefer it, increases score if yes, doesn't decrease score if no
     Question("Does this hack retain the old move system?",
              ["all"],
              "gameplay",
@@ -292,107 +409,23 @@ questions:list[Question] = [
              "gameplay",
              bonus=True),
 
-    Question("If level / resources are fixed:\n\tAre these sufficient to clear the game without over-reliance on luck?\nElse:\n\tAre there sufficient grinding areas in case you get stuck?",
-             ["all"],
-             "gameplay"),
-    
     Question("Can you skip cutscenes?",
              ["all"],
              "gameplay",
              bonus=True),
 
-    Question("Does it feel like transitions are missing?",
-             ["all"],
-             "gameplay"),
+    # Final verdicts
 
-    Question("Are boss fights balanced (not just HP sponges)?",
-             ["all"],
-             "gameplay"),
-
-    Question("Do Special Episodes world-build meaningfully?",
-             ["story", "mixed"],
-             "story"),
-    
-    Question("How many special episodes are there? (If difficulty hack, include if they are modified.)",
-             ["all"],
-             "story",
-             numeric=True),
-
-    Question("Is the post game engaging/flows well with the main story?",
-             ["story", "mixed"],
-             "gameplay"),
-
-    Question("Are there Easter Eggs or hidden interactions?",
-             ["all"],
-             "gameplay"),
-
-    Question("Are there additional ways to spend Poké on other things apart from dungeon items?",
-             ["all"],
-             "gameplay"),
-
-    Question("Is the Adventure Log updated to reflect the main and special stories?",
-             ["all"],
-             "ui"),
-
-    Question("Is the mission objective menu updated with proper text (no 'Dummy' or placeholder entries)?",
-             ["all"],
-             "ui",
-             bonus=True,
-             exclude_if_wip=True),
- 
-    Question("Is the in-game help/documentation updated to reflect the hack's lore or mechanics?",
-             ["all"],
-             "ui",
-             bonus=True),
- 
-    Question("Are system-level strings changed to fit the hack? (e.g., error messages, cart text, etc.)",
-             ["all"],
-             "ui",
-             bonus=True),
- 
-    Question("Does the game feature pre-title screen or pre-'New Game' dialogue/cutscenes?",
-             ["all"],
-             "story",
-             bonus=True),
-
-    Question("How long is the story (in hours)?",
-             ["all"],
-             "story",
-             numeric=True,
-             num_units=0.5),
-
-    Question("Was the game engaging?",
-             ["all"],
-             "gameplay"),
-
-    Question("Does the story feel unique (not just EoS with some minor modifications)?",
-             ["story", "mixed"],
-             "story"),
-    
-    Question("Did the hack flow well story-wise?",
-             ["story", "mixed"],
-             "story"),
-
-    Question("Does the story feel complete/resolved?",
-             ["story", "mixed"],
-             "story",
-             exclude_if_wip=True),
-
-    Question("If there are multiple endings, do they feel meaningfully distinct?",
-             ["all"],
-             "story",
-             bonus=True),
-    
     Question("Would you want to replay this hack?",
              ["all"],
-             "gameplay"
-             ),
+             "gameplay"),
 
     Question("Would you recommend this hack to someone else?",
              ["all"],
-             "gameplay"
-             )
+             "gameplay"),
 ]
+
+print(len(questions))
 
 # check if questions valid
 ex:bool = False
@@ -472,6 +505,9 @@ old_max = max_score_nobono
 score_earned:float = 0
 bonus_earned:float = 0
 
+cat_earned:dict = defaultdict(float)
+cat_max:dict = defaultdict(float)
+
 # y for yes
 # n for no
 # k for kinda (half points)
@@ -487,7 +523,7 @@ for q in questions:
 
     if q.numeric:
         try:
-            ans = float(input(f"{q} (Enter number): "))*q.num_units
+            ans = float(input(f"{q} (Enter number): ")) * q.num_units
             bonus_earned += (min(ans, 5) * weight)
             continue
         except:
@@ -499,12 +535,12 @@ for q in questions:
         if ans != "na" and ans != "":
             if q.inverse:
                 if ans == "k":
-                    bonus_earned += (weight/2)
+                    bonus_earned += (weight / 2)
                 if ans == "n":
                     bonus_earned += weight
             else:
                 if ans == "k":
-                    bonus_earned += (weight/2)
+                    bonus_earned += (weight / 2)
                 if ans == "y":
                     bonus_earned += weight
             continue
@@ -512,20 +548,24 @@ for q in questions:
             bonus_score -= weight
             continue
 
-
     ans = input(f"{q} (y/n/k/na): ").lower()
 
     if ans != "na" and ans != "":
         if q.inverse:
             if ans == "k":
-                score_earned += (weight/2)
+                score_earned += (weight / 2)
+                cat_earned[q.category] += (weight / 2)
             if ans == "n":
                 score_earned += weight
+                cat_earned[q.category] += weight
         else:
             if ans == "k":
-                score_earned += (weight/2)
+                score_earned += (weight / 2)
+                cat_earned[q.category] += (weight / 2)
             if ans == "y":
                 score_earned += weight
+                cat_earned[q.category] += weight
+        cat_max[q.category] += weight
         continue
     else:
         max_score_nobono -= weight
@@ -556,6 +596,10 @@ if max_score_nobono > 0:
 
     print("-----------------------")
     print(f"Final Score: {score_earned:.2f} / {max_score_nobono:.2f} ({score:.2f}%)")
+    for cat, possible in cat_max.items():
+        earned = cat_earned[cat]
+        pct = (earned / possible * 100) if possible else 0
+        print(f"\t{cat.capitalize()}: {earned:.2f} / {possible:.2f} ({pct:.2f}%)")
     print(f"Bonus Score: {bonus_earned} / {bonus_score} ({(bonus_earned / bonus_score)*100:.2f}%)")
     print("-----------------------")
     print(f"Rank: {final_rank}")

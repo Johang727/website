@@ -136,6 +136,24 @@ summary.big-summary {
     color: white;
 }
 
+.spoiler-image {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.spoiler-image img {
+    filter: blur(20px); /* Adjust blur strength here */
+    transition: filter 0.3s ease;
+}
+
+/* Reveal on hover or focus */
+.spoiler-image:hover img,
+.spoiler-image:focus img {
+    filter: blur(0);
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
