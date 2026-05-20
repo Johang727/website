@@ -5,6 +5,7 @@ TEST_FILE="./TESTPRINT.pdf"
 custom_ppd="false"
 
 # Function to URL-encode strings (for passwords with #, @, etc.)
+# This was made with AI because.. I duno URI coding :p
 urlencode() {
     local string="${1}"
     local strlen=${#string}
@@ -157,7 +158,7 @@ echo "
 " # newline since s also hides the newline? 
 
 echo "---
-Configuring CUPS... (You may be prompted for $USER@$HOSTNAME's password)
+Configuring CUPS... (You may be prompted for $USER@$HOSTNAME's password).
 ---
 "
 
@@ -176,6 +177,7 @@ fi
 
 
 read -r -p "
+---
 Would you like to print a test file? Est. $creds credits! (y/N): " confirmation
 
 if [[ "$confirmation" =~ ^[Yy]$ ]]; then
@@ -201,6 +203,7 @@ fi
 
 
 echo "
+---
 For the most consistent printing, use the CLI directly:
 lp -d $PRINTER -o sides=two-sided-long-edge -o Duplex=DuplexNoTumble <file.pdf>
 

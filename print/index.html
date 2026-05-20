@@ -21,17 +21,45 @@
         <div class="container mt-4 flex-grow-1">
             <div class = "d-flex justify-content-between">
             
-                <h2>Linux Setup Guide</h2>
+                <h2>Doane Linux Printing Guide</h2>
                 <button id = "theme-toggle" onclick = "toggle_theme" class = "btn btn-secondary">
                     Toggle Dark/Light Mode
                 </button>
 
             </div>
 
+            <i>Not supported? Not anymore.</i>
+
+            <hr>
+
+            <h3>Premise</h3>
+
+            <p><i><a href="#dependencies">Click here to skip this section</a>.</i></p>
+
+            <p>
+                I got tired of needing to switch to Windows for color or duplex prints, so I needed to find a way to actually get this working natively without a VM.
+            </p>
+
+            <p>
+                The built in printing front-end never worked for me, perhaps you have more success with it, however, it always gave B/W prints or none at all. Furthermore I would need to reconfigure printers all the time, this solution is a lot more consistent, albeit, a bit less secure.
+            </p>
+
+            <p>
+                However, I have not run into the standard issues that even Windows machines face & that's why I believe this CLI solution is still better.
+            </p>
+
+            <p>
+                However, especially with fish, I did not like typing passwords into the commands directly, so I made a little shell script that streamlined setup on the four major printers (in my opinion) on campus.
+            </p>
+
+            <p>
+                Without further ado, let's get into the setup.
+            </p>
+
             <hr>
 
             
-            <h3>Dependencies</h3>
+            <h3 id="dependencies">Dependencies</h3>
 
             <p>Most Linux Distros like Linux Mint, Ubuntu, etc. come with these by default. Arch distros typically do not have these installed. Regardless, make sure you have <code>cups</code> and <code>samba</code> installed on your computer using your package manager.</p>
 
@@ -41,7 +69,9 @@
 
             <p><i>Note: For both methods, your password will be saved in <b>/etc/cups/printers.conf</b>! This file can only be read by root, however, if you are on a shared device or uncomfortable with this, these methods are not for you!</i></p>
 
-            <p><b>For an automated setup</b> that goes through the following steps, download this file: <a href="https://raw.githubusercontent.com/Johang727/website/master/print/setup.sh">setup.sh</a></p>
+            <p>I am <i>NOT</i> responsible for leaked passwords. Use this method at your own risk.. or just use Windows.</p>
+
+            <p id="automated"><b>For an automated setup</b> that goes through the following steps, download this file: <a href="https://raw.githubusercontent.com/Johang727/website/master/print/setup.sh">setup.sh</a></p>
             <p><small><i>If it doesn't download automatically, you can use CTRL+S to save it.</i></small></p>
 
             <div class="container mb-4">
