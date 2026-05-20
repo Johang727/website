@@ -46,412 +46,329 @@
             <p>Reviews are nitpicky and occasionally a bit harsh by nature, please do not take offense if one of these are your favorites!</p>
 
             <p>
-                Currently Playing: <b>Waves of Nostalgia V4</b>
+                Currently Playing: <b>Nothing</b>
             </p>
 
             <div class = "row">
 
                 <hr>
 
-                <div class="card mb-3 border-secondary bg-transparent">
-                        <div class="card-header p-0"><button class="d-flex justify-content-between align-items-center w-100 bg-transparent border-0 p-3 text-start card-toggle" data-bs-toggle="collapse" data-bs-target="#collapseWoN" aria-expanded="true" aria-controls="collapseWoN">
-                            <div class="d-flex align-items-center">
-                                <img src="images/pmd_hacks/waves_nostaiga.png" width="24" class="me-2" alt="Waves of Nostalgia Icon.">
-                                <h5 class="mb-0">Waves of Nostalgia</h5>
-                            </div>
+                <div class="d-flex justify-content-end mb-3">
+                        <select id="sort-select" class="form-select w-auto bg-transparent border-secondary" style="color: inherit;">
+                        <option value="score-desc">Score: High to Low</option>
+                        <option value="score-asc">Score: Low to High</option>
+                        <option value="date-desc">Date: Newest First</option>
+                        <option value="date-asc">Date: Oldest First</option>
+                        <option value="name-asc">Name: A-Z</option>
+                    </select>
+                </div>
 
-                            <div class="d-flex align-items-center gap-3">
-                                <span class="small">May 19, 2026</span>
-                                <span class="rank-tag" style="color: #8577ff;">SS+ | 95*</span>
-                            </div>
-                        </button></div>
-
-                        <div id="collapseWoN" class="collapse hide">
-                            <div class="card-body">
-                                <div class="mb-3 border-start border-4 ps-3 border-info">
-                                    <p class="mb-1"><b>Difficulty:</b> Fairly Easy</p>
-                                    <p class="mb-1"><b>Time:</b> 2 Hours (Officially 4-5 Hours)</p>
-                                    <p class="mb-1"><b>Dungeon Length:</b> Average 10F | Max 13F</p>
-                                    <p class="mb-1"><b>Link:</b> <a href="https://drive.google.com/drive/folders/1-XlF2jLLAXLGbf7RsuNy065aJtPDmP44">Google Drive</a></p>
-                                    <small>Created: May 19, 2026</small>
+                <div id="hack-list">
+                    <div class="card mb-3 border-secondary bg-transparent hack-row" data-score="96" data-date="2026-05-19" data-name="Waves of Nostalgia">
+                            <div class="card-header p-0"><button class="d-flex justify-content-between align-items-center w-100 bg-transparent border-0 p-3 text-start card-toggle" data-bs-toggle="collapse" data-bs-target="#collapseWoN" aria-expanded="true" aria-controls="collapseWoN">
+                                <div class="d-flex align-items-center">
+                                    <img src="images/pmd_hacks/waves_nostaiga.png" width="24" class="me-2" alt="Waves of Nostalgia Icon.">
+                                    <h5 class="mb-0">Waves of Nostalgia</h5>
                                 </div>
-                                
-                                <i>
-                                    <p><i>Originally scored an 88, was bumped up a few points ignoring technical issues.</i></p>
-                                </i>
-
-                                <p><i>Turns out, I played version 1.0! This review will be updated at a later time for version 4.0.</i></p>
-
-                                <p>
-                                    The gimmick for this Jam was the use of the top screen, which.. it excelled at. It was essentially a Visual Novel with amazingly drawn portraits with plenty of emotions. It was a bit rough with transitions and changing emotions, but that could be overlooked for something that looked so clean otherwise!
-                                </p>
-
-                                <p>
-                                    The custom music wasn't overbearing, nor out of place. I felt like it matched the PMD style quite well, and didn't suffer from issues like clicking, stuttering, or static as I've seen with other hacks. The music does fade out when saving, which makes sense.. gotta save on cpu cycles on a device that can hardly play an mp3!
-                                </p>
-
-
-                                <p>
-                                    Onto the main premise... <span class="spoiler">You go around town, completing quests and collecting flowers once you get to the end. These are shown in the spot where your rank would be. It is a shame that some of the flowers actually didn't show in the inventory, but I can ignore this as it was for a jam.</span>
-                                </p>
-
-                                <p>
-                                    The dungeons aren't very hard. I did KO from one, but that was because I wasn't paying attention. I needed to use an item or move and that was that. Apparently, <span class="spoiler">leveling between the MC and partner are synchronized, however, the mayor awards you with an item that increases your level by 5, so I never got to see that.</span>
-                                </p>
-
-                                <p>
-                                    After completing the final dungeon, you return with <span class="spoiler">the picked flower and find that the statue Dragonair was sculping.. was a tombstone. You lay a bouquet of collected flowers in front of the grave.</span><span class="spoiler"> Each character says their thanks to Flaaffy, and disappears. This scene did make me tear up a bit. All of them say goodbye as Flaaffy's mother hugs them, before she disappears too, leaving her on the ground.</span>
-                                </p>
-
-                                <p>
-                                    I didn't expect that ending, I didn't expect the ones <span class="spoiler">who died in the flooding, was everyone. Flaaffy's immense regret and sadness going through the ruins, how everything was destroyed, it showed tons of damage, but I thought only <i>some</i> were lost, not everyone who was dear to Flaaffy. The festival was to celebrate the ones who were lost in the flooding, and that's what it did.</span>
-                                </p>
-
-                                <p>
-                                    I do wonder though... <span class="spoiler"> were they just creations of Flaaffy's mind? Or were they truly there for one last moment in spirit? Her partner is psychic, so either one actually works out.</span>
-                                </p>
-
-                                <p>
-                                    Regardless, this was a very well done hack, even with the constraints of a jam. I would recommend playing through it or watching a playthrough. And.. I do wish there was more, but perhaps, it is better to leave this story resolved.
-                                </p>
-
-                                <p>
-                                    <div class="spoiler-image" tabindex="0">
-                                        <img src="images/pmd_hacks/waves/the_end.png" alt="The Final Image in Waves of Nostalgia" class="img-fluid">
+                                <div class="d-flex align-items-center gap-3">
+                                    <span class="small">May 19, 2026</span>
+                                    <span class="rank-tag" style="color: #8577ff;">SS+ | 96*</span>
+                                </div>
+                            </button></div>
+                            <div id="collapseWoN" class="collapse hide">
+                                <div class="card-body">
+                                    <div class="mb-3 border-start border-4 ps-3 border-info">
+                                        <p class="mb-1"><b>Difficulty:</b> Fairly Easy</p>
+                                        <p class="mb-1"><b>Time:</b> 2-3 Hours (Officially 4-5 Hours)</p>
+                                        <p class="mb-1"><b>Dungeon Length:</b> Average 10F | Max 13F</p>
+                                        <p class="mb-1"><b>Link:</b> <a href="https://drive.google.com/drive/folders/1-XlF2jLLAXLGbf7RsuNy065aJtPDmP44">Google Drive</a></p>
+                                        <small>Created: May 19, 2026</small>
                                     </div>
-                                </p>
-
-                            </div>
-                        </div>
-                </div>
-
-                <div class="card mb-3 border-secondary bg-transparent">
-                        <div class="card-header p-0"><button class="d-flex justify-content-between align-items-center w-100 bg-transparent border-0 p-3 text-start card-toggle" data-bs-toggle="collapse" data-bs-target="#collapseGMCVTP" aria-expanded="true" aria-controls="collapseGMCVTP">
-                            <div class="d-flex align-items-center">
-                                <img src="images/pmd_hacks/pmd_eos_icon.png" width="24" class="me-2" alt="Uses the default icon.">
-                                <h5 class="mb-0">Glaceon Maid Cafe Virtual Training Program</h5>
-                            </div>
-
-                            <div class="d-flex align-items-center gap-3">
-                                <span class="small">May 19, 2026</span>
-                                <span class="rank-tag" style="color: #79d0cd;">A | 85*</span>
-                            </div>
-                        </button></div>
-
-                        <div id="collapseGMCVTP" class="collapse hide">
-                            <div class="card-body">
-                                <div class="mb-3 border-start border-4 ps-3 border-info">
-                                    <p class="mb-1"><b>Difficulty:</b> Expect 1 KO | Fairly RNG</p>
-                                    <p class="mb-1"><b>Time:</b> 30 - 45 Minutes | No Saves</p>
-                                    <p class="mb-1"><b>Dungeon Length:</b> 10F</p>
-                                    <p class="mb-1"><b>Link:</b> <a href="https://discord.com/channels/710190644152369162/840183736354996224/1121627780606595104">Discord (Must join SkyTemple Server First)</a></p>
-                                    <small>Created: May 19, 2026</small>
-                                </div>
-                                
-                                <i>
-                                    <p>Note: ...okay, you <b>cannot</b> rate this with the standard program. It returned a <b>B- | 77</b> for the score, but I felt it deserved higher, so it was bumped up to a 85 for the A threshold.</p>
-                                </i>
-
-                                <p>
-                                    The experience was very dependent on crude humor. Def a different experience from these other hacks. Didn't try to go for emotional and sad, nor a deep story, just under an hour of laughs.
-                                </p>
-
-                                <p>
-                                    The hack starts with a disclaimer that the maker doesn't live in Canada, and that any offense to Canadians is 100% intentional. So you know you are in for a great time.
-                                </p>
-
-                                <p>
-                                    Imma be honest, I played this at 2 am with some friends in VC and.. it was hecking hilarious, and probably would still be if we weren't half asleep :3
-                                </p>
-
-                                <p>
-                                    This is truly, one of the rom hacks of all time. Very humorous with a dash of metagaming.
-                                </p>
-
-                            </div>
-                        </div>
-                </div>
-
-                <div class="card mb-3 border-secondary bg-transparent">
-                        <div class="card-header p-0"><button class="d-flex justify-content-between align-items-center w-100 bg-transparent border-0 p-3 text-start card-toggle" data-bs-toggle="collapse" data-bs-target="#collapseASN" aria-expanded="true" aria-controls="collapseASN">
-                            <div class="d-flex align-items-center">
-                                <img src="images/pmd_hacks/pmd_eos_icon.png" width="24" class="me-2" alt="Uses the default icon.">
-                                <h5 class="mb-0">A Starless Night</h5>
-                            </div>
-
-                            <div class="d-flex align-items-center gap-3">
-                                <span class="small">May 18, 2026</span>
-                                <span class="rank-tag" style="color: #6ebe82;">B | 80</span>
-                            </div>
-                        </button></div>
-
-                        <div id="collapseASN" class="collapse hide">
-                            <div class="card-body">
-                                <div class="mb-3 border-start border-4 ps-3 border-info">
-                                    <p class="mb-1"><b>Difficulty:</b> Fairly Easy</p>
-                                    <p class="mb-1"><b>Time:</b> 45 - 75 Minutes | No Saves</p>
-                                    <p class="mb-1"><b>Dungeon Length:</b> 5F & 10F</p>
-                                    <p class="mb-1"><b>Link:</b> <a href="https://hacks.skytemple.org/h/starlessnight">SkyTemple</a></p>
-                                    <small>Created: May 18, 2026</small>
-                                </div>
-                                
-                                <p>It first starts out with a disclaimer, however, it is mostly just for the usage of swear words. I don't consider these to influence the score, they can be used to convey emotion, but aren't required as seen with many other hacks.</p>
-
-                                <p>Most of the hack takes place in a flashback, which honestly, I forgot that was the case. Since that was the premise of the jam, alright. It does add a layer of suspense.</p>
-
-                                <p>I do like how it shows dungeon-ing without the Guild's insurance is actually quite dangerous. The badges pretty much are your emergency exit, and when you aren't an official Explorer, you pretty much just die if you are alone in a dungeon. I've always thought that was the case, but its nice to see it reflected in the lore. I never KOed, so I never got to see the dialog.</p>
-
-                                <p>Some of the NPCs when you <span class="spoiler">go into town</span> were quite humorous, albeit a bit out of place. I don't even know what else to say, but it was amusing.</p>
-
-                                <p>A lot of things were custom, overworld, using sprites from Pokémon Mystery Universe, which was clever. Music was imported from other games, for better or for worse. One of the tracks was from mainline Pokémon game: they have a different style and I felt it immediately. Nothing else to say about that, it was just odd. The DS also doesn't fare too well with imported music so I can forgive the clicks heard in the custom music. Although, I have seen other hacks not have this issue, so perhaps its just a way of finessing.</p>
-
-                                <p>There were no save points throughout the entire game, which, I <i>suppose</i> for a max runtime of 75 minutes isn't bad. But maybe someone would like to take a break or just have some security that they won't have to play the whole game again if their DS dies or the flash cart is nudged.</p>
-
-                                <p>Overall, it was a good, one-shot, emotional story. I would actually not mind more. Or perhaps knowing what happened to <span class="spoiler">the third person who they vaguely mention. The MC's mother figure says they don't want the MC to end up like "...", but they never elaborate on that.</span> It would be cool to have more backstory.</p>
-                                
-
-                            </div>
-                        </div>
-                </div>
-
-                <div class="card mb-3 border-secondary bg-transparent">
-                        <div class="card-header p-0"><button class="d-flex justify-content-between align-items-center w-100 bg-transparent border-0 p-3 text-start card-toggle" data-bs-toggle="collapse" data-bs-target="#collapseFF" aria-expanded="true" aria-controls="collapseFF">
-                            <div class="d-flex align-items-center">
-                                <img src="images/pmd_hacks/pmd_eos_icon.png" width="24" class="me-2" alt="Uses the default icon.">
-                                <h5 class="mb-0">Fortune's Fault</h5>
-                            </div>
-
-                            <div class="d-flex align-items-center gap-3">
-                                <span class="small">Mar. 13, 2026</span>
-                                <span class="rank-tag" style="color: #ff3e1c;">E- | 34</span>
-                            </div>
-                        </button></div>
-
-                        <div id="collapseFF" class="collapse hide">
-                            <div class="card-body">
-                                <div class="mb-3 border-start border-4 ps-3 border-info">
-                                    <p class="mb-1"><b>Difficulty:</b> Expect to KO multiple times.</p>
-                                    <p class="mb-1"><b>Time:</b> 1 - 2 Hours</p>
-                                    <p class="mb-1"><b>Dungeon Length:</b> The Whole Game is One (24 Floors).</p>
-                                    <p class="mb-1"><b>Link:</b> <a href="https://hacks.skytemple.org/h/fortunesfault">SkyTemple</a></p>
-                                    <small>Created: Mar. 13, 2026</small>
-                                </div>
-                                
-                                <p>Being awarded "best gameplay", I had high hopes...</p>
-
-                                <p>You get these pickaxes you can throw to tunnel through, honestly, pretty cool idea! The main issue is that you have no moves, which is fine... just one to find the stairs. The issue is... PMD, there is no way to run away from an enemy, once you are in combat, you are there, and if another one comes in, you are actually cooked, no escape.</p>
-
-                                <p>There are a ton of IQ raising items like Wonder Gummis, Orange Gummies, and Nectar that spawn, which do help get through the dungeon, which I think is the main goal. To wipe out of the dungeon like 200 times in order to get the IQ skills by the end of it.</p>
-
-                                <p>Even so, it was still quite a challenge, which is fine... but it did feel kinda unfair, especially since there are no checkpoints in the entire 24 floor dungeon.</p>
-
-                                <p>Once you get to the end, <span class="spoiler">you have to go back down after getting the treasure with a 300 turn time limit. It wasn't a challenge at that point.. just an annoyance, since every step you took on a new floor would play the "Something is coming..." line, causing the music to stop and repeat from the beginning... which isn't good for polish.</span></p>
-
-                                <p>Furthermore, there's a lot of small things like the mission objective menu showing an incorrect message or just "Dummy", which is fine.. those are just bonus points in my book..</p>
-
-                                <p>There are three endings, but it doesn't even feel like it. The endings are <span class="spoiler">if you make it out alive without taking the will, if you make it out alive taking the will with you, and if you die. No special "Greed caused your death" or whatever dialog.</span></p>
-
-                                <p>All in all, the pickaxe gimmick is cool.. but the implementation was bad. I wish you at least got Agility so you can run away. Nerf my attack, that's fine, just give means of escape... oh and also, you aren't guaranteed a pickaxe if you KO.</p>
-
-                            </div>
-                        </div>
-                </div>
-
-                <div class="card mb-3 border-secondary bg-transparent">
-                        <div class="card-header p-0"><button class="d-flex justify-content-between align-items-center w-100 bg-transparent border-0 p-3 text-start card-toggle" data-bs-toggle="collapse" data-bs-target="#collapseSUBS" aria-expanded="true" aria-controls="collapseSUBS">
-                            <div class="d-flex align-items-center">
-                                <img src="images/pmd_hacks/subs_icon.png" width="24" class="me-2" alt="SUBS Icon">
-                                <h5 class="mb-0">Strung Up By Sketches</h5>
-                            </div>
-
-                            <div class="d-flex align-items-center gap-3">
-                                <span class="small">Mar. 10, 2026</span>
-                                <span class="rank-tag" style="color: #ff00ff;">EX++ | 100</span>
-                            </div>
-                        </button></div>
-
-                        <div id="collapseSUBS" class="collapse hide">
-                            <div class="card-body">
-                                <div class="mb-3 border-start border-4 ps-3 border-info">
-                                    <p class="mb-1"><b>Difficulty:</b> Puzzles, But On Par w/ the Original</p>
-                                    <p class="mb-1"><b>Time:</b> 3-4 hours</p>
-                                    <p class="mb-1"><b>Dungeon Length:</b> 30-60 Minutes</p>
-                                    <p class="mb-1"><b>Link:</b> <a href="https://hacks.skytemple.org/h/strungupbysketches">SkyTemple</a></p>
-                                    <small>Created: Mar. 10, 2026</small>
-                                </div>
-                                
-
-                                <p>The ROM starts off with a cutscene, of who I presume is the MC, writing a diary entry. I have never seen this before! This is super unique, having dialogue the moment the game starts, rather than pressing New Game. We are in for a new mechanical treat.</p>
-
-                                <p>You do not play a normal dungeon crawler, but the dungeons are these <span class="spoiler">remember places</span> where you go and <span class="spoiler"><strike>kidnap</strike> save people from these places.</span></p>
-
-                                <p>The dungeons are very puzzle oriented and aren't combat heavy.</p>
-
-                                <p>Right off the bat, the first time skip? Your play time is set to 101 hours and your level goes up by a lot. Finally, a timeskip that increases stats/level... the playtime is a neat thing though!</p>
-
-                                <p>Fully custom borders and backgrounds, I wonder how they did the cutscenes, since they are just.. super cool!</p>
-
-                                <p>Heck, even the help documentation is changed to reflect the lore... its really dope!</p>
-
-                                <p>Music is stock, but has effects that change based on what's going on in the cutscene. Furthermore, character portraits also change mid text box, something I didn't even know was possible..</p>
-
-                                <p>Holy heck, I don't even know how to describe any of this experience... just go try it yourself... it's leagues better than anything else I have seen, but I suppose that is expected for a game jam winner. They replaced the hecking ejected cart error message too??? I didn't realize that was even possible!</p>
-
-                            </div>
-                        </div>
-                </div>
-
-                <div class="card mb-3 border-secondary bg-transparent">
-                        <div class="card-header p-0"><button class="d-flex justify-content-between align-items-center w-100 bg-transparent border-0 p-3 text-start card-toggle" data-bs-toggle="collapse" data-bs-target="#collapseBF" aria-expanded="true" aria-controls="collapseBF">
-                            <div class="d-flex align-items-center">
-                                <img src="images/pmd_hacks/pmd_eos_icon.png" width="24" class="me-2" alt="Standard Icon" title="Bright Future has no custom icon, which is fine.">
-                                <h5 class="mb-0">The Bright Future</h5>
-                            </div>
-
-                            <div class="d-flex align-items-center gap-3">
-                                <span class="small">Mar. 9, 2026</span>
-                                <span class="rank-tag" style="color: #dcda6d;">C- | 74</span>
-                            </div>
-                        </button></div>
-
-                        <div id="collapseBF" class="collapse hide">
-                            <div class="card-body">
-
-                                <div class="mb-3 border-start border-4 ps-3 border-info">
-                                    <p class="mb-1"><b>Difficulty:</b> Pretty Easy</p>
-                                    <p class="mb-1"><b>Time:</b> 2 Hours to Beat</p>
-                                    <p class="mb-1"><b>Dungeon Length:</b> Around 10F | Max: 15F</p>
-                                    <p class="mb-1"><b>Link:</b> <a href="https://hacks.skytemple.org/h/pmd_the_bright_future">SkyTemple</a></p>
-                                    <small>Edited: Mar. 9, 2026; Created: Dec. 1, 2025</small>
-                                </div>
-
-                                <p>I decided to replay this hack, because I felt like my previous review was a bit harsh. This one is more in-depth because I decided to comment on each chapter after I played through it. I will do this going forward.</p>
-
-                                <p>Starting off, I chose to name myself "Scorbunny", since I personally the story fits better this way. This review and its grade will be treated as a 3rd person story.</p>
-
-                                <p>I love the humor, I pretty much giggled at most of the jokes.</p>
-
-
-                                <p>It's interesting how it takes place in the far, far future after PMD Sky, but like the new Pokémon who appear in place of the others.</p>
-
-
-                                <p>Your level is locked at 20, which is plenty enough for the dungeons in this game. However, this level seems.. weird. If you are the savior of the future from the original game, why are you LV20, rather than high 30s, low 40s? Seems a bit inconsistent, but I digress.</p>
-
-                                <p>You and Rockruff do missions behind a transition card, which is fine, its a short story and prevents filler for that. However, I wish your level increased by a few levels through that transition, just for story/gameplay consistency. Also, how as Rockruff's rash behavior not caused a problem throughout those, but just now when the user is playing? Perhaps it is mentioned, but I may be wrong.</p>
-
-                                <p>One thing that made this a better 3rd person story than an insertion story was the fact the MC says they wanna return to the human world badly. Honestly, if I was here in this world of PMD, I'd want to stay here the rest of my life. The MC 100% misses people from back home, and I would too. It is implied in the dialogue, but dang.. I duno if I would go back to the human world regardless.. this just seems more fun.</p>
-
-                                <p>The dreams being <span class="spoiler">your previous partner,</span> is nice foreshadowing. It's hard to say too much, since this is my second time.</p>
-
-                                <p>The battles during the <span class="spoiler">Daylight Festival use internal names like TTBoss1-3. I don't know how hard scripting or whatever is, but... I've never seen this before.</span> I don't think any other boss fight in this hack even has that issue though.. strange..</p>
-
-
-                                <p>Ch. 8: <span class="spoiler">The scene where the MC loses hope and isn't motivated to do anything is a bit.. cheesy. They turn around so quickly though tbh, they are hopeless then Rockruff goes "ruff ruff, imma snuggle you so you feel better", and then MC is now.. completely fine after not putting their heart into anything the past few days? I duno, just feels like <i>most</i> of it would happen for me, but rather than it be like "wao, i am full of hope now", it would just be a quiet "thanks", and then a slower recovery or so. Granted, I'm not really one to lose hope that quickly, but I also don't really insert well with Scorbunny to begin with. Also, I feel like a transition card would be better, since it actually just seemed like Rockruff went back to his bed during the night.. rather than an entire day passing. They could've also been in Treasure Town to have this conversation about their day...</span></p>
-
-                                <p>Chapter 10: <span class="spoiler">For the boss fight... why is the location text "Dream Boss"? That seems.. not right for world building. I duno, just a simple "???" could've done just fine.</span></p>
-
-                                <p>Back to the whole intermission, when they say "We need to train up!" and a title card shows.. I do expect a higher level and boost in stats, just to be consistent.</p>
-
-                                <p>Other than my nitpicking.. it's honestly pretty good writing. Pacing or transitions could've been better, but tbh, this is kind of attempting to fit a story about development and such within 2 hours. It feels.. like it was made for a game jam.</p>
-
-                                <p>The two new songs are nice remixes and they play during the Final Chapter. The 2nd one is a bit crackily, which made it a bit hard to enjoy, but the final boss theme's audio was fine.</p>
-
-
-
-                                <p>I personally think it's a pretty neat take on the <i>Wishing Star</i> and <i>Dynamaxing</i>. Cool to see some elements of Super Mystery Dungeon in here as well.</p>
-
-                                <p>A lot of internal names, or just.. weird names used for the Boss areas, and just for some too! Some actually have proper locations, and others have "[Location] Boss", boss shouldn't be in the name.</p>
-
-                                <p>Also the end scene, I've got the idea that <span class="spoiler">it's Sobble on the left and Rockruff on the right, in the MC's POV</span>, but I wonder if there is a reference here. It felt a <i>bit</i> outta place, but it's creative.. I think.</p>
-
-                                <p>All in all, it was a pretty alright story hack, the gameplay was quite easy, I only used one Oran Berry during the <span class="spoiler">teacup fight</span>. Otherwise, Scorbunny's moves are so good, that the game is quite easy.</p>
-
-                                <p>Also, either I'm going crazy, or some of the chapter cards were missing...</p>
-
-
-
-                                <hr>
-
-                                <details>
-                                    <summary>Old Review (Dec. 1, 2025)</summary>
+                    
                                     <i>
-                                        <p>Like the OP says, the player stays at Level 20 and there are no overworld segments, it's easy, back-to-back dungeon-ing with story in between. It's a full story-only hack which aren't the worst in my opinion: I do like myself a good story hack!</p>
-                                    
-                                        <p>The MC talks in this hack, which wouldn't be a problem if it wasn't an insertion story, <i>(the game asks for your name and a name to give your partner)</i>. This honestly is the only issue I have with this hack. The main reason that the MC in the base game doesn't speak often and somewhat generically, for lack of a better word, is because the MC needs to fit a wide range of people. When the MC says things that I, personally, wouldn't have said in that situation, it breaks the immersion a bit.</p>
-                                    
-                                        <p>Despite this, that doesn't mean the story or writing is bad, far from it. I feel like it captures the feeling of the original game. It flows nicely and doesn't drag on. I was not bored while I was playing, <i>(granted, it wasn't a long hack, but still)</i>.</p>
-                                    
-                                        <p><b>Don't let my opinion discourage you! There's a reason I didn't go too into detail!</b> Honestly, I was tempted to replay the hack after seeing all the positive feedback on it, <i>(it has been a few months since I played through it).</i> I personally would replay with generic species names to get that 3rd person experience I feel this game needs, however, if you want to play it as an insertion story, go for it!</p>
+                                        <p><i>Originally scored an 88, was bumped up a few points ignoring technical issues.</i></p>
                                     </i>
-                                </details>
-
-                            </div>
-                        </div>
-                </div>
-
-                <div class="card mb-3 border-secondary bg-transparent">
-                        <div class="card-header p-0"><button class="d-flex justify-content-between align-items-center w-100 bg-transparent border-0 p-3 text-start card-toggle" data-bs-toggle="collapse" data-bs-target="#collapseLR" aria-expanded="true" aria-controls="collapseLR">
-                            <div class="d-flex align-items-center">
-                                <img src="images/pmd_hacks/lr_icon.png" width="24" class="me-2" alt="LR Icon">
-                                <h5 class="mb-0">Lonely Roads</h5>
-                            </div>
-
-                            <div class="d-flex align-items-center gap-3">
-                                <span class="small">Feb. 18, 2026</span>
-                                <span class="rank-tag" style="color: #8577ff;">SS+ (WIP)</span>
-                            </div>
-                        </button></div>
-
-                        <div id="collapseLR" class="collapse hide">
-                            <div class="card-body">
-                                <div class="mb-3 border-start border-4 ps-3 border-info">
-                                    <p class="mb-1"><b>Difficulty:</b> On Par w/ the Original</p>
-                                    <p class="mb-1"><b>Time:</b> 27 Hours and Counting...</p>
-                                    <p class="mb-1"><b>Link:</b> <a href="https://hacks.skytemple.org/h/lonely_roads" target="_blank">SkyTemple</a></p>
-                                    <small>Edited: Feb. 18, 2026 | Created: Jan. 31, 2026</small>
+                                    <p><i>Turns out, I played version 1.0! This review will be updated at a later time for version 4.0.</i></p>
+                                    <p>
+                                        The gimmick for this Jam was the use of the top screen, which.. it excelled at. It was essentially a Visual Novel with amazingly drawn portraits with plenty of emotions. It was a bit rough with transitions and changing emotions, but that could be overlooked for something that looked so clean otherwise!
+                                    </p>
+                                    <p>
+                                        The custom music wasn't overbearing, nor out of place. I felt like it matched the PMD style quite well, and didn't suffer from issues like clicking, stuttering, or static as I've seen with other hacks. The music does fade out when saving, which makes sense.. gotta save on cpu cycles on a device that can hardly play an mp3!
+                                    </p>
+                                    <p>
+                                        Onto the main premise... <span class="spoiler">You go around town, completing quests and collecting flowers once you get to the end. These are shown in the spot where your rank would be. It is a shame that some of the flowers actually didn't show in the inventory, but I can ignore this as it was for a jam.</span>
+                                    </p>
+                                    <p>
+                                        The dungeons aren't very hard. I did KO from one, but that was because I wasn't paying attention. I needed to use an item or move and that was that. Apparently, <span class="spoiler">leveling between the MC and partner are synchronized, however, the mayor awards you with an item that increases your level by 5, so I never got to see that.</span>
+                                    </p>
+                                    <p>
+                                        After completing the final dungeon, you return with <span class="spoiler">the picked flower and find that the statue Dragonair was sculping.. was a tombstone. You lay a bouquet of collected flowers in front of the grave.</span><span class="spoiler"> Each character says their thanks to Flaaffy, and disappears. This scene did make me tear up a bit. All of them say goodbye as Flaaffy's mother hugs them, before she disappears too, leaving her on the ground.</span>
+                                    </p>
+                                    <p>
+                                        I didn't expect that ending, I didn't expect the ones <span class="spoiler">who died in the flooding, was everyone. Flaaffy's immense regret and sadness going through the ruins, how everything was destroyed, it showed tons of damage, but I thought only <i>some</i> were lost, not everyone who was dear to Flaaffy. The festival was to celebrate the ones who were lost in the flooding, and that's what it did.</span>
+                                    </p>
+                                    <p>
+                                        I do wonder though... <span class="spoiler"> were they just creations of Flaaffy's mind? Or were they truly there for one last moment in spirit? Her partner is psychic, so either one actually works out.</span>
+                                    </p>
+                                    <p>
+                                        Regardless, this was a very well done hack, even with the constraints of a jam. I would recommend playing through it or watching a playthrough. And.. I do wish there was more, but perhaps, it is better to leave this story resolved.
+                                    </p>
+                                    <p>
+                                        <div class="spoiler-image" tabindex="0">
+                                            <img src="images/pmd_hacks/waves/the_end.png" alt="The Final Image in Waves of Nostalgia" class="img-fluid">
+                                        </div>
+                                    </p>
+                                    <p>A small update on my review (but not for the hack) for version 4, since most of my points are the same, but do play the newest version, issues like buggy and sudden transitions were fixed. Although, the music is still buggy, but that's just samples / streaming audio rather than the proper midi-like solution.</p>
+                                    <p>There is a lot more content and the ending is given a lot more charm. And there is a secret dungeon too in the revamped version, adding a post game to this hack.</p>
+                                    <p>Still enjoyed this hack the second time around, just like the first though.</p>
                                 </div>
-                                
-                                <p>Starting off, the gameplay/story balance is very similar to the base game and I personally would say the difficulty is about the same, if not a smidge harder. This a third person story and not an insertion story, which I feel allows the character's backgrounds to be deeper.</p>
-
-                            <p>Things I like and noticed from this hack:</p>
-                            <p><small>(Blacked out parts are spoilers! Hover over them to view!)</small></p>
-                            <ul>
-                                <li>Overall great humor in general.</li>
-                                <li>The title screen changes based on where you are in the story.</li>
-                                <li>There's weather in Treasure Town! <i>(It doesn't really do much gameplay wise, but its really cool! Dialog is changed and there's water flowing into Spinda's Cafe during rain).</i></li>
-                                <li>In-dungeon dialog <i>(by interacting with your teammates or pressing Talk in the menus)</i> has been changed to better reflect the characters' personalities.</li>
-                                <li>Some exploration teams from the base game are expanded on and become side-main characters in this hack.</li>
-                                <li>Seperate wonder bags for story events <i>(I didn't even know that would be possible!)</i></li>
-                                <li>5 Special Episodes that world build and help bring the story together. All of them are pretty good and none are hard.</li>
-                                <ul>
-                                    <li><i>Outlaw's Paradise</i> is also pretty great, even though it's technically its own hack, it's considered a special episode since Okami considers it as such in the credits. Plus, it comes bundled with Lonely Roads and shares the same "soul". It recieved an <b>S</b> in my rating script if I were to rate it seperately.</li>
-                                    <li>For "The Perfect Mix", <span class="spoiler">you can end the alcoholism early which just displays END after Zigzagoon leaves, its hilarious.</span></li>
-                                </ul>
-                                <li>Also, after Part 7, <span class="spoiler">I love how you can tell Team Redemption is getting more comfortable with each other through small interactions. It really does make me happy.</span></li>
-                                <ul>
-                                    <li><span class="spoiler">LIKE SHINX DOES THE POSE WITH RIOLU!! I hecking love it!!!</span></li>
-                                </ul>
-                            </ul>
-
-
-                            <p>Overall, the story writing is hecking amazing and really keeps me wanting more! It really does capture the charm of the original game, while being its own great and unique story!</p>
-
-                            <p>Fanart is reposted on their <a href="https://bsky.app/profile/lr-okami.bsky.social">bluesky profile</a>, so if you have played up to the point I have, then do check it out! Some of them are included in the zip file you download, but there are some new ones that are worth checking out! <b>Be warned, the fan art <i>will</i> spoil the game if you haven't completed it.</b></p>
-
-                            <p>This hack is still a work in progress, with the last update being <b>Februrary 2026</b>, which is actually a bit of an issue now! The final part in the game has you <span class="spoiler">frozen in time, being in some sort of rendition of the dark future. You cannot earn experience here, therefore, if you <i>are</i> underleveled, its a bit of an issue! This is the only place in the game where you don't earn experience, apart from Shinx's nightmares in early game.</span></p>
-
-                            <p><i>Note: If you read the other reviews and wonder: "why is this one so short?", it's because this was my first review. I didn't know how to really review (and still really don't), but when I replay this, it will have a paragraph per chapter, like the rest.</i></p>
-
-                            <p></p>
                             </div>
-                        </div>
+                    </div>
+                    <div class="card mb-3 border-secondary bg-transparent hack-row" data-score="77" data-date="2026-05-19" data-name="Glaceon Maid Cafe Virtual Training Program">
+                            <div class="card-header p-0"><button class="d-flex justify-content-between align-items-center w-100 bg-transparent border-0 p-3 text-start card-toggle" data-bs-toggle="collapse" data-bs-target="#collapseGMCVTP" aria-expanded="true" aria-controls="collapseGMCVTP">
+                                <div class="d-flex align-items-center">
+                                    <img src="images/pmd_hacks/pmd_eos_icon.png" width="24" class="me-2" alt="Uses the default icon.">
+                                    <h5 class="mb-0">Glaceon Maid Cafe Virtual Training Program</h5>
+                                </div>
+                                <div class="d-flex align-items-center gap-3">
+                                    <span class="small">May 19, 2026</span>
+                                    <span class="rank-tag" style="color: #6ebe82;">B | 77</span>
+                                </div>
+                            </button></div>
+                            <div id="collapseGMCVTP" class="collapse hide">
+                                <div class="card-body">
+                                    <div class="mb-3 border-start border-4 ps-3 border-info">
+                                        <p class="mb-1"><b>Difficulty:</b> Expect 1 KO | Fairly RNG</p>
+                                        <p class="mb-1"><b>Time:</b> 30 - 45 Minutes | No Saves</p>
+                                        <p class="mb-1"><b>Dungeon Length:</b> 10F</p>
+                                        <p class="mb-1"><b>Link:</b> <a href="https://discord.com/channels/710190644152369162/840183736354996224/1121627780606595104">Discord (Must join SkyTemple Server First)</a></p>
+                                        <small>Created: May 19, 2026</small>
+                                    </div>
+                    
+                                    <i>
+                                        <p><i>I decided to go with the program's rating, because even though it was very unique, it's a one time experience. These other games, I've been able to run again and enjoy, however, this one did lose its novelty quickly. Still an enjoyable experience for the first time though!</i></p>
+                                    </i>
+                                    <p>
+                                        The experience was very dependent on crude humor. Def a different experience from these other hacks. Didn't try to go for emotional and sad, nor a deep story, just under an hour of laughs.
+                                    </p>
+                                    <p>
+                                        The hack starts with a disclaimer that the maker doesn't live in Canada, and that any offense to Canadians is 100% intentional. So you know you are in for a great time.
+                                    </p>
+                                    <p>
+                                        Imma be honest, I played this at 2 am with some friends in VC and.. it was hecking hilarious, and probably would still be if we weren't half asleep :3
+                                    </p>
+                                    <p>
+                                        This is truly, an rom hack. Very humorous with a dash of metagaming.
+                                    </p>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="card mb-3 border-secondary bg-transparent hack-row" data-score="80" data-date="2026-05-18" data-name="A Starless Night">
+                            <div class="card-header p-0"><button class="d-flex justify-content-between align-items-center w-100 bg-transparent border-0 p-3 text-start card-toggle" data-bs-toggle="collapse" data-bs-target="#collapseASN" aria-expanded="true" aria-controls="collapseASN">
+                                <div class="d-flex align-items-center">
+                                    <img src="images/pmd_hacks/pmd_eos_icon.png" width="24" class="me-2" alt="Uses the default icon.">
+                                    <h5 class="mb-0">A Starless Night</h5>
+                                </div>
+                                <div class="d-flex align-items-center gap-3">
+                                    <span class="small">May 18, 2026</span>
+                                    <span class="rank-tag" style="color: #6ebe82;">B | 80</span>
+                                </div>
+                            </button></div>
+                            <div id="collapseASN" class="collapse hide">
+                                <div class="card-body">
+                                    <div class="mb-3 border-start border-4 ps-3 border-info">
+                                        <p class="mb-1"><b>Difficulty:</b> Fairly Easy</p>
+                                        <p class="mb-1"><b>Time:</b> 45 - 75 Minutes | No Saves</p>
+                                        <p class="mb-1"><b>Dungeon Length:</b> 5F & 10F</p>
+                                        <p class="mb-1"><b>Link:</b> <a href="https://hacks.skytemple.org/h/starlessnight">SkyTemple</a></p>
+                                        <small>Created: May 18, 2026</small>
+                                    </div>
+                    
+                                    <p>It first starts out with a disclaimer, however, it is mostly just for the usage of swear words. I don't consider these to influence the score, they can be used to convey emotion, but aren't required as seen with many other hacks.</p>
+                                    <p>Most of the hack takes place in a flashback, which honestly, I forgot that was the case. Since that was the premise of the jam, alright. It does add a layer of suspense.</p>
+                                    <p>I do like how it shows dungeon-ing without the Guild's insurance is actually quite dangerous. The badges pretty much are your emergency exit, and when you aren't an official Explorer, you pretty much just die if you are alone in a dungeon. I've always thought that was the case, but its nice to see it reflected in the lore. I never KOed, so I never got to see the dialog.</p>
+                                    <p>Some of the NPCs when you <span class="spoiler">go into town</span> were quite humorous, albeit a bit out of place. I don't even know what else to say, but it was amusing.</p>
+                                    <p>A lot of things were custom, overworld, using sprites from Pokémon Mystery Universe, which was clever. Music was imported from other games, for better or for worse. One of the tracks was from mainline Pokémon game: they have a different style and I felt it immediately. Nothing else to say about that, it was just odd. The DS also doesn't fare too well with imported music so I can forgive the clicks heard in the custom music. Although, I have seen other hacks not have this issue, so perhaps its just a way of finessing.</p>
+                                    <p>There were no save points throughout the entire game, which, I <i>suppose</i> for a max runtime of 75 minutes isn't bad. But maybe someone would like to take a break or just have some security that they won't have to play the whole game again if their DS dies or the flash cart is nudged.</p>
+                                    <p>Overall, it was a good, one-shot, emotional story. I would actually not mind more. Or perhaps knowing what happened to <span class="spoiler">the third person who they vaguely mention. The MC's mother figure says they don't want the MC to end up like "...", but they never elaborate on that.</span> It would be cool to have more backstory.</p>
+                    
+                                </div>
+                            </div>
+                    </div>
+                    <div class="card mb-3 border-secondary bg-transparent hack-row" data-score="34" data-date="2026-03-13" data-name="Fortunes Fault">
+                            <div class="card-header p-0"><button class="d-flex justify-content-between align-items-center w-100 bg-transparent border-0 p-3 text-start card-toggle" data-bs-toggle="collapse" data-bs-target="#collapseFF" aria-expanded="true" aria-controls="collapseFF">
+                                <div class="d-flex align-items-center">
+                                    <img src="images/pmd_hacks/pmd_eos_icon.png" width="24" class="me-2" alt="Uses the default icon.">
+                                    <h5 class="mb-0">Fortune's Fault</h5>
+                                </div>
+                                <div class="d-flex align-items-center gap-3">
+                                    <span class="small">Mar. 13, 2026</span>
+                                    <span class="rank-tag" style="color: #ff3e1c;">E- | 34</span>
+                                </div>
+                            </button></div>
+                            <div id="collapseFF" class="collapse hide">
+                                <div class="card-body">
+                                    <div class="mb-3 border-start border-4 ps-3 border-info">
+                                        <p class="mb-1"><b>Difficulty:</b> Expect to KO multiple times.</p>
+                                        <p class="mb-1"><b>Time:</b> 1 - 2 Hours</p>
+                                        <p class="mb-1"><b>Dungeon Length:</b> The Whole Game is One (24 Floors).</p>
+                                        <p class="mb-1"><b>Link:</b> <a href="https://hacks.skytemple.org/h/fortunesfault">SkyTemple</a></p>
+                                        <small>Created: Mar. 13, 2026</small>
+                                    </div>
+                    
+                                    <p>Being awarded "best gameplay", I had high hopes...</p>
+                                    <p>You get these pickaxes you can throw to tunnel through, honestly, pretty cool idea! The main issue is that you have no moves, which is fine... just one to find the stairs. The issue is... PMD, there is no way to run away from an enemy, once you are in combat, you are there, and if another one comes in, you are actually cooked, no escape.</p>
+                                    <p>There are a ton of IQ raising items like Wonder Gummis, Orange Gummies, and Nectar that spawn, which do help get through the dungeon, which I think is the main goal. To wipe out of the dungeon like 200 times in order to get the IQ skills by the end of it.</p>
+                                    <p>Even so, it was still quite a challenge, which is fine... but it did feel kinda unfair, especially since there are no checkpoints in the entire 24 floor dungeon.</p>
+                                    <p>Once you get to the end, <span class="spoiler">you have to go back down after getting the treasure with a 300 turn time limit. It wasn't a challenge at that point.. just an annoyance, since every step you took on a new floor would play the "Something is coming..." line, causing the music to stop and repeat from the beginning... which isn't good for polish.</span></p>
+                                    <p>Furthermore, there's a lot of small things like the mission objective menu showing an incorrect message or just "Dummy", which is fine.. those are just bonus points in my book..</p>
+                                    <p>There are three endings, but it doesn't even feel like it. The endings are <span class="spoiler">if you make it out alive without taking the will, if you make it out alive taking the will with you, and if you die. No special "Greed caused your death" or whatever dialog.</span></p>
+                                    <p>All in all, the pickaxe gimmick is cool.. but the implementation was bad. I wish you at least got Agility so you can run away. Nerf my attack, that's fine, just give means of escape... oh and also, you aren't guaranteed a pickaxe if you KO.</p>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="card mb-3 border-secondary bg-transparent hack-row" data-score="100" data-date="2026-03-10" data-name="Strung Up By Sketches">
+                            <div class="card-header p-0"><button class="d-flex justify-content-between align-items-center w-100 bg-transparent border-0 p-3 text-start card-toggle" data-bs-toggle="collapse" data-bs-target="#collapseSUBS" aria-expanded="true" aria-controls="collapseSUBS">
+                                <div class="d-flex align-items-center">
+                                    <img src="images/pmd_hacks/subs_icon.png" width="24" class="me-2" alt="SUBS Icon">
+                                    <h5 class="mb-0">Strung Up By Sketches</h5>
+                                </div>
+                                <div class="d-flex align-items-center gap-3">
+                                    <span class="small">Mar. 10, 2026</span>
+                                    <span class="rank-tag" style="color: #ff00ff;">EX++ | 100</span>
+                                </div>
+                            </button></div>
+                            <div id="collapseSUBS" class="collapse hide">
+                                <div class="card-body">
+                                    <div class="mb-3 border-start border-4 ps-3 border-info">
+                                        <p class="mb-1"><b>Difficulty:</b> Puzzles, But On Par w/ the Original</p>
+                                        <p class="mb-1"><b>Time:</b> 3-4 hours</p>
+                                        <p class="mb-1"><b>Dungeon Length:</b> 30-60 Minutes</p>
+                                        <p class="mb-1"><b>Link:</b> <a href="https://hacks.skytemple.org/h/strungupbysketches">SkyTemple</a></p>
+                                        <small>Created: Mar. 10, 2026</small>
+                                    </div>
+                    
+                                    <p>The ROM starts off with a cutscene, of who I presume is the MC, writing a diary entry. I have never seen this before! This is super unique, having dialogue the moment the game starts, rather than pressing New Game. We are in for a new mechanical treat.</p>
+                                    <p>You do not play a normal dungeon crawler, but the dungeons are these <span class="spoiler">remember places</span> where you go and <span class="spoiler"><strike>kidnap</strike> save people from these places.</span></p>
+                                    <p>The dungeons are very puzzle oriented and aren't combat heavy.</p>
+                                    <p>Right off the bat, the first time skip? Your play time is set to 101 hours and your level goes up by a lot. Finally, a timeskip that increases stats/level... the playtime is a neat thing though!</p>
+                                    <p>Fully custom borders and backgrounds, I wonder how they did the cutscenes, since they are just.. super cool!</p>
+                                    <p>Heck, even the help documentation is changed to reflect the lore... its really dope!</p>
+                                    <p>Music is stock, but has effects that change based on what's going on in the cutscene. Furthermore, character portraits also change mid text box, something I didn't even know was possible..</p>
+                                    <p>Holy heck, I don't even know how to describe any of this experience... just go try it yourself... it's leagues better than anything else I have seen, but I suppose that is expected for a game jam winner. They replaced the hecking ejected cart error message too??? I didn't realize that was even possible!</p>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="card mb-3 border-secondary bg-transparent hack-row" data-score="74" data-date="2026-03-09" data-name="The Bright Future">
+                            <div class="card-header p-0"><button class="d-flex justify-content-between align-items-center w-100 bg-transparent border-0 p-3 text-start card-toggle" data-bs-toggle="collapse" data-bs-target="#collapseBF" aria-expanded="true" aria-controls="collapseBF">
+                                <div class="d-flex align-items-center">
+                                    <img src="images/pmd_hacks/pmd_eos_icon.png" width="24" class="me-2" alt="Standard Icon" title="Bright Future has no custom icon, which is fine.">
+                                    <h5 class="mb-0">The Bright Future</h5>
+                                </div>
+                                <div class="d-flex align-items-center gap-3">
+                                    <span class="small">Mar. 9, 2026</span>
+                                    <span class="rank-tag" style="color: #dcda6d;">C- | 74</span>
+                                </div>
+                            </button></div>
+                            <div id="collapseBF" class="collapse hide">
+                                <div class="card-body">
+                                    <div class="mb-3 border-start border-4 ps-3 border-info">
+                                        <p class="mb-1"><b>Difficulty:</b> Pretty Easy</p>
+                                        <p class="mb-1"><b>Time:</b> 2 Hours to Beat</p>
+                                        <p class="mb-1"><b>Dungeon Length:</b> Around 10F | Max: 15F</p>
+                                        <p class="mb-1"><b>Link:</b> <a href="https://hacks.skytemple.org/h/pmd_the_bright_future">SkyTemple</a></p>
+                                        <small>Edited: Mar. 9, 2026; Created: Dec. 1, 2025</small>
+                                    </div>
+                                    <p>I decided to replay this hack, because I felt like my previous review was a bit harsh. This one is more in-depth because I decided to comment on each chapter after I played through it. I will do this going forward.</p>
+                                    <p>Starting off, I chose to name myself "Scorbunny", since I personally the story fits better this way. This review and its grade will be treated as a 3rd person story.</p>
+                                    <p>I love the humor, I pretty much giggled at most of the jokes.</p>
+                                    <p>It's interesting how it takes place in the far, far future after PMD Sky, but like the new Pokémon who appear in place of the others.</p>
+                                    <p>Your level is locked at 20, which is plenty enough for the dungeons in this game. However, this level seems.. weird. If you are the savior of the future from the original game, why are you LV20, rather than high 30s, low 40s? Seems a bit inconsistent, but I digress.</p>
+                                    <p>You and Rockruff do missions behind a transition card, which is fine, its a short story and prevents filler for that. However, I wish your level increased by a few levels through that transition, just for story/gameplay consistency. Also, how as Rockruff's rash behavior not caused a problem throughout those, but just now when the user is playing? Perhaps it is mentioned, but I may be wrong.</p>
+                                    <p>One thing that made this a better 3rd person story than an insertion story was the fact the MC says they wanna return to the human world badly. Honestly, if I was here in this world of PMD, I'd want to stay here the rest of my life. The MC 100% misses people from back home, and I would too. It is implied in the dialogue, but dang.. I duno if I would go back to the human world regardless.. this just seems more fun.</p>
+                                    <p>The dreams being <span class="spoiler">your previous partner,</span> is nice foreshadowing. It's hard to say too much, since this is my second time.</p>
+                                    <p>The battles during the <span class="spoiler">Daylight Festival use internal names like TTBoss1-3. I don't know how hard scripting or whatever is, but... I've never seen this before.</span> I don't think any other boss fight in this hack even has that issue though.. strange..</p>
+                                    <p>Ch. 8: <span class="spoiler">The scene where the MC loses hope and isn't motivated to do anything is a bit.. cheesy. They turn around so quickly though tbh, they are hopeless then Rockruff goes "ruff ruff, imma snuggle you so you feel better", and then MC is now.. completely fine after not putting their heart into anything the past few days? I duno, just feels like <i>most</i> of it would happen for me, but rather than it be like "wao, i am full of hope now", it would just be a quiet "thanks", and then a slower recovery or so. Granted, I'm not really one to lose hope that quickly, but I also don't really insert well with Scorbunny to begin with. Also, I feel like a transition card would be better, since it actually just seemed like Rockruff went back to his bed during the night.. rather than an entire day passing. They could've also been in Treasure Town to have this conversation about their day...</span></p>
+                                    <p>Chapter 10: <span class="spoiler">For the boss fight... why is the location text "Dream Boss"? That seems.. not right for world building. I duno, just a simple "???" could've done just fine.</span></p>
+                                    <p>Back to the whole intermission, when they say "We need to train up!" and a title card shows.. I do expect a higher level and boost in stats, just to be consistent.</p>
+                                    <p>Other than my nitpicking.. it's honestly pretty good writing. Pacing or transitions could've been better, but tbh, this is kind of attempting to fit a story about development and such within 2 hours. It feels.. like it was made for a game jam.</p>
+                                    <p>The two new songs are nice remixes and they play during the Final Chapter. The 2nd one is a bit crackily, which made it a bit hard to enjoy, but the final boss theme's audio was fine.</p>
+                                    <p>I personally think it's a pretty neat take on the <i>Wishing Star</i> and <i>Dynamaxing</i>. Cool to see some elements of Super Mystery Dungeon in here as well.</p>
+                                    <p>A lot of internal names, or just.. weird names used for the Boss areas, and just for some too! Some actually have proper locations, and others have "[Location] Boss", boss shouldn't be in the name.</p>
+                                    <p>Also the end scene, I've got the idea that <span class="spoiler">it's Sobble on the left and Rockruff on the right, in the MC's POV</span>, but I wonder if there is a reference here. It felt a <i>bit</i> outta place, but it's creative.. I think.</p>
+                                    <p>All in all, it was a pretty alright story hack, the gameplay was quite easy, I only used one Oran Berry during the <span class="spoiler">teacup fight</span>. Otherwise, Scorbunny's moves are so good, that the game is quite easy.</p>
+                                    <p>Also, either I'm going crazy, or some of the chapter cards were missing...</p>
+                                    <hr>
+                                    <details>
+                                        <summary>Old Review (Dec. 1, 2025)</summary>
+                                        <i>
+                                            <p>Like the OP says, the player stays at Level 20 and there are no overworld segments, it's easy, back-to-back dungeon-ing with story in between. It's a full story-only hack which aren't the worst in my opinion: I do like myself a good story hack!</p>
+                    
+                                            <p>The MC talks in this hack, which wouldn't be a problem if it wasn't an insertion story, <i>(the game asks for your name and a name to give your partner)</i>. This honestly is the only issue I have with this hack. The main reason that the MC in the base game doesn't speak often and somewhat generically, for lack of a better word, is because the MC needs to fit a wide range of people. When the MC says things that I, personally, wouldn't have said in that situation, it breaks the immersion a bit.</p>
+                    
+                                            <p>Despite this, that doesn't mean the story or writing is bad, far from it. I feel like it captures the feeling of the original game. It flows nicely and doesn't drag on. I was not bored while I was playing, <i>(granted, it wasn't a long hack, but still)</i>.</p>
+                    
+                                            <p><b>Don't let my opinion discourage you! There's a reason I didn't go too into detail!</b> Honestly, I was tempted to replay the hack after seeing all the positive feedback on it, <i>(it has been a few months since I played through it).</i> I personally would replay with generic species names to get that 3rd person experience I feel this game needs, however, if you want to play it as an insertion story, go for it!</p>
+                                        </i>
+                                    </details>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="card mb-3 border-secondary bg-transparent hack-row" data-score="98" data-date="2026-02-18" data-name="Lonely Roads">
+                            <div class="card-header p-0"><button class="d-flex justify-content-between align-items-center w-100 bg-transparent border-0 p-3 text-start card-toggle" data-bs-toggle="collapse" data-bs-target="#collapseLR" aria-expanded="true" aria-controls="collapseLR">
+                                <div class="d-flex align-items-center">
+                                    <img src="images/pmd_hacks/lr_icon.png" width="24" class="me-2" alt="LR Icon">
+                                    <h5 class="mb-0">Lonely Roads</h5>
+                                </div>
+                                <div class="d-flex align-items-center gap-3">
+                                    <span class="small">Feb. 18, 2026</span>
+                                    <span class="rank-tag" style="color: #ff88ff;">EX+ | 98</span>
+                                </div>
+                            </button></div>
+                            <div id="collapseLR" class="collapse hide">
+                                <div class="card-body">
+                                    <div class="mb-3 border-start border-4 ps-3 border-info">
+                                        <p class="mb-1"><b>Difficulty:</b> On Par w/ the Original</p>
+                                        <p class="mb-1"><b>Time:</b> 27 Hours and Counting...</p>
+                                        <p class="mb-1"><b>Link:</b> <a href="https://hacks.skytemple.org/h/lonely_roads" target="_blank">SkyTemple</a></p>
+                                        <small>Edited: Feb. 18, 2026 | Created: Jan. 31, 2026</small>
+                                    </div>
+                    
+                                    <p>Starting off, the gameplay/story balance is very similar to the base game and I personally would say the difficulty is about the same, if not a smidge harder. This a third person story and not an insertion story, which I feel allows the character's backgrounds to be deeper.</p>
+                                <p>Things I like and noticed from this hack:</p>
+                                <p><small>(Blacked out parts are spoilers! Hover over them to view!)</small></p>
+                                <ul>
+                                    <li>Overall great humor in general.</li>
+                                    <li>The title screen changes based on where you are in the story.</li>
+                                    <li>There's weather in Treasure Town! <i>(It doesn't really do much gameplay wise, but its really cool! Dialog is changed and there's water flowing into Spinda's Cafe during rain).</i></li>
+                                    <li>In-dungeon dialog <i>(by interacting with your teammates or pressing Talk in the menus)</i> has been changed to better reflect the characters' personalities.</li>
+                                    <li>Some exploration teams from the base game are expanded on and become side-main characters in this hack.</li>
+                                    <li>Seperate wonder bags for story events <i>(I didn't even know that would be possible!)</i></li>
+                                    <li>5 Special Episodes that world build and help bring the story together. All of them are pretty good and none are hard.</li>
+                                    <ul>
+                                        <li><i>Outlaw's Paradise</i> is also pretty great, even though it's technically its own hack, it's considered a special episode since Okami considers it as such in the credits. Plus, it comes bundled with Lonely Roads and shares the same "soul". It recieved an <b>S</b> in my rating script if I were to rate it seperately.</li>
+                                        <li>For "The Perfect Mix", <span class="spoiler">you can end the alcoholism early which just displays END after Zigzagoon leaves, its hilarious.</span></li>
+                                    </ul>
+                                    <li>Also, after Part 7, <span class="spoiler">I love how you can tell Team Redemption is getting more comfortable with each other through small interactions. It really does make me happy.</span></li>
+                                    <ul>
+                                        <li><span class="spoiler">LIKE SHINX DOES THE POSE WITH RIOLU!! I hecking love it!!!</span></li>
+                                    </ul>
+                                </ul>
+                                <p>Overall, the story writing is hecking amazing and really keeps me wanting more! It really does capture the charm of the original game, while being its own great and unique story!</p>
+                                <p>Fanart is reposted on their <a href="https://bsky.app/profile/lr-okami.bsky.social">bluesky profile</a>, so if you have played up to the point I have, then do check it out! Some of them are included in the zip file you download, but there are some new ones that are worth checking out! <b>Be warned, the fan art <i>will</i> spoil the game if you haven't completed it.</b></p>
+                                <p>This hack is still a work in progress, with the last update being <b>Februrary 2026</b>, which is actually a bit of an issue now! The final part in the game has you <span class="spoiler">frozen in time, being in some sort of rendition of the dark future. You cannot earn experience here, therefore, if you <i>are</i> underleveled, its a bit of an issue! This is the only place in the game where you don't earn experience, apart from Shinx's nightmares in early game.</span></p>
+                                <p><i>Note: If you read the other reviews and wonder: "why is this one so short?", it's because this was my first review. I didn't know how to really review (and still really don't), but when I replay this, it will have a paragraph per chapter, like the rest.</i></p>
+                                <p></p>
+                                </div>
+                            </div>
+                    </div>
                 </div>
 
 
                 
                 <hr>
 
-                <details>
+                <details id="ratings">
                     <summary>Ratings</summary>
 
                     <p>
@@ -515,6 +432,8 @@
 
 
         <script src = "../scripts/theme.js"></script>
+
+        <script src="scripts/pmd-sorter.js"></script>
 
     </body>
 
