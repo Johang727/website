@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="Pictures taken with my camera!">
+        <meta property="og:title" content="The Photo Album">
+        <title>The Album</title>
+        <meta property="og:type" content="website">
+        <meta property="og:description" content="Pictures taken with my camera!">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+
+        <script src="../scripts/dark-light-sw.js"></script>
+    </head>
+
+    <body>
+        <div class="container mt-4">
+            <div class="d-flex justify-content-between">
+                <div class="d-flex align-items-baseline">
+                    <h2><a href="../index.html">~</a>/<a href="index.html">TheAlbum</a>/ThePile</h2>
+                </div>
+
+                <button id = "theme-toggle" onclick = "toggle_theme" class = "btn btn-secondary">
+                    Dark/Light
+                </button>
+            </div>
+            <small><i>Scattered images.</i></small>
+
+            <hr>
+
+                <!--Unorganized Images-->
+                <div>
+                    <h4 id="the-pile">The Pile</h4>
+                    <p>
+                        These are a set of photos that do not have an overall story attached to them.
+                    </p>
+                    <div class="row">
+                        <div class="col">
+                            <div class="card mb-3">
+                                <a href="images/thepile/bk.jpg" title="Click for Fullscreen">
+                                    <picture>
+                                        <source srcset="images/thepile/bk_tn.avif" type="image/avif">
+                                        <source srcset="images/thepile/bk_tn.webp" type="image/webp">
+                                        <img src="images/thepile/bk_tn.jpg" class="card-img-top" alt="The Ohio Hoover Dam from the top." loading="lazy">
+                                    </picture>
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title">Crete Burger King - Community Board</h5>
+                                    <p class="card-text small text-muted mb-1">
+                                        I've never seen a community board in a restaurant; a Burger King was the last place I'd expect to see one. While waiting for your food, check out the community events and announcements! Actually up to date too!
+                                    </p>
+                                    <p class="card-text mb-0" style="font-size: 0.75rem;">
+                                        <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="text-decoration-none text-secondary">
+                                            <i class="fab fa-creative-commons"></i> CC BY-NC-SA 4.0
+                                        </a>
+                                    </p>
+                                    <div>
+                                        <span class="badge rounded-pill bg-dark text-light">Canon EOS M50</span>
+                                        <span class="badge rounded-pill bg-dark text-light">EF-M 15-45mm f/3.5-6.3 IS STM</span>
+                                        <span class="badge rounded-pill bg-dark text-light">15mm (24mm)</span>
+                                        <span class="badge rounded-pill bg-dark text-light">f/3.5</span>
+                                        <span class="badge rounded-pill bg-dark text-light">1/50s</span>
+                                        <span class="badge rounded-pill bg-dark text-light">ISO 320</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card mb-3">
+                                <a href="images/thepile/music_library.jpg" title="Click for Fullscreen">
+                                    <picture>
+                                        <source srcset="images/thepile/music_library_tn.avif" type="image/avif">
+                                        <source srcset="images/thepile/music_library_tn.webp" type="image/webp">
+                                        <img src="images/thepile/music_library_tn.jpg" class="card-img-top" alt="The Ohio Hoover Dam from the top." loading="lazy">
+                                    </picture>
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title">Crete Public Library - Outdoor Xylophone</h5>
+                                    <p class="card-text small text-muted mb-1">
+                                        I haven't been to many parks, so I'm not entirely sure what the situation is, but this is my first time seeing one of these things. It was quite fun tbh. 
+                                    </p>
+                                    <p class="card-text mb-0" style="font-size: 0.75rem;">
+                                        <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="text-decoration-none text-secondary">
+                                            <i class="fab fa-creative-commons"></i> CC BY-NC-SA 4.0
+                                        </a>
+                                    </p>
+                                    <div>
+                                        <span class="badge rounded-pill bg-dark text-light">Canon EOS M50</span>
+                                        <span class="badge rounded-pill bg-dark text-light">EF-M 15-45mm f/3.5-6.3 IS STM</span>
+                                        <span class="badge rounded-pill bg-dark text-light">24mm (38mm)</span>
+                                        <span class="badge rounded-pill bg-dark text-light">f/8</span>
+                                        <span class="badge rounded-pill bg-dark text-light">1/60s</span>
+                                        <span class="badge rounded-pill bg-dark text-light">ISO 500</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <hr>
+
+
+
+
+
+        <script src = "../scripts/theme.js"></script>
+    </body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</html>
