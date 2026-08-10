@@ -79,7 +79,8 @@ Ex: LiedMedia: " PRINTER
 2) Sharp-MX-5071
 3) Sharp-MX-M5071
 4) Sharp-MX-4071
-5) Provide Own PPD
+5) Sharp-MX-3071
+6) Provide Own PPD
 
 Selection: " model
 
@@ -106,6 +107,11 @@ Selection: " model
                 ;;
 
                 "5")
+                PPD_FILE="./Sharp-MX-3071-ps.ppd"
+                break
+                ;;
+
+                "6")
                 read -r -p "Enter the path to the PPD file
 Ex: ./Sharp-MX-4071-ps.ppd: " PPD_FILE
                 custom_ppd="true"
