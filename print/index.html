@@ -34,8 +34,6 @@
 
             <h3>Premise</h3>
 
-            <p><strong>I am looking for a better solution to handle credentials. This is very much a WIP, but gets the job done.</strong></p>
-
             <p><i><a href="#dependencies">Click here to skip this section</a>.</i></p>
 
             <p>
@@ -43,16 +41,18 @@
             </p>
 
             <p>
-                The built in printing front-end never worked for me, perhaps you have more success with it, however, it always gave B/W prints or none at all. Furthermore I would need to reconfigure printers all the time, this solution is a lot more consistent, albeit, a bit less secure.
+                The built in printing front-end never worked for me, perhaps you have more success with it, however, it always gave B/W prints or none at all. Furthermore I would need to reconfigure printers all the time.
             </p>
 
             <p>
-                However, I have not run into the standard issues that even Windows machines face & that's why I believe this CLI solution is still better.
+                The printers have all been changed to FollowMe Printers, therefore, the previous setup.sh no longer works and the setup has changed. Driverless printing makes it weird, and I have not managed to get prints to work with the GUI, only in CLI.
             </p>
 
             <p>
-                However, especially with fish, I did not like typing passwords into the commands directly, so I made a little shell script that streamlined setup on the four major printers (in my opinion) on campus.
+                After some research, I found this neat script I plan on adding a print from PDF option to in the future.
             </p>
+
+
 
             <p>
                 Without further ado, let's get into the setup.
@@ -69,45 +69,25 @@
 
             <h3>Printer Setup</h3>
 
-            <p><i>Note: For both methods, your password will be saved in <b>/etc/cups/printers.conf</b>! This file can only be read by root, however, if you are on a shared device or uncomfortable with this, these methods are not for you!</i></p>
+            <p>
+                Clone the GitHub Repo: <a href="https://github.com/Rewzilla/pc-mobility-print">https://github.com/Rewzilla/pc-mobility-print</a>, someone already made a program to add those FollowMe printers.
+            </p>
 
-            <p>I am <i>NOT</i> responsible for leaked passwords. Use this method at your own risk.. or just use Windows.</p>
+            <p>
+                In the username and password, enter your Doane University credentials. Do not include <code>@doane.edu</code>.
+            </p>
 
-            <p id="automated"><b>For an automated setup</b> that goes through the following steps, download this file: <a href="https://raw.githubusercontent.com/Johang727/website/master/print/setup.sh">setup.sh</a></p>
-            <p><small><i>If it doesn't download automatically, you can use CTRL+S to save it.</i></small></p>
+            <p>
+                Under server, enter <code>ob2</code> and under domain, enter <code>doane.local</code>. There is no error detection built into the software, so if it locks up for more than 10 seconds, restart the program and try again.
+            </p>
 
-            <div class="container mb-4">
-                <p>Make sure to make it executable with <code>chmod +x setup.sh</code></p>
-                <p>Run it like any other program with <code>./setup.sh</code></p>
-                <p>This script supports both the <b>Lied Lounge</b> and the <b>24/7 Lab</b> printers. The other printers do something differently and are a WIP.</p>
-            </div>
-
-
-            <p><b>For a manual setup</b> because running shell scripts can be scary...</p>
-
-            <div class="container mb-4">
-                <p>Download the PPD for the printer from the <a href="https://global.sharp/restricted/print/select.html?view=2">Sharp official website</a>.</p>
-
-                <p>Find the name of the printer and write it down.</p>
-
-                <p>Make sure CUPS is running.</p>
-
-                <p>To register the printer, run <i>(all in one line)</i>:</p>
-                <div class="container mb-4">
-                    <p><code>sudo lpadmin -p PRINTER_NAME -b "smb://USERNAME:PASSWORD@crete/ob2/PRINTER_NAME" -E -P /PATH/TO/PPD_FILE</code></p>
-                </div>
-
-                <p>If you password contains special characters, you would need to encode it using URI standards.</p>
-
-                <p>And that's it, try a test print with: </p>
-                <div class="container mb-4">
-                    <p><code>lp -d PRINTER_NAME -o sides=two-sided-long-edge /PATH/TO/PDF_FILE</code></p>
-                </div>
-
-                <p>It might take up to one minute to register on the printer.</p>
+            <p>
+                Add the FollowMeColor printer, there is no reason to use the BW since you can just send a BW print to the color queue. And that's it. Depending on your specific flavor of Linux, you'll need to print from the terminal. To do that, envoke <code>lp -d "FollowMeColor" -o sides=two-sided-long-edge -o print-color-mode=color</code> for a color + double sided print. Modify the command to suit your needs. Double check the print details on the printer to make sure it's what you want. 
+            </p>
 
 
-            </div>
+
+
 
             <hr>
 

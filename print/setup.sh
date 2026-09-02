@@ -24,10 +24,10 @@ urlencode() {
 }
 
 # credits for a double sided color print
-creds="3.0" # i think it was 3.0, but it could be something like 1.5 or 2.0
-
-echo "Note: Your credentials will be saved in /etc/cups/printers.conf! This file is read protected by root."
-echo "Continuing is not recommended on a shared device! I am not responsible for leaked passwords."
+creds="2.0" # i think it was 3.0, but it could be something like 1.5 or 2.0
+echo "Note: You need root access to use this software. Furthermore, this script depends on CUPS"
+echo "Note: Your credentials will be saved in /etc/cups/printers.conf and shown in the URI! This file is read protected by root."
+echo "Note: Continuing is not recommended on a shared device! I am not responsible for leaked passwords."
 
 read -r -p "Would you like to proceed? (y/N): " confirmation
 if [[ "$confirmation" =~ ^[Nn]$ ]]; then
@@ -36,7 +36,7 @@ fi
 
 while true; do
     read -r -p "Select Printer:
-1) Lied Media
+1) Lied Media Printer
 2) Library Printer 1
 3) Library Printer 2
 4) 24/7 Library Printer
@@ -169,7 +169,7 @@ Configuring CUPS... (You may be prompted for $USER@$HOSTNAME's password).
 "
 
 
-sudo systemctl start cups.service > /dev/null # in case user doesn't have it set to autorun
+sudo systemctl start cups.service > /dev/null || { echo "Starting failed, make sure you have CUPS installed"; exit 1; } # in case user doesn't have it set to autorun
 
 if sudo lpadmin -p "$PRINTER" -v "smb://$ENCODED_USER:$ENCODED_PASS@crete/ob2/$PRINTER" -E -P "$PPD_FILE" > /dev/null; then
     echo "
@@ -214,4 +214,3 @@ For the most consistent printing, use the CLI directly:
 lp -d $PRINTER -o sides=two-sided-long-edge -o Duplex=DuplexNoTumble <file.pdf>
 
 Note: Print jobs on the printer will be under $USER rather than $ENCODED_USER. Regardless, $ENCODED_USER will be charged."
-
