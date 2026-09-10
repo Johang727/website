@@ -603,5 +603,89 @@ if max_score_nobono > 0:
     print(f"Bonus Score: {bonus_earned} / {bonus_score} ({(bonus_earned / bonus_score)*100:.2f}%)")
     print("-----------------------")
     print(f"Rank: {final_rank}")
+
+
+
+    def get_color(pct: float) -> str:
+        """
+        Returns a hex code for the percent color
+
+        :param float pct: the percentage to return the string for
+        :return hex: the color hex code
+        """
+
+        if score == 100: return "b900b9"
+        elif score >= 98: return "ff88ff"
+        elif score >= 95: return "8577ff"
+        elif score >= 92: return "4f92ff"
+        elif score >= 85: return "79d0cd"
+        elif score >= 75: return "6ebe82"
+        elif score >= 60: return "dcda6d"
+        elif score >= 50: return "e7844f"
+        elif score >= 30: return "ff3e1c"
+
+        return "ff0000"
+
+    print("Would you like the HTML? (y/N)")
+
+    if input().lower() == "y":
+
+        # category | earned / possible
+        categories:dict[str,tuple[float,float, float]] = {}
+        
+        for cat, possible in cat_max.items():
+            earned = cat_earned[cat]
+            pct = (earned / possible * 100) if possible else 0
+            categories[cat] = (earned, possible, pct)
+
+        #print(categories)
+
+        bonus_pct:float = round((bonus_earned / bonus_score)*100)
+            
+        try:
+            print(f"""<div class="mb-3 border-start border-4 ps-3 border-info">
+        <div class="d-flex align-items-center ">
+            <b style="width: 100px;">Technical:</b> 
+            <div class="progress flex-grow-1" role="progressbar">
+                <div class="progress-bar" style="width: {round(categories["technical"][2])}%; background-color: #{get_color(round(categories["technical"][2]))}; color:#000">{categories["technical"][0]} / {categories["technical"][1]} {round(categories["technical"][2])}%</div>
+            </div>
+        </div>
+        <div class="d-flex align-items-center ">
+            <b style="width: 100px;">Story:</b> 
+                <div class="progress-bar" style="width: {round(categories["story"][2])}%; background-color: #{get_color(round(categories["story"][2]))}; color:#000">{categories["story"][0]} / {categories["story"][1]} {round(categories["story"][2])}%</div>
+            </div>
+        </div>
+        <div class="d-flex align-items-center ">
+            <b style="width: 100px;">Visuals:</b> 
+            <div class="progress flex-grow-1" role="progressbar">
+                <div class="progress-bar" style="width: {round(categories["visuals"][2])}%; background-color: #{get_color(round(categories["visuals"][2]))}; color:#000">{categories["visuals"][0]} / {categories["visuals"][1]} {round(categories["visuals"][2])}%</div>
+            </div>
+        </div>
+        <div class="d-flex align-items-center ">
+            <b style="width: 100px;">Sound:</b> 
+            <div class="progress flex-grow-1" role="progressbar">
+                <div class="progress-bar" style="width: {round(categories["sound"][2])}%; background-color: #{get_color(round(categories["sound"][2]))}; color:#000">{categories["sound"][0]} / {categories["sound"][1]} {round(categories["sound"][2])}%</div>
+            </div>
+        </div>
+        <div class="d-flex align-items-center ">
+            <b style="width: 100px;">Gameplay:</b> 
+            <div class="progress flex-grow-1" role="progressbar">
+                <div class="progress-bar" style="width: {round(categories["gameplay"][2])}%; background-color: #{get_color(round(categories["gameplay"][2]))}; color:#000">{categories["gameplay"][0]} / {categories["gameplay"][1]} {round(categories["gameplay"][2])}%</div>
+            </div>
+        </div>
+        <div class="d-flex align-items-center ">
+            <b style="width: 100px;">Bonus:</b> 
+            <div class="progress flex-grow-1" role="progressbar">
+                <div class="progress-bar" style="width: {bonus_pct}%; background-color: #{get_color(bonus_pct)}; color:#000">{bonus_earned} / {bonus_score} {bonus_pct}%</div>
+            </div>
+        </div>
+    </div>""")
+        except Exception as e:
+            print(f"""{e}
+----
+Unable to provide HTML.
+                  """)
+            exit(1)
+
 else:
     print("All questions answered as N/A... cannot get grade")
