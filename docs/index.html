@@ -15,6 +15,9 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
         <script src="scripts/dark-light-sw.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/js/bootstrap-datepicker.min.js"></script>
+        <script src="main.js"></script>
     </head>
 
 
@@ -35,163 +38,173 @@
             <h4>
                 What's New_
             </h4>
+
+            <div class="container mb-3">
+                <div class="card p-4">
+                    <div class="input-group">
+                        <input type="text" id="restricted-date" class="form-control" placeholder="Select a Date to View Logs..." readonly onclick="HideLog()">
+                        <span class="input-group-text"><i class="bi bi-calendar"></i></span>
+                        <button onclick="ShowLog()">Select!</button>
+                    </div>
+                </div>
+            </div>
+
             <div class="container ms-1">
-                <details>
-                    <summary><b>July 9th, 2026</b></summary>
-                    <div class="container ms-1">
-                        <ul>
-                            <li>Site-wide</li>
-                            <ul>
-                                <li>Updated all headers to use the new breadcrumbs.</li>
-                            </ul>
 
-                            <li>The Album</li>
-                            <ul>
-                                <li>Added an image to the Pile.</li>
-                                <li>There are now button elements on each section that show # of pictures.</li>
-                            </ul>
 
-                        </ul>
-                    </div>
-                </details>
-                <details>
-                    <summary><b>July 4th, 2026</b></summary>
-                    <div class="container ms-1">
+                <div id="2026-09-09" hidden>
+                    <ul>
+                        <li>Index</li>
                         <ul>
-                            <li>The Album</li>
+                            <li>Modified the What's New section to include a date selector as opposed to the old list.</li>
+                            <li>Removed the Artwork section</li>
                             <ul>
-                                <li>Put images on their own pages, makes for quicker loading & a less buggy experience.</li>
-                                <li>Added some images to The Pile.</li>
-                            </ul>
-
-                        </ul>
-                    </div>
-                </details>
-                <details>
-                    <summary><b>May 30th, 2026</b></summary>
-                    <div class="container ms-1">
-                        <ul>
-                            <li>Site-wide</li>
-                            <ul>
-                                <li>A lot of images now have AVIF for supported devices & lazy loading.</li>
-                            </ul>
-                            <li>Artwork Page</li>
-                            <ul>
-                                <li>Added a bit more yap, sorry, no new artworks today.</li>
+                                <li>
+                                    I didn't draw as much as I thought I would, it's under the scratchpad now.
+                                </li>
                             </ul>
                         </ul>
-                    </div>
-                </details>
+                    </ul>
+                </div>
 
 
-                <details>
-                    <summary><b>May 27th, 2026</b></summary>
-                    <div class="container ms-1">
+                <div id="2026-07-09" hidden>
+                    <ul>
+                        <li>Site-wide</li>
                         <ul>
-                            <li>Index</li>
-                            <ul>
-                                <li>Added a project.</li>
-                            </ul>
-                            <li>Scratchpad/PMD Sky</li>
-                            <ul>
-                                <li>Added a review for Tunnel Run.</li>
-                                <li>Added a review for Aggron's Grand Opening.</li>
-                                <li>Fixed a broken image.</li>
-                            </ul>
+                            <li>Updated all headers to use the new breadcrumbs.</li>
                         </ul>
-                    </div>
-                </details>
 
-                <details>
-                    <summary><b>May 19th, 2026</b></summary>
-                    <div class="container ms-1">
+                        <li>The Album</li>
                         <ul>
-                            <li>Scratchpad/PMD Sky</li>
-                            <ul>
-                                <li>Added a review for A Starless Night.</li>
-                                <li>Added a review for Glaceon's Maid Cafe</li>
-                                <li>Modified the rating badges to include the score.</li>
-                                <li>Under the ratings section, you can now see what the general meaning of each rank is.</li>
-                            </ul>
+                            <li>Added an image to the Pile.</li>
+                            <li>There are now button elements on each section that show # of pictures.</li>
                         </ul>
-                    </div>
-                </details>
+                    </ul>
+                </div>
 
-                <details>
-                    <summary><b>April 30th, 2026</b></summary>
-                    <div class="container ms-1">
+                <div id="2026-07-04" hidden>
+                    <ul>
+                        <li>The Album</li>
                         <ul>
-                            <li>Photography</li>
-                            <ul>
-                                <li>Added images from the Eau Claire competition.</li>
-                            </ul>
+                            <li>Put images on their own pages, makes for quicker loading & a less buggy experience.</li>
+                            <li>Added some images to The Pile.</li>
                         </ul>
-                    </div>
-                </details>
-                <details>
-                    <summary><b>April 28th, 2026</b></summary>
-                    <div class="container ms-1">
+
+                    </ul>
+                </div>
+
+
+                <div id="2026-05-30" hidden>
+                    <ul>
+                        <li>Site-wide</li>
                         <ul>
-                            <li>TE:C SR Calculator</li>
-                            <ul>
-                                <li>The calculator now links to tec.johang.dev, rather than tecsrcalc.org so I don't have to pay for two domains.</li>
-                                <li>The api links to tec-api.johang.dev if needed.</li>
-                            </ul>
-
+                            <li>A lot of images now have AVIF for supported devices & lazy loading.</li>
                         </ul>
-                    </div>
-                </details>
-                <details>
-                    <summary><b>April 13th, 2026</b></summary>
-                    <div class="container ms-1">
+                        <li>Artwork Page</li>
                         <ul>
-                            <li>Scratchpad/PMD Sky</li>
-                            <ul>
-                                <li>You can now tab through the reviews!</li>
-                            </ul>
-                            <li>Scratchpad/Artwork</li>
-                            <ul>
-                                <li>Added alt text to one of the drawings.</li>
-                            </ul>
-                            <li>CSS</li>
-                            <ul>
-                                <li>The a object now is now a darker/lighter color.</li>
-                            </ul>
-                            <li>Footer</li>
-                            <ul>
-                                <li>Now shows the latest commit, since sometimes I forget to update the date.</li>
-                            </ul>
-
-                            <li>Redirects</li>
-                            <ul>
-                                <li>johang.uk now redirects to johang.dev</li>
-                            </ul>
-
-                            <li>Scratchpad Fix</li>
-                            <ul>
-                                <li>Turns out I forgot the favicon for index. That's fixed now.</li>
-                            </ul>
+                            <li>Added a bit more yap, sorry, no new artworks today.</li>
                         </ul>
-                    </div>
-                </details>
+                    </ul>
+                </div>
 
-                <details>
-                    <summary><b>April 3rd, 2026</b></summary>
-                    <div class="container ms-1">
+
+
+                <div id="2026-05-27" hidden>
+                    <ul>
+                        <li>Index</li>
                         <ul>
-                            <li>Scratchpad Index Update</li>
-                            <ul>
-                                <li>Woah, it's a corkboard with pinned notes on it now.</li>
-                                <li>All of them <i>should</i> have proper alt text and tooltips. LMK if otherwise!</li>
-                            </ul>
-
-                            <li>Artwork Page Update</li>
-                            <ul>
-                                <li>Just some minor text updates. A bit more yap added.</li>
-                            </ul>
+                            <li>Added a project.</li>
                         </ul>
-                    </div>
-                </details>
+                        <li>Scratchpad/PMD Sky</li>
+                        <ul>
+                            <li>Added a review for Tunnel Run.</li>
+                            <li>Added a review for Aggron's Grand Opening.</li>
+                            <li>Fixed a broken image.</li>
+                        </ul>
+                    </ul>
+                </div>
+
+                <div id="2026-05-19" hidden>
+                    <ul>
+                        <li>Scratchpad/PMD Sky</li>
+                        <ul>
+                            <li>Added a review for A Starless Night.</li>
+                            <li>Added a review for Glaceon's Maid Cafe</li>
+                            <li>Modified the rating badges to include the score.</li>
+                            <li>Under the ratings section, you can now see what the general meaning of each rank is.</li>
+                        </ul>
+                    </ul>
+                </div>
+
+                <div id="2026-04-30" hidden>
+                    <ul>
+                        <li>Photography</li>
+                        <ul>
+                            <li>Added images from the Eau Claire competition.</li>
+                        </ul>
+                    </ul>
+                </div>
+
+
+                <div id="2026-04-28" hidden>
+                    <ul>
+                        <li>TE:C SR Calculator</li>
+                        <ul>
+                            <li>The calculator now links to tec.johang.dev, rather than tecsrcalc.org so I don't have to pay for two domains.</li>
+                            <li>The api links to tec-api.johang.dev if needed.</li>
+                        </ul>
+
+                    </ul>
+                </div>
+
+
+                <div id="2026-04-13" hidden>
+                    <ul>
+                        <li>Scratchpad/PMD Sky</li>
+                        <ul>
+                            <li>You can now tab through the reviews!</li>
+                        </ul>
+                        <li>Scratchpad/Artwork</li>
+                        <ul>
+                            <li>Added alt text to one of the drawings.</li>
+                        </ul>
+                        <li>CSS</li>
+                        <ul>
+                            <li>The a object now is now a darker/lighter color.</li>
+                        </ul>
+                        <li>Footer</li>
+                        <ul>
+                            <li>Now shows the latest commit, since sometimes I forget to update the date.</li>
+                        </ul>
+
+                        <li>Redirects</li>
+                        <ul>
+                            <li>johang.uk now redirects to johang.dev</li>
+                        </ul>
+
+                        <li>Scratchpad Fix</li>
+                        <ul>
+                            <li>Turns out I forgot the favicon for index. That's fixed now.</li>
+                        </ul>
+                    </ul>
+                </div>
+
+
+                <div id="2026-04-03" hidden>
+                    <ul>
+                        <li>Scratchpad Index Update</li>
+                        <ul>
+                            <li>Woah, it's a corkboard with pinned notes on it now.</li>
+                            <li>All of them <i>should</i> have proper alt text and tooltips. LMK if otherwise!</li>
+                        </ul>
+
+                        <li>Artwork Page Update</li>
+                        <ul>
+                            <li>Just some minor text updates. A bit more yap added.</li>
+                        </ul>
+                    </ul>
+                </div>
             </div>
 
             <hr>

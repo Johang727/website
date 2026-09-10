@@ -164,3 +164,12 @@ th, td {
     padding: 8px;
     text-align: left;
 }
+
+
+/* Optional: Style allowed dates differently so they stand out */
+.datepicker table tr td.highlighted-available-day {
+    background-color: #d1e7dd !important;
+    color: #0f5132 !important;
+    font-weight: bold;
+    border-radius: 4px;
+}
