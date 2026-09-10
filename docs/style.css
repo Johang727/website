@@ -144,7 +144,7 @@ summary.big-summary {
 }
 
 .spoiler-image img {
-    filter: blur(20px); /* Adjust blur strength here */
+    filter: blur(50px); /* Adjust blur strength here */
     transition: filter 0.3s ease;
 }
 
@@ -173,3 +173,4 @@ th, td {
     font-weight: bold;
     border-radius: 4px;
 }
+

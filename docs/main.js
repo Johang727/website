@@ -1,6 +1,6 @@
 $(document).ready(function(){
     // 1. Define your array of allowed dates (Format must match the picker's format)
-    const allowedDates = ["2026-09-09", "2026-04-03", "2026-04-13", "2026-04-28", "2026-04-30", "2026-05-19", "2026-05-27", "2026-05-30", "2026-07-04", "2026-07-09"];
+    const allowedDates = ["2026-09-10", "2026-09-09", "2026-04-03", "2026-04-13", "2026-04-28", "2026-04-30", "2026-05-19", "2026-05-27", "2026-05-30", "2026-07-04", "2026-07-09"];
 
     // 2. Initialize the datepicker
     $('#restricted-date').datepicker({
